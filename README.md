@@ -3,6 +3,13 @@
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.
 
+## Setup
+
+`$ npm install -g yo`
+`$ npm install -g cordova`
+`$ npm install`
+`$ bower install`
+
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
