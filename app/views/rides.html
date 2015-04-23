@@ -1,0 +1,19 @@
+<div class="table-responsive">
+  <table class="table">
+  	<tr>
+  		<th>{{ 'NUM' | translate }}</th>
+	  	<th>{{ 'DATE' | translate }}</th>
+	  	<th>{{ 'VACATE' | translate }}</th>
+	  	<th>{{ 'BACKAT' | translate }}</th>
+	  	<th>{{ 'BACK' | translate }}</th>
+	  	<th></th>
+  	</tr>
+  	<tr ng-repeat="ride in rides">
+  		<td>{{ride.id}}</td>
+  		<td>{{ride.aviliableDate}}</td>
+  		<td>{{ride.area}}</td>
+  		<td>{{ride.returnDate}}</td>
+  		<td>{{ride.destination}}</td>
+  	</tr>
+  </table>
+</div>

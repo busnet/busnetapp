@@ -1,0 +1,71 @@
+2015-04-15 10:00:42.842 ngTest[4994:775282] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Data/Application/70E6741A-7A1D-4C8D-B6C1-5C03F384B34A/Library/Cookies/Cookies.binarycookies
+2015-04-15 10:00:43.224 ngTest[4994:775282] Apache Cordova native platform version 3.8.0 is starting.
+2015-04-15 10:00:43.225 ngTest[4994:775282] Multi-tasking -> Device: YES, App: YES
+2015-04-15 10:00:43.252 ngTest[4994:775282] Unlimited access to network resources
+2015-04-15 10:00:43.281 ngTest[4994:775282] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-04-15 10:00:44.209 ngTest[4994:775282] Resetting plugins due to page load.
+2015-04-15 10:00:44.413 ngTest[4994:775282] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Bundle/Application/97828321-3CEB-4108-B5AC-6FA34F593281/ngTest.app/www/index.html
+2015-04-15 10:11:05.983 ngTest[5252:780346] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Data/Application/C85F5ED0-3C05-4920-89D6-08299CDA855F/Library/Cookies/Cookies.binarycookies
+2015-04-15 10:11:06.101 ngTest[5252:780346] Apache Cordova native platform version 3.8.0 is starting.
+2015-04-15 10:11:06.101 ngTest[5252:780346] Multi-tasking -> Device: YES, App: YES
+2015-04-15 10:11:06.102 ngTest[5252:780346] Unlimited access to network resources
+2015-04-15 10:11:06.105 ngTest[5252:780346] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-04-15 10:11:06.308 ngTest[5252:780346] Resetting plugins due to page load.
+2015-04-15 10:11:06.736 ngTest[5252:780346] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Bundle/Application/3E75B080-2C2B-4A1E-9150-BFB544C0024E/ngTest.app/www/index.html#/
+2015-04-15 10:18:09.978 busnetApp[5507:784719] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Data/Application/BDA6B823-B359-4FF8-B440-5FD44FA5F4FB/Library/Cookies/Cookies.binarycookies
+2015-04-15 10:18:10.088 busnetApp[5507:784719] Apache Cordova native platform version 3.8.0 is starting.
+2015-04-15 10:18:10.088 busnetApp[5507:784719] Multi-tasking -> Device: YES, App: YES
+2015-04-15 10:18:10.091 busnetApp[5507:784719] Unlimited access to network resources
+2015-04-15 10:18:10.094 busnetApp[5507:784719] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-04-15 10:18:10.301 busnetApp[5507:784719] Resetting plugins due to page load.
+2015-04-15 10:18:10.399 busnetApp[5507:784719] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Bundle/Application/64D52A27-6A3D-43C0-8A24-68D5A4812D66/busnetApp.app/www/index.html#/
+2015-04-15 10:18:57.373 busnetApp[5648:785520] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Data/Application/5C696354-E388-4AB1-B99E-ED53AB572FAE/Library/Cookies/Cookies.binarycookies
+2015-04-15 10:18:57.429 busnetApp[5648:785520] Apache Cordova native platform version 3.8.0 is starting.
+2015-04-15 10:18:57.430 busnetApp[5648:785520] Multi-tasking -> Device: YES, App: YES
+2015-04-15 10:18:57.431 busnetApp[5648:785520] Unlimited access to network resources
+2015-04-15 10:18:57.434 busnetApp[5648:785520] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-04-15 10:18:57.605 busnetApp[5648:785520] Resetting plugins due to page load.
+2015-04-15 10:18:57.776 busnetApp[5648:785520] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Bundle/Application/1D3C7D66-F1C1-49E9-9AB7-3E8FBC389386/busnetApp.app/www/index.html#/
+2015-04-15 11:58:14.387 busnetApp[8295:826604] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Data/Application/D69B6AF0-2315-40C6-89BC-3C9D844A2ED9/Library/Cookies/Cookies.binarycookies
+2015-04-15 11:58:14.505 busnetApp[8295:826604] Apache Cordova native platform version 3.8.0 is starting.
+2015-04-15 11:58:14.505 busnetApp[8295:826604] Multi-tasking -> Device: YES, App: YES
+2015-04-15 11:58:14.506 busnetApp[8295:826604] Unlimited access to network resources
+2015-04-15 11:58:14.509 busnetApp[8295:826604] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-04-15 11:58:14.723 busnetApp[8295:826604] Resetting plugins due to page load.
+2015-04-15 11:58:14.923 busnetApp[8295:826604] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Bundle/Application/88E3A58F-2F22-400F-A12E-3FE16DB2C4C1/busnetApp.app/www/index.html#/
+2015-04-15 11:58:34.666 ngTest[5252:826899] Terminating since there is no system app.
