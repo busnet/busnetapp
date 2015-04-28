@@ -16,6 +16,7 @@ angular
     'busnetApp.home',
     'busnetApp.about',
     'busnetApp.login',
+    'busnetApp.rides',
     // components
     'busnetApp.directives',
     //'ngAnimate',

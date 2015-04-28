@@ -1,3 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <div class="form-group">
+                <div class='input-group date' id='ride-date-selector'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="vehicle-type" data-toggle="dropdown" aria-expanded="true">
+              {{ 'VEHICLE_TYPE' | translate }} {{vehicleType}}
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="vehicle-type">
+              <li role="presentation" ng-repeat="vehicle in vehicles"><a role="menuitem" tabindex="-1" href="javascript: true" ng-click="filterVehicle(vehicle)">{{vehicle}}</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+</div>
 <div class="table-responsive">
   <table class="table">
   	<tr>
@@ -9,7 +34,7 @@
 	  	<th></th>
   	</tr>
   	<tr ng-repeat="ride in rides">
-  		<td>{{ride.id}}</td>
+  		<td>{{ride._id}}</td>
   		<td>{{ride.aviliableDate}}</td>
   		<td>{{ride.area}}</td>
   		<td>{{ride.returnDate}}</td>
