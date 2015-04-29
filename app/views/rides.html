@@ -1,7 +1,19 @@
+	<div id="header" data-role="header" class="ui-header">
+		<a href="#notification" class="ui-btn-left"><img src="images/notification.png"></a>
+		<img src="images/logotop.png">
+		<a href="#navside" class="ui-btn-right"><img src="images/sidemenu.png"></a>
+	</div>
+	<br>
+	<div data-role="main" class="ui-content">
+	<div class="toplable">
+	<div><h2>לוח נסיעות</h2><span><a id="addride" href="#addride" data-role="button"><img src="images/plusicon.png"></img>הוספת נסיעה</a></span>
+	</div>
+	</div>
 <div class="container">
-    <div class="row">
+    <div class="row homepage-filter-main">
+	<p style="float: right">סינון לפי</p>
         <div>
-            <div class="form-group">
+            <div class="form-group homepage-filter">
                 <div class='input-group date' id='ride-date-selector'>
                     <input type='text' class="form-control" />
                     <span class="input-group-addon">
@@ -11,7 +23,7 @@
             </div>
         </div>
         <div>
-            <div class="dropdown">
+            <div class="dropdown homepage-filter">
             <button class="btn btn-default dropdown-toggle" type="button" id="vehicle-type" data-toggle="dropdown" aria-expanded="true">
               {{ 'VEHICLE_TYPE' | translate }} {{vehicleType}}
               <span class="caret"></span>
@@ -23,13 +35,13 @@
         </div>
     </div>
 </div>
-<div class="table-responsive">
-  <table class="table">
-  	<tr>
+<div class="table-responsive rides">
+  <table class="table ride-table">
+  	<tr style="color:#fff" bgcolor="#4C66A3">
   		<th>{{ 'NUM' | translate }}</th>
 	  	<th>{{ 'DATE' | translate }}</th>
 	  	<th>{{ 'VACATE' | translate }}</th>
-	  	<th>{{ 'BACKAT' | translate }}</th>
+	 <!-- 	<th>{{ 'BACKAT' | translate }}</th> -->
 	  	<th>{{ 'BACK' | translate }}</th>
 	  	<th></th>
   	</tr>
@@ -37,8 +49,20 @@
   		<td>{{ride._id}}</td>
   		<td>{{ride.aviliableDate}}</td>
   		<td>{{ride.area}}</td>
-  		<td>{{ride.returnDate}}</td>
+  <!--		<td>{{ride.returnDate}}</td>  -->
   		<td>{{ride.destination}}</td>
   	</tr>
   </table>
+</div>
+
+
+<div data-role="footer" style="bottom: 0" class="footer" data-position="fixed">
+<nav class="navbar navbar-default navbar-fixed-bottom ">
+  <div class="container navbar">
+  <a href="#HomePage"><img src="images/icons/home.png"><span>דף הבית</span></a>
+  <a href="#openRequst"><img src="images/icons/openreq.png"><span>בקשות פתוחות</span></a>
+  <a href="#fourm"><img src="images/icons/fourm.png"><span>פורום</span></a>
+  <a href="#HomePage"><img src="images/icons/settings.png"><span>הגדרות</span></a>
+  </div>
+</nav>
 </div>
