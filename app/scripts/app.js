@@ -19,7 +19,7 @@ angular
     'busnetApp.rides',
     // components
     'busnetApp.directives',
-    //'ngAnimate',
+    'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',

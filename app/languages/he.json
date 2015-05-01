@@ -9,5 +9,11 @@
 	"VACATE": "מתפנה",
 	"BACKAT": "חזרה",
 	"BACK": "חוזר",
-	"VEHICLE_TYPE": "סוג רכב"
+	"VEHICLE_TYPE": "סוג רכב",
+	"CHECK_ALL": "בחר הכל",
+	"UNCHECK_ALL": "הסר הכל",
+	"SELECTION_COUNT": "נבחרו",
+	"SEARCH": "חפש...",
+	"SELECT": "בחר",
+	"AREAS": "אזורים"
 }

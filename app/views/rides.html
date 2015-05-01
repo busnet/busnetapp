@@ -23,15 +23,10 @@
             </div>
         </div>
         <div>
-            <div class="dropdown homepage-filter">
-            <button class="btn btn-default dropdown-toggle" type="button" id="vehicle-type" data-toggle="dropdown" aria-expanded="true">
-              {{ 'VEHICLE_TYPE' | translate }} {{vehicleType}}
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="vehicle-type">
-              <li role="presentation" ng-repeat="vehicle in vehicles"><a role="menuitem" tabindex="-1" href="javascript: true" ng-click="filterVehicle(vehicle)">{{vehicle}}</a></li>
-            </ul>
-          </div>
+            <div ng-dropdown-multiselect options="vehicles" selected-model="selectedVehicles" translation-texts="vehiclesTranslation" onItemSelect="filterRides"></div>
+        </div>
+        <div>
+          <div ng-dropdown-multiselect options="areas" selected-model="selectedAreas" translation-texts="areaTranslation"></div>
         </div>
     </div>
 </div>
