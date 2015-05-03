@@ -15,5 +15,8 @@
 	"SELECTION_COUNT": "נבחרו",
 	"SEARCH": "חפש...",
 	"SELECT": "בחר",
-	"AREAS": "אזורים"
+	"AREAS": "אזורים",
+	"FILTERBY" : "סינון לפי",
+	"RIDEBOARD" : "לוח נסיעות",
+	"ADDRIDE" : "הוספת נסיעה"
 }
