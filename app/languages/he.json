@@ -16,7 +16,18 @@
 	"SEARCH": "חפש...",
 	"SELECT": "בחר",
 	"AREAS": "אזורים",
+<<<<<<< HEAD
 	"FILTERBY" : "סינון לפי",
 	"RIDEBOARD" : "לוח נסיעות",
 	"ADDRIDE" : "הוספת נסיעה"
+=======
+	"RIDE_TYPE": "סוג נסיעה",
+	"VACATE_DATE": "תאריך פינוי",
+	"VEHICLE_COUNT": "מס׳ רכבים",
+	"VACANT_AREA": "אזור פינוי",
+	"RETURN_DATE": "תאריך החזרה",
+	"RETURN_AREA": "אזור החזרה",
+	"MORE_DETAILS": "פרטים נוספים",
+	"SUBMIT_NEW_RIDE": "אישור והוספת נסיעה"
+>>>>>>> cb2a3a451590191a42cb5b1150d12233f6cbfa71
 }
