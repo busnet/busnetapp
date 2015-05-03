@@ -1,0 +1,8 @@
+<form>
+	<div class="form-group">
+		<label for="ridetype" class="control-label">{{'RIDE_TYPE' | translate}}</label>
+		<select class="form-control">
+			<option ng-repeat="ridetype in ridetypes" value="{{ridetype._id}}">{{ridetype.name}}</option>
+		</select>
+	</div>
+</form>

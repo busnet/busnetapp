@@ -34,7 +34,7 @@ angular.module('busnetApp.rides', ['busnetApp.grandfather', 'angularjs-dropdown-
 	      	vehicles: function($http){
 	      		return $http.post('http://localhost:3002/rest/vehicles').then(function(res){
 	      			return _.map(res.data, function(item){
-	      				return {id: item._id, label: item.name};
+	      				return {id: item.name, label: item.name};
 	      			});
 	      		});
 	      	},
@@ -68,14 +68,14 @@ angular.module('busnetApp.rides', ['busnetApp.grandfather', 'angularjs-dropdown-
   		if($scope.rideDate){
   			filter.aviliableDateObj = $scope.rideDate;
   		}
-  		if($scope.vehicleType){
-  			filter.vehicleType = $scope.vehicleType;
-  		}
+  		filter.selectedVehicles = $scope.selectedVehicles;
+  		filter.selectedAreas = $scope.selectedAreas;
+  		console.log(filter);
   		getRides($http, filter).then(function(res){
   			$scope.rides = res.data;
   		});
   	}
-  	$scope.filterRides = filterRides;
+
   	$scope.rides = rides.data;
   	
   	$scope.areas = areas;
@@ -91,6 +91,12 @@ angular.module('busnetApp.rides', ['busnetApp.grandfather', 'angularjs-dropdown-
   	vehiclesTranslation.buttonDefaultText = vehiclesTranslation.buttonDefaultText + ' ' + areaTranslation.vehicleType
   	$scope.vehiclesTranslation = vehiclesTranslation;
 
+  	$scope.filterEvents = {
+  		onItemSelect: filterRides,
+  		onItemDeselect: filterRides,
+  		onSelectAll: filterRides,
+  		onUnselectAll: filterRides,
+  	};
   	var dselector = $('#ride-date-selector');
   	dselector.datetimepicker({
   		format: "DD/MM/YY"
@@ -99,9 +105,4 @@ angular.module('busnetApp.rides', ['busnetApp.grandfather', 'angularjs-dropdown-
   		$scope.rideDate = element.date;
   		filterRides();
   	});
-
-  	$scope.filterVehicle = function(vehicle){
-  		$scope.vehicleType = vehicle;
-  		filterRides();
-  	};
 });
