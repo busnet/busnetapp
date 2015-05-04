@@ -1,14 +1,14 @@
-<form name="addride">
+<form name="addride" class="addRide">
 	<div class="form-group">
 		<label for="ridetype" class="control-label">{{'RIDE_TYPE' | translate}}</label>
-		<select name="ridetype" id="ridetype" class="form-control" ng-model="ride.ride_type" required>
+		<select name="ridetype" id="ridetype" class="form-control form-input" ng-model="ride.ride_type" required>
 			<option ng-repeat="ridetype in ridetypes" value="{{ridetype.id}}">{{ridetype.label}}</option>
 		</select>
 		<span ng-show="addride.ride_type.$error.required">Select service</span>
 	</div>
 	<div class="form-group">
 		<label for="ride-date-selector" class="control-label">{{'VACATE_DATE' | translate}}</label>
-        <div class='input-group date' id='ride-date-selector'>
+        <div class='input-group date foum-input' id='ride-date-selector'>
             <input type='text' class="form-control" ng-model="ride.vacant_date" required/>
             <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
@@ -17,24 +17,24 @@
     </div>
     <div class="form-group">
 		<label for="vehicle-type" class="control-label">{{'VEHICLE_TYPE' | translate}}</label>
-		<select id="vehicle-type" class="form-control" ng-model="ride.vehicle" required>
+		<select id="vehicle-type" class="form-control foum-input" ng-model="ride.vehicle" required>
 			<option ng-repeat="vehicle in vehicles" value="{{vehicle.id}}">{{vehicle.label}}</option>
 		</select>
 	</div>
 	<div class="form-group">
 		<label for="vehicle-count" class="control-label">{{'VEHICLE_COUNT' | translate}}</label>
-		<select id="vehicle-count" class="form-control" ng-model="ride.vehicle_count" required>
+		<select id="vehicle-count" class="form-control foum-input" ng-model="ride.vehicle_count" required>
 			<option ng-repeat="vcount in vehicleCount" value="{{vcount}}">{{vcount}}</option>
 		</select>
 	</div>
 	<div class="form-group">
 		<label for="vacant_area" class="control-label">{{'VACANT_AREA' | translate}}</label>
-		<input type="text" id="vacant_area" data-provide="typeahead" class="form-control typeahead" ng-model="ride.vacant_area">
+		<input type="text" id="vacant_area" data-provide="typeahead" class="form-control typeahead foum-input" ng-model="ride.vacant_area">
 	</div>
 	<div class="form-group">
 		<label for="ride-return-date-selector" class="control-label">{{'RETURN_DATE' | translate}}</label>
         <div class='input-group date' id='ride-return-date-selector'>
-            <input type='text' class="form-control" ng-model="ride.return_date" required/>
+            <input type='text' class="form-control foum-input" ng-model="ride.return_date" required/>
             <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
             </span>
@@ -42,10 +42,10 @@
     </div>
     <div class="form-group">
 		<label for="return-area" class="control-label">{{'RETURN_AREA' | translate}}</label>
-		<input type="text" id="return-area" class="form-control typeahead" ng-model="ride.return_area" required>
+		<input type="text" id="return-area" class="form-control typeahead foum-input" ng-model="ride.return_area" required>
 	</div>
 	<div class="form-group">
 		<textarea id="more-details" class="form-control" placeholder="{{'MORE_DETAILS' | translate}}" ng-model="ride.remarks"></textarea>
 	</div>
 	<button type="submit" ng-click="save(ride)" class="btn btn-default">{{'SUBMIT_NEW_RIDE' | translate}}</button>
-</form>
+</form>s
