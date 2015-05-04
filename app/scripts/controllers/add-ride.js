@@ -18,7 +18,6 @@ angular.module('busnetApp.addride', ['busnetApp.grandfather'])
 	      resolve:{
 	      	ridetypes: function($http){
 	      		return $http.post('http://localhost:3002/rest/ridetypes').then(function(res){
-	      			console.log(res);
 	      			return _.map(res.data, function(item){
 	      				return {id: item._id, label: item.name};
 	      			});
@@ -41,4 +40,17 @@ angular.module('busnetApp.addride', ['busnetApp.grandfather'])
   	$('.date').datetimepicker({
   		format: "DD/MM/YY"
   	});
+
+  	$('.typeahead').typeahead({
+  		ajax: {
+  			url: 'http://localhost:3002/rest/cities',
+  			method: 'post',
+  			displayField: 'city',
+  			valueField: '_id'
+  		}
+  	});
+
+  	$scope.save = function(ride){
+  		console.log(ride);
+  	}
   });

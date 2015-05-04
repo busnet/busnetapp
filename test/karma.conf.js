@@ -37,6 +37,8 @@ module.exports = function(config) {
       'bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js',
       'bower_components/lodash/dist/lodash.compat.js',
       'bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js',
+      'bower_components/bootstrap/dist/js/bootstrap.js',
+      'bower_components/bs-typeahead/js/bootstrap-typeahead.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
