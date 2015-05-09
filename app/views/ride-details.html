@@ -1,0 +1,19 @@
+<div>
+	<div>
+		<span>{{'COMPANY_NAME' | translate}}</span> {{row.entity.companyName}}
+	</div>
+	<div>
+		<span>{{'RIDE_TYPE' | translate}}</span> {{row.entity.type == '1' ? ridetypes[0].label : ridetypes[1].label}}
+	</div>
+	<div>
+		<span>{{'VACATE_HOUR' | translate}}</span> {{row.entity.aviliableHour}}
+	</div>
+	<div>
+		<span>{{'VEHICLE_TYPE' | translate}}</span> {{row.entity.vehicleType}}
+	</div>
+</div>
+<div>
+	<div ng-repeat="request in row.entity.requests">
+
+	</div>
+</div>

@@ -20,6 +20,7 @@ angular.module('busnetApp.grandfather', ['ui.router'])
             return loginService.resolvePendingState($http.get('http://localhost:3002/rest/user'));
           } else {
             roleDefined.resolve();
+            console.log(loginService);
           }
           return roleDefined.promise;
         }

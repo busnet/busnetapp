@@ -10,10 +10,10 @@
  */
 angular
   .module('busnetApp', [
+    'config',
     'loginService',
     //app sections
     'busnetApp.error',
-    'busnetApp.home',
     'busnetApp.about',
     'busnetApp.login',
     'busnetApp.rides',

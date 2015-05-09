@@ -7,8 +7,12 @@
  * # AddRideCtrl
  * Controller of the busnetApp
  */
-angular.module('busnetApp.addride', ['busnetApp.grandfather'])
-	.config(function ($stateProvider) {
+angular.module('busnetApp.addride', [
+	'busnetApp.grandfather', 
+	'ui.bootstrap.showErrors',
+	'ui.bootstrap',
+	'config'])
+	.config(function ($stateProvider, REST_URLS) {
 	  $stateProvider
 	    .state('app.addride', {
 	      url: '/addride',
@@ -17,14 +21,14 @@ angular.module('busnetApp.addride', ['busnetApp.grandfather'])
 	      accessLevel: accessLevels.user,
 	      resolve:{
 	      	ridetypes: function($http){
-	      		return $http.post('http://localhost:3002/rest/ridetypes').then(function(res){
+	      		return $http.post(REST_URLS.RIDE_TYPES).then(function(res){
 	      			return _.map(res.data, function(item){
 	      				return {id: item._id, label: item.name};
 	      			});
 	      		});
 	      	},
 	      	vehicles: function($http){
-	      		return $http.post('http://localhost:3002/rest/vehicles').then(function(res){
+	      		return $http.post(REST_URLS.VEHICLES).then(function(res){
 	      			return _.map(res.data, function(item){
 	      				return {id: item.name, label: item.name};
 	      			});
@@ -33,17 +37,30 @@ angular.module('busnetApp.addride', ['busnetApp.grandfather'])
 	      }
 	    });	
 	})
-  .controller('AddRideCtrl', function ($scope, ridetypes, vehicles) {
+  .controller('AddRideCtrl',function ($scope, $http, ridetypes, vehicles, REST_URLS) {
     $scope.ridetypes = ridetypes;
     $scope.vehicles = vehicles;
     $scope.vehicleCount = ['1', '2', '3', '4','5+'];
-  	$('.date').datetimepicker({
-  		format: "DD/MM/YY"
-  	});
+
+  	$scope.vacant_date_opened = false;
+  	$scope.toggle_vacant_date = function($event){
+  		$event.preventDefault();
+		$event.stopPropagation();
+		
+		$scope.vacant_date_opened = !$scope.vacant_date_opened;
+  	}
+
+  	$scope.return_date_opened = false;
+  	$scope.toggle_return_date = function($event){
+  		$event.preventDefault();
+		$event.stopPropagation();
+		
+		$scope.return_date_opened = !$scope.return_date_opened;
+  	}
 
   	$('.typeahead').typeahead({
   		ajax: {
-  			url: 'http://localhost:3002/rest/cities',
+  			url: REST_URLS.CITIES,
   			method: 'post',
   			displayField: 'city',
   			valueField: '_id'
@@ -51,6 +68,14 @@ angular.module('busnetApp.addride', ['busnetApp.grandfather'])
   	});
 
   	$scope.save = function(ride){
+  		$scope.$broadcast('show-errors-check-validity');
+
+  		if(!$scope.addride.$valid){
+  			return;
+  		}
   		console.log(ride);
+  		$http.post(REST_URLS.RIDE, ride).then(function(res){
+
+  		});
   	}
   });

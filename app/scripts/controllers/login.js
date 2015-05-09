@@ -12,13 +12,20 @@ angular.module('busnetApp.login', ['busnetApp.grandfather', 'loginService'])
   .config(function ($stateProvider) {
     $stateProvider
       .state('app.login', {
-        url: '/login',
+        url: '/',
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
         accessLevel: accessLevels.public
       });
   })
-  .controller('LoginCtrl', function ($scope, $stateParams, loginService, $http, $timeout, LOGIN_SERVER_URL) {
+  .controller('LoginCtrl', function (
+    $scope, 
+    $stateParams, 
+    loginService, 
+    $http, 
+    $timeout,
+    $state, 
+    LOGIN_SERVER_URL) {
     // loginService exposed and a new Object containing login user/pwd
     $scope.ls = loginService;
     $scope.login = {
@@ -38,6 +45,7 @@ angular.module('busnetApp.login', ['busnetApp.grandfather', 'loginService'])
       });
       loginPromise.finally(function () {
         $scope.login.working = false;
+        $state.go('app.rides');
       });
     };
     $scope.logoutMe = function () {

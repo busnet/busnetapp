@@ -3,6 +3,19 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+.form-group .help-block {
+  display: none;
+}
+
+.form-group.has-error .help-block {
+  display: block;
+}
+
+.rides-grid {
+  width: 350px;
+  height: 250px;
+}
+
 /* header */
 .ui-header  {
   background-color: #fff !important;

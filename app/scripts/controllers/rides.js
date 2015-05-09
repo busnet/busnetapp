@@ -8,12 +8,17 @@
  * Controller of the busnetApp
  */
 
-var getRides = function($http, filter){
-	return $http.post('http://localhost:3002/rest/rides', filter);
+var getRides = function(config, $http, filter){
+	return $http.post(config.RIDES, filter);
 };
 
-angular.module('busnetApp.rides', ['busnetApp.grandfather', 'angularjs-dropdown-multiselect'])
-	.config(function ($stateProvider) {
+angular.module('busnetApp.rides', [
+	'busnetApp.grandfather', 
+	'angularjs-dropdown-multiselect',
+	'ui.bootstrap',
+	'ui.grid',
+	'ui.grid.expandable'])
+	.config(function ($stateProvider, REST_URLS) {
 	  $stateProvider
 	    .state('app.rides', {
 	      url: '/rides',
@@ -22,19 +27,26 @@ angular.module('busnetApp.rides', ['busnetApp.grandfather', 'angularjs-dropdown-
 	      accessLevel: accessLevels.user,
 	      resolve: {
 	      	rides: function($http){
-	      		return getRides($http);
+	      		return getRides(REST_URLS, $http);
 	      	},
 	      	areas: function($http){
-	      		return $http.post('http://localhost:3002/rest/areas').then(function(res){
+	      		return $http.post(REST_URLS.AREAS).then(function(res){
 	      			return _.map(res.data, function(item){
 	      				return {id: item._id, label: item.area};
 	      			});
 	      		});
 	      	},
 	      	vehicles: function($http){
-	      		return $http.post('http://localhost:3002/rest/vehicles').then(function(res){
+	      		return $http.post(REST_URLS.VEHICLES).then(function(res){
 	      			return _.map(res.data, function(item){
 	      				return {id: item.name, label: item.name};
+	      			});
+	      		});
+	      	},
+	      	ridetypes: function($http){
+	      		return $http.post(REST_URLS.RIDE_TYPES).then(function(res){
+	      			return _.map(res.data, function(item){
+	      				return {id: item._id, label: item.name};
 	      			});
 	      		});
 	      	},
@@ -46,7 +58,11 @@ angular.module('busnetApp.rides', ['busnetApp.grandfather', 'angularjs-dropdown-
 	      			'SEARCH', 
 	      			'SELECT', 
 	      			'AREAS',
-	      			'VEHICLE_TYPE']).then(function (translations) {
+	      			'VEHICLE_TYPE',
+	      			'NUM',
+	      			'DATE',
+	      			'VACATE',
+	      			'BACK']).then(function (translations) {
 					return {
 						checkAll: translations.CHECK_ALL,
 						uncheckAll: translations.UNCHECK_ALL,
@@ -55,28 +71,53 @@ angular.module('busnetApp.rides', ['busnetApp.grandfather', 'angularjs-dropdown-
 						buttonDefaultText: translations.SELECT,
 						dynamicButtonTextSuffix: translations.SELECTION_COUNT,
 						areas: translations.AREAS,
-						vehicleType: translations.VEHICLE_TYPE
+						vehicleType: translations.VEHICLE_TYPE,
+						num: translations.NUM,
+						date: translations.DATE,
+						vacate: translations.VACATE,
+						back: translations.BACK
 					}
 				});
 	      	}
 	      }
 	    });
 	})
-  .controller('RidesCtrl', function ($scope, $http, rides, areas, vehicles, translations) {
+  .controller('RidesCtrl', function (
+  	$scope, 
+  	$http, 
+  	rides,
+  	ridetypes,
+  	areas, 
+  	vehicles, 
+  	translations,
+  	REST_URLS) {
   	var filterRides = function(){
   		var filter = {};
-  		if($scope.rideDate){
-  			filter.aviliableDateObj = $scope.rideDate;
+  		if($scope.ride.date){
+  			filter.aviliableDateObj = $scope.ride.date;
   		}
   		filter.selectedVehicles = $scope.selectedVehicles;
   		filter.selectedAreas = $scope.selectedAreas;
-  		console.log(filter);
-  		getRides($http, filter).then(function(res){
-  			$scope.rides = res.data;
+  		getRides(REST_URLS, $http, filter).then(function(res){
+  			$scope.gridOptions.data = res.data;
   		});
   	}
-
-  	$scope.rides = rides.data;
+  	$scope.ridetypes = ridetypes;
+  	console.log($scope.ridetypes)
+  	$scope.ride = {};
+  	$scope.gridOptions = {
+  		data: rides.data,
+  		columnDefs:[
+  			{name: "id", field:"_id", displayName:translations.num},
+  			{name: "aviliableDate", field:"aviliableDate", displayName:translations.date},
+  			{name: "vacate", field:"area", displayName:translations.vacate},
+  			{name: "back", field:"destination", displayName:translations.back},
+  		],
+  		expandableRowTemplate: "views/ride-details.html",
+  		expandableRowHeight: 150,
+  		enableRowSelection: true,
+  		expandableRowScope: {ridetypes: ridetypes}
+  	};
   	
   	$scope.areas = areas;
   	$scope.selectedAreas = [];
@@ -97,12 +138,15 @@ angular.module('busnetApp.rides', ['busnetApp.grandfather', 'angularjs-dropdown-
   		onSelectAll: filterRides,
   		onUnselectAll: filterRides,
   	};
-  	var dselector = $('#ride-date-selector');
-  	dselector.datetimepicker({
-  		format: "DD/MM/YY"
-  	});
-  	dselector.on('dp.change', function(element){
-  		$scope.rideDate = element.date;
+
+  	$scope.date_opened = false;
+  	$scope.date_toggle = function($event) {
+		$event.preventDefault();
+		$event.stopPropagation();
+
+		$scope.date_opened = !$scope.date_opened;
+	};
+	$scope.date_change = function(){
   		filterRides();
-  	});
+  	};
 });

@@ -28,6 +28,29 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: appConfig,
 
+    ngconstant: {
+      options: {
+        name: 'config',
+        dest: 'app/scripts/config.js',
+        constants: {
+          PACKAGE: grunt.file.readJSON('package.json'),
+          REST_URLS: {
+            VEHICLES: 'http://localhost:3002/rest/vehicles',
+            RIDE_TYPES: 'http://localhost:3002/rest/ridetypes',
+            AREAS: 'http://localhost:3002/rest/areas',
+            CITIES: 'http://localhost:3002/rest/cities',
+            RIDES: 'http://localhost:3002/rest/rides',
+            RIDE: 'http://localhost:3002/rest/ride'
+          }
+        },
+        values: {
+          debug: true
+        }
+      },
+      build: {
+      }
+    },
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -447,6 +470,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'autoprefixer:server',
+      'ngconstant',
       'connect:livereload',
       'watch'
     ]);

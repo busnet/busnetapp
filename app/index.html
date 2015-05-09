@@ -8,8 +8,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -20,9 +20,29 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
+    <div id="header" data-role="header" class="ui-header">
+        <a href="#notification" class="ui-btn-left"><img src="images/notification.png"></a>
+        <img src="images/logotop.png">
+        <a href="#navside" class="ui-btn-right"><img src="images/sidemenu.png"></a>
+    </div>
+    <br>
+    <div data-role="main" class="ui-content">
+      <div class="toplable">
+      <div><h2>{{ 'RIDE_BOARD' | translate }}</h2><span><a id="addride" ui-sref="app.addride" data-role="button"><img src="images/plusicon.png"></img>{{ 'ADD_RIDE' | translate }}</a></span>
+      </div>
+    </div>
     <div class="container">
     <ui-view ng-hide="doingResolve"></ui-view>
+    </div>
+    <div data-role="footer" style="bottom: 0" class="footer" data-position="fixed">
+    <nav class="navbar navbar-default navbar-fixed-bottom ">
+      <div class="container navbar">
+      <a href="#HomePage"><img src="images/icons/home.png"><span>{{'HOMEPAGE' | translate}}</span></a>
+      <a href="#openRequst"><img src="images/icons/openreq.png"><span>{{'OPEN_REQUESTS' | translate}}</span></a>
+      <a href="#fourm"><img src="images/icons/fourm.png"><span>{{'FORUM' | translate}}</span></a>
+      <a href="#HomePage"><img src="images/icons/settings.png"><span>{{'SETTINGS' | translate}}</span></a>
+      </div>
+    </nav>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -51,20 +71,20 @@
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
     <script src="bower_components/angular-translate-loader-url/angular-translate-loader-url.js"></script>
-    <script src="bower_components/moment/moment.js"></script>
-    <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/bs-typeahead/js/bootstrap-typeahead.js"></script>
+    <script src="bower_components/angular-bootstrap-show-errors/src/showErrors.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/config.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/grandfather.js"></script>
-        <script src="scripts/controllers/home.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/my-requests.js"></script>
@@ -76,6 +96,8 @@
         <script src="scripts/controllers/rides.js"></script>
         <script src="scripts/controllers/add-ride.js"></script>
         <!-- endbuild -->
+        <script src="http://localhost:3002/socket.io/socket.io.js"></script>
+        <script src="languages/angular-locale_he-il.js"></script>
 <script>
 /**
  * Directly from fnakstad

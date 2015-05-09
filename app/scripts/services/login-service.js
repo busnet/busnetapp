@@ -10,7 +10,7 @@ angular.module('loginService', ['ui.router'])
 .provider('loginService', function () {
   var userToken = localStorage.getItem('userToken'),
       errorState = 'app.error',
-      logoutState = 'app.home';
+      logoutState = 'app.login';
 
   this.$get = function ($rootScope, $http, $q, $state) {
 
