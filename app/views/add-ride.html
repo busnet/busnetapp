@@ -1,12 +1,12 @@
-<form novalidate name="addride">
+<form class="addRide" novalidate name="addride">
 	<div class="form-group" show-errors="{ showSuccess: true }">
 		<label for="ridetype" class="control-label">{{'RIDE_TYPE' | translate}}</label>
-		<select name="ridetype" class="form-control form-input" ng-model="ride.ride_type" ng-options="ridetype.label for ridetype in ridetypes" required>
+		<select name="ridetype" class="form-control foum-input" ng-model="ride.ride_type" ng-options="ridetype.label for ridetype in ridetypes" required>
 			<option value="">{{'SELECT' | translate}} {{'RIDE_TYPE' | translate}}</option>
 		</select>
 		<p class="help-block" ng-if="addride.ridetype.$error.required">{{'RIDE_TYPE' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
 	</div>
-	<div class="form-group" show-errors="{ showSuccess: true, trigger: 'change' }">
+	<div class="form-group date" show-errors="{ showSuccess: true, trigger: 'change' }">
 		<label for="ridedateselector" class="control-label">{{'VACATE_DATE' | translate}}</label>
         <div class="input-group">
           <input name="vacant_date" type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="ride.vacant_date" is-open="vacant_date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" required/>
@@ -35,7 +35,7 @@
 		<input type="text" name="vacantarea" id="vacantarea" data-provide="typeahead" class="form-control typeahead foum-input" ng-model="ride.vacant_area" required>
 		<p class="help-block" ng-if="addride.vacantarea.$error.required">{{'VACANT_AREA' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
 	</div>
-	<div class="form-group" show-errors="{ showSuccess: true }">
+	<div class="form-group date" show-errors="{ showSuccess: true }">
 		<label for="ridereturndate" class="control-label">{{'RETURN_DATE' | translate}}</label>
         <div class="input-group">
           <input name="return_date" type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="ride.return_date" is-open="return_date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" required/>
@@ -53,5 +53,5 @@
 	<div class="form-group">
 		<textarea id="more-details" class="form-control" placeholder="{{'MORE_DETAILS' | translate}}" ng-model="ride.remarks"></textarea>
 	</div>
-	<button type="submit" ng-click="save(ride)" class="btn btn-default">{{'SUBMIT_NEW_RIDE' | translate}}</button>
+	<button type="submit" ng-click="save(ride)" class="btn btn-default addRide">{{'SUBMIT_NEW_RIDE' | translate}}</button>
 </form>
