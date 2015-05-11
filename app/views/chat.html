@@ -1,0 +1,15 @@
+<div ng-if="!requests">
+	<input ng-model="message" type="text" class="form-control" placeholder="{{'ENTER_MSG' | translate}}">
+	<buton ng-click="sendMessage(rideid, rideowner, message, false)" type="submit" class="btn btn-default">{{'SEND' | translate}}</buton>
+</div>
+<accordion close-others="true">
+	<accordion-group ng-repeat="(key, request) in requests" heading="{{request.from}}">
+  		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="msg in request.msgs">{{msg.time}}|{{msg.name}}: {{msg.message}}</li>
+		</ul>
+		<div>
+		    <input ng-model="reply" type="text" class="form-control"  placeholder="{{'ENTER_MSG' | translate}}">
+		 	<buton ng-click="sendMessage(rideid, key, reply, true)" type="submit" class="btn btn-default">{{'SEND' | translate}}</buton>
+		</div>
+    </accordion-group>
+</accordion>

@@ -1,5 +1,6 @@
 {
 	"WELCOME": "ברוכים הבאים",
+	"SEND": "שלח",
 	"SERVER_ERROR": "שגיאת שרת",
 	"LOGIN":"כניסה למערכת",
 	"LOGOUT": "התנתק",
@@ -34,5 +35,6 @@
 	"HOMEPAGE": "דף הבית",
 	"OPEN_REQUESTS": "בקשות פתוחות",
 	"FORUM": "פורום",
-	"SETTINGS": "הגדרות"
+	"SETTINGS": "הגדרות",
+	"ENTER_MSG": "הקלד הודעה"
 }

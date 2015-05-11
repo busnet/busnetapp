@@ -103,7 +103,6 @@ angular.module('busnetApp.rides', [
   		});
   	}
   	$scope.ridetypes = ridetypes;
-  	console.log($scope.ridetypes)
   	$scope.ride = {};
   	$scope.gridOptions = {
   		data: rides.data,
@@ -124,7 +123,6 @@ angular.module('busnetApp.rides', [
   	var areaTranslation = _.clone(translations);
   	areaTranslation.buttonDefaultText = areaTranslation.buttonDefaultText + ' ' + areaTranslation.areas
   	$scope.areaTranslation = areaTranslation;
-
   	
   	$scope.vehicles = vehicles;
   	$scope.selectedVehicles = [];
@@ -143,7 +141,6 @@ angular.module('busnetApp.rides', [
   	$scope.date_toggle = function($event) {
 		$event.preventDefault();
 		$event.stopPropagation();
-
 		$scope.date_opened = !$scope.date_opened;
 	};
 	$scope.date_change = function(){
