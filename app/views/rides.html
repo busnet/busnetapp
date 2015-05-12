@@ -5,15 +5,15 @@
            <div class="input-group">
               <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="ride.date" is-open="date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" ng-change="date_change()" />
               <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="date_toggle($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                <button type="button" class="btn btn-default btn-filter" ng-click="date_toggle($event)"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
             </div>
         </div>
         <div>
-            <div ng-dropdown-multiselect options="vehicles" selected-model="selectedVehicles" translation-texts="vehiclesTranslation" events="filterEvents"></div>
+            <div class="input-group" ng-dropdown-multiselect options="vehicles" selected-model="selectedVehicles" translation-texts="vehiclesTranslation" events="filterEvents"></div>
         </div>
         <div>
-          <div ng-dropdown-multiselect options="areas" selected-model="selectedAreas" translation-texts="areaTranslation" events="filterEvents"></div>
+     <!--//need to put in settings      <div ng-dropdown-multiselect options="areas" selected-model="selectedAreas" translation-texts="areaTranslation" events="filterEvents"></div> -->
         </div>
     </div>
 </div>
