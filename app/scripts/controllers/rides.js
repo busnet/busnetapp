@@ -17,7 +17,8 @@ angular.module('busnetApp.rides', [
 	'angularjs-dropdown-multiselect',
 	'ui.bootstrap',
 	'ui.grid',
-	'ui.grid.expandable'])
+	'ui.grid.expandable',
+	'busnetApp.RideChat'])
 	.config(function ($stateProvider, REST_URLS) {
 	  $stateProvider
 	    .state('app.rides', {

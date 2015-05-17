@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-xs-7" >
-		<chat requests="row.entity.requests" rideid="row.entity._id" rideowner="row.entity.username"/>
+		<button class="btn btn-default" type="button" ui-sref="app.ridechat({ rideid: row.entity._id})"><span ng-if="!row.entity.requests">{{'BEGIN' | translate}}</span><span ng-if="row.entity.requests">{{'CONTINUE' | translate}}</span> {{'CHAT' | translate}}</button>
 	</div>
 	<div class="col-xs-5">
 		<div>
