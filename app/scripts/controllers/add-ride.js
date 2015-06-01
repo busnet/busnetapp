@@ -8,9 +8,10 @@
  * Controller of the busnetApp
  */
 angular.module('busnetApp.addride', [
-	'busnetApp.grandfather', 
-	'ui.bootstrap.showErrors',
+	'busnetApp.grandfather',
 	'ui.bootstrap',
+	'ui.bootstrap.showErrors',
+	'ui.bootstrap.modal',
 	'config'])
 	.config(function ($stateProvider, REST_URLS) {
 	  $stateProvider
@@ -37,7 +38,7 @@ angular.module('busnetApp.addride', [
 	      }
 	    });	
 	})
-  .controller('AddRideCtrl',function ($scope, $http, ridetypes, vehicles, REST_URLS) {
+  .controller('AddRideCtrl',function ($scope, $http, $state, $modal, ridetypes, vehicles, REST_URLS) {
     $scope.ridetypes = ridetypes;
     $scope.vehicles = vehicles;
     $scope.vehicleCount = ['1', '2', '3', '4','5+'];
@@ -65,17 +66,33 @@ angular.module('busnetApp.addride', [
   			displayField: 'city',
   			valueField: '_id'
   		}
-  	});
+  	});	
 
   	$scope.save = function(ride){
   		$scope.$broadcast('show-errors-check-validity');
-
   		if(!$scope.addride.$valid){
   			return;
   		}
-  		console.log(ride);
   		$http.post(REST_URLS.RIDE, ride).then(function(res){
+  			var modalInstance = $modal.open({
+				animation: true,
+				templateUrl: 'views/add-ride-modal.html',
+				controller: 'AddRideModalCtrl',
+				size: 'sm',
+				resolve: {
+					ride: function () {
+					  return res.data;
+					}
+				}
+			});
 
+			modalInstance.result.then(function (response) {
+				if(response){
+					$state.go("app.rides");
+				}
+			}, function () {
+				console.log('Modal dismissed at: ' + new Date());
+			});
   		});
   	}
   });

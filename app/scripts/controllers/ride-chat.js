@@ -26,8 +26,5 @@ angular.module('busnetApp.RideChat', [])
 	      });
 	  })
 	.controller('RideChatCtrl', function ($scope, ride) {
-		$scope.rideid = ride._id;
-		$scope.owner = ride.username;
-		$scope.requests = ride.requests;
-		console.log(ride);
+		$scope.ride = ride;
 	});

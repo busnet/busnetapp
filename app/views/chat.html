@@ -2,30 +2,13 @@
 	<input ng-model="message" type="text" class="form-control" placeholder="{{'ENTER_MSG' | translate}}">
 	<buton ng-click="sendMessage(rideid, rideowner, message, false)" type="submit" class="btn btn-default">{{'SEND' | translate}}</buton>
 </div>
-<div class="chat-ride-details row">
-<div class="label col-md-2">מס</div>
-<div class="label col-md-2">תאריך</div>
-<div class="label col-md-2">מתפנה</div>
-<div class="label col-md-2">חזרה</div>
-<div class="label col-md-2">חוזר</div>
+<div ng-repeat="(key, request) in requests" heading="{{request.from}}">
+	<ul class="list-group chat-main">
+		<li class="list-group-item chat-list" ng-repeat="msg in request.msgs"><span class="time">{{msg.time}}</span><span class="name">{{msg.name}}</span><br><textarea class="message">{{msg.message}}</textarea></li>
+	</ul>
 </div>
-<div class="chat-ride-details row">
-<div class="info col-md-2">טקסט</div>
-<div class="info col-md-2">טקסט</div>
-<div class="info col-md-2">טקסט</div>
-<div class="info col-md-2">טקסט</div>
-<div class="info col-md-2">טקסט</div>
-</div>
-
-<!--<accordion close-others="true">--->
-	<div ng-repeat="(key, request) in requests" heading="{{request.from}}">
-  		<ul class="list-group chat-main">
-			<li class="list-group-item chat-list" ng-repeat="msg in request.msgs"><span class="time">{{msg.time}}</span><span class="name">{{msg.name}}</span><br><textarea class="message">{{msg.message}}</textarea></li>
-		</ul>
-    </div>
-	<div class="send">
-		    <input ng-model="reply" type="text" class="form-control chat-input"  placeholder="{{'ENTER_MSG' | translate}}">
-		 	<buton ng-click="sendMessage(rideid, key, reply, true)" type="submit" class="btn btn-default send-chat">{{'SEND' | translate}}</buton>
-		</div>
+<div class="send">
+	    <input ng-model="reply" type="text" class="form-control chat-input"  placeholder="{{'ENTER_MSG' | translate}}">
+	 	<buton ng-click="sendMessage(rideid, key, reply, true)" type="submit" class="btn btn-default send-chat">{{'SEND' | translate}}</buton>
 	</div>
-<!-- </accordion> -->
+</div>

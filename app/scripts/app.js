@@ -30,13 +30,60 @@ angular
   ])
   .config(function ($urlRouterProvider, $translateProvider) {
     $urlRouterProvider.otherwise('/');
-    $translateProvider.useStaticFilesLoader({
+    $translateProvider.translations('he',{
+        "WELCOME": "ברוכים הבאים",
+        "SEND": "שלח",
+        "CONFIRM":  "אישור",
+        "SERVER_ERROR": "שגיאת שרת",
+        "LOGIN":"כניסה למערכת",
+        "LOGOUT": "התנתק",
+        "USERNAME": "שם משתמש",
+        "PASSWORD": "סיסמא",
+        "LOGIN_ERROR": "קוד המשתמש ו/או הסיסמא אינם נכונים",
+        "NUM": "מס׳",
+        "NUMBER": "מספר",
+        "DATE": "תאריך",
+        "VACATE": "מתפנה",
+        "BACKAT": "חזרה",
+        "BACK": "חוזר",
+        "VEHICLE_TYPE": "סוג רכב",
+        "CHECK_ALL": "בחר הכל",
+        "UNCHECK_ALL": "הסר הכל",
+        "SELECTION_COUNT": "נבחרו",
+        "SEARCH": "חפש...",
+        "SELECT": "בחר",
+        "AREAS": "אזורים",
+        "FILTER_BY" : "סינון לפי",
+        "RIDE_BOARD" : "לוח נסיעות",
+        "ADD_RIDE" : "הוספת נסיעה",
+        "RIDE_TYPE": "סוג נסיעה",
+        "VACATE_DATE": "תאריך פינוי",
+        "VACATE_HOUR": "שעת פינוי",
+        "VEHICLE_COUNT": "מס׳ רכבים",
+        "VACANT_AREA": "אזור פינוי",
+        "RETURN_DATE": "תאריך החזרה",
+        "RETURN_AREA": "אזור החזרה",
+        "MORE_DETAILS": "פרטים נוספים",
+        "SUBMIT_NEW_RIDE": "אישור והוספת נסיעה",
+        "REQUIRED_FIELD": "הוא שדה חובה",
+        "COMPANY_NAME": "שם חברה",
+        "HOMEPAGE": "דף הבית",
+        "OPEN_REQUESTS": "בקשות פתוחות",
+        "FORUM": "פורום",
+        "SETTINGS": "הגדרות",
+        "ENTER_MSG": "הקלד הודעה",
+        "BEGIN": "התחל",
+        "CONTINUE": "המשך",
+        "CHAT": "שיחה",
+        "RIDE_ADDED_SUCCESSFULLY": "הנסיעה הוספה בהצלחה"
+      });
+    /*$translateProvider.useStaticFilesLoader({
       prefix: '/languages/',
       suffix: '.json'
-    });
+    });*/
     $translateProvider.preferredLanguage('he');
   })
-  .run(function($rootScope){
+  .run(function($rootScope, $state, $stateParams){
     var resolveDone = function () { $rootScope.doingResolve = false; };
     $rootScope.doingResolve = false;
 
@@ -46,4 +93,7 @@ angular
     $rootScope.$on('$stateChangeSuccess', resolveDone);
     $rootScope.$on('$stateChangeError', resolveDone);
     $rootScope.$on('$statePermissionError', resolveDone);
+
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams; 
   });

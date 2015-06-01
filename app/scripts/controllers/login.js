@@ -8,7 +8,6 @@
  * Controller of the busnetApp
  */
 angular.module('busnetApp.login', ['busnetApp.grandfather', 'loginService'])
-  .constant('LOGIN_SERVER_URL', 'http://localhost:3002/rest/login')
   .config(function ($stateProvider) {
     $stateProvider
       .state('app.login', {
@@ -25,16 +24,19 @@ angular.module('busnetApp.login', ['busnetApp.grandfather', 'loginService'])
     $http, 
     $timeout,
     $state, 
-    LOGIN_SERVER_URL) {
+    REST_URLS) {
     // loginService exposed and a new Object containing login user/pwd
     $scope.ls = loginService;
+    
     $scope.login = {
       working: false,
-      wrong: false
+      wrong: false,
+      user: loginService.user,
+      isLogged: loginService.isLogged ? true : false
     };
     $scope.loginMe = function () {
       // setup promise, and 'working' flag
-      var loginPromise = $http.post(LOGIN_SERVER_URL, $scope.login);
+      var loginPromise = $http.post(REST_URLS.LOGIN_SERVER, $scope.login);
       $scope.login.working = true;
       $scope.login.wrong = false;
 

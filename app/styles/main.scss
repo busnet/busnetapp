@@ -1,50 +1,6 @@
 @import "base";
+@import "body";
 @import "rides";
 @import "addride";
 @import "chat";
 
-.login-form {
-  .logo{
-    width: 65%;
-    margin-top: 13%;
-    margin-bottom: 5vw;
-  }
-  .bus{
-	width: 80%;
-	margin-top: 5%;
-	margin-bottom: 4vw;
-  }
-  a{
-  	border: 0;
-	width: 77%;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	background-color: rgb(60, 181, 74) !important;
-	color: #fff !important;
-	font-weight: 100;
-  }
-  input {
-	width: 81%;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	padding: 2%;
-	margin-top: 2%;
-	text-align: right;
-	border-color: rgb(0, 114, 188);
-	border-style: solid;
-  }
-  #loginB {
-    color: #333;
-  background-color: rgb(60, 181, 74) !important;
-  border-color: #ccc;
-  color: #ffffff;
-  width: 82%;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding: 3%;
-  font-size: 130%;
-  }
-} 

@@ -1,22 +1,19 @@
 <div class="container">
-    <div class="row homepage-filter-main">
-	<p style="float: right">{{ 'FILTER_BY' | translate }}</p>
-        <div>
-           <div class="input-group">
-              <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="ride.date" is-open="date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" ng-change="date_change()" />
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default btn-filter" ng-click="date_toggle($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-            </div>
+    <div class="row">
+      <div class="col-xs-12">{{ 'FILTER_BY' | translate }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+       <div class="input-group">
+          <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="ride.date" is-open="date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" ng-change="date_change()" placeholder="{{'VACATE_DATE' | translate}}" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-filter" ng-click="date_toggle($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
         </div>
-        <div>
-            <div class="input-group" ng-dropdown-multiselect options="vehicles" selected-model="selectedVehicles" translation-texts="vehiclesTranslation" events="filterEvents"></div>
-        </div>
-        <div>
-     <!--//need to put in settings      <div ng-dropdown-multiselect options="areas" selected-model="selectedAreas" translation-texts="areaTranslation" events="filterEvents"></div> -->
-        </div>
+      </div>
+      <div class="col-xs-5">
+          <div class="input-group" ng-dropdown-multiselect options="vehicles" selected-model="selectedVehicles" translation-texts="vehiclesTranslation" events="filterEvents"></div>
+      </div>
     </div>
 </div>
-<div>
   <div ui-grid="gridOptions" dir="rtl" ui-grid-expandable class="rides-grid"></div>
-</div>

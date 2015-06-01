@@ -16,35 +16,11 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-controller="BodyCtrl">
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div id="header" data-role="header" class="ui-header">
-        <a href="#notification" class="ui-btn-left"><img src="images/notification.png"></a>
-        <img src="images/logotop.png">
-        <a href="#navside" class="ui-btn-right"><img src="images/sidemenu.png"></a>
-    </div>
-    <br>
-    <div data-role="main" class="ui-content">
-      <div class="toplable">
-      <div><h2>{{ 'RIDE_BOARD' | translate }}</h2><span><a id="addride" ui-sref="app.addride" data-role="button"><img src="images/plusicon.png"></img>{{ 'ADD_RIDE' | translate }}</a></span>
-      </div>
-    </div>
-    <div class="container">
-    <ui-view ng-hide="doingResolve"></ui-view>
-    </div>
-    <div data-role="footer" style="bottom: 0" class="footer" data-position="fixed">
-    <nav class="navbar navbar-default navbar-fixed-bottom ">
-      <div class="container navbar">
-      <a href="#HomePage"><img src="images/icons/home.png"><span>{{'HOMEPAGE' | translate}}</span></a>
-      <a href="#openRequst"><img src="images/icons/openreq.png"><span>{{'OPEN_REQUESTS' | translate}}</span></a>
-      <a href="#fourm"><img src="images/icons/fourm.png"><span>{{'FORUM' | translate}}</span></a>
-      <a href="#HomePage"><img src="images/icons/settings.png"><span>{{'SETTINGS' | translate}}</span></a>
-      </div>
-    </nav>
-    </div>
-
+    <div ui-view></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
@@ -99,6 +75,7 @@
         <script src="scripts/controllers/add-ride.js"></script>
         <script src="scripts/directives/chat.js"></script>
         <script src="scripts/controllers/ride-chat.js"></script>
+        <script src="scripts/controllers/add-ride-modal.js"></script>
         <!-- endbuild -->
         <script src="http://localhost:3002/socket.io/socket.io.js"></script>
         <script src="languages/angular-locale_he-il.js"></script>

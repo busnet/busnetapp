@@ -28,26 +28,70 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: appConfig,
 
+    phonegap:{
+      config:{
+        root: 'www',
+        config: 'config.xml',
+        path: 'phonegap',
+        cordova: '.cordova',
+        cli: 'cordova',
+        cleanBeforeBuild: true,
+        platforms: ['ios'],
+        maxBuffer: 200,
+        verbose: false,
+        releases: 'releases',
+        releaseName: function(){
+          var pkg = grunt.file.readJSON('package.json');
+          return(pkg.name + '-' + pkg.version);
+        },
+        debuggable: false,
+        name: function(){
+          var pkg = grunt.file.readJSON('package.json');
+          return pkg.name;
+        }
+      }
+    },
+
     ngconstant: {
       options: {
         name: 'config',
         dest: 'app/scripts/config.js',
         constants: {
           PACKAGE: grunt.file.readJSON('package.json'),
+        }
+      },
+      values: {
+        debug: true
+      },
+      build: {
+      },
+      dev: {
+        constants: {
           REST_URLS: {
             VEHICLES: 'http://localhost:3002/rest/vehicles',
             RIDE_TYPES: 'http://localhost:3002/rest/ridetypes',
             AREAS: 'http://localhost:3002/rest/areas',
             CITIES: 'http://localhost:3002/rest/cities',
             RIDES: 'http://localhost:3002/rest/rides',
-            RIDE: 'http://localhost:3002/rest/ride'
+            RIDE: 'http://localhost:3002/rest/ride',
+            LOGIN_SERVER: 'http://localhost:3002/rest/login',
+            USER: 'http://localhost:3002/rest/user'
           }
-        },
-        values: {
-          debug: true
         }
       },
-      build: {
+      phonegap: {
+        constants: {
+          REST_URLS: {
+            VEHICLES: 'http://10.0.0.1:3002/rest/vehicles',
+            RIDE_TYPES: 'http://10.0.0.1:3002/rest/ridetypes',
+            AREAS: 'http://10.0.0.1:3002/rest/areas',
+            CITIES: 'http://10.0.0.1:3002/rest/cities',
+            RIDES: 'http://10.0.0.1:3002/rest/rides',
+            RIDE: 'http://10.0.0.1:3002/rest/ride',
+            LOGIN_SERVER: 'http://10.0.0.1:3002/rest/login',
+            USER: 'http://localhost:3002/rest/user'
+          }
+        }
       }
     },
 
@@ -231,6 +275,9 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
+        debugInfo: true,
+        quiet: false,
+        trace: true,
         sassDir: '<%= yeoman.app %>/styles',
         cssDir: '.tmp/styles',
         generatedImagesDir: '.tmp/images/generated',
@@ -455,12 +502,16 @@ module.exports = function (grunt) {
     shell: {
       phonegapBuild: {
         command: 'cordova build'
+      },
+      phonegapServ:{
+        command: 'cordova serve'
       }
     }
   });
 
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
+    target = target || 'dev';
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
@@ -470,7 +521,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'autoprefixer:server',
-      'ngconstant',
+      'ngconstant:'+target,
       'connect:livereload',
       'watch'
     ]);
@@ -496,6 +547,7 @@ module.exports = function (grunt) {
       grunt.task.run([
         'clean:phonegap',
         'clean:dist',
+        'ngconstant:'+target,
         'wiredep',
         'useminPrepare',
         'concurrent:dist',
@@ -515,6 +567,7 @@ module.exports = function (grunt) {
     }else{
       grunt.task.run([
         'clean:dist',
+        'ngconstant:'+target,
         'wiredep',
         'useminPrepare',
         'concurrent:dist',

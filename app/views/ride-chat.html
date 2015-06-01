@@ -1,1 +1,15 @@
-<chat requests="requests" rideid="rideid" rideowner="owner"/>
+<div class="chat-ride-details row">
+	<div class="label col-md-2">{{'NUM' | translate}}</div>
+	<div class="label col-md-2">{{'DATE' | translate}}</div>
+	<div class="label col-md-2">{{'VACATE' | translate}}</div>
+	<div class="label col-md-2">{{'BACKAT' | translate}}</div>
+	<div class="label col-md-2">{{'BACK' | translate}}</div>
+</div>
+<div class="chat-ride-details row">
+	<div class="info col-md-2">{{ride._id}}</div>
+	<div class="info col-md-2">{{ride.aviliableDate}}</div>
+	<div class="info col-md-2">{{ride.area}}</div>
+	<div class="info col-md-2">{{ride.destination}}</div>
+	<div class="info col-md-2">{{ride.returnDate}}</div>
+</div>
+<chat requests="ride.requests" rideid="ride._id" rideowner="ride.username"/>

@@ -50,35 +50,6 @@ angular.module('busnetApp.rides', [
 	      				return {id: item._id, label: item.name};
 	      			});
 	      		});
-	      	},
-	      	translations: function($translate){
-	      		return $translate([
-	      			'CHECK_ALL',
-	      			'UNCHECK_ALL', 
-	      			'SELECTION_COUNT', 
-	      			'SEARCH', 
-	      			'SELECT', 
-	      			'AREAS',
-	      			'VEHICLE_TYPE',
-	      			'NUM',
-	      			'DATE',
-	      			'VACATE',
-	      			'BACK']).then(function (translations) {
-					return {
-						checkAll: translations.CHECK_ALL,
-						uncheckAll: translations.UNCHECK_ALL,
-						selectionCount: translations.SELECTION_COUNT,
-						searchPlaceholder: translations.SEARCH,
-						buttonDefaultText: translations.SELECT,
-						dynamicButtonTextSuffix: translations.SELECTION_COUNT,
-						areas: translations.AREAS,
-						vehicleType: translations.VEHICLE_TYPE,
-						num: translations.NUM,
-						date: translations.DATE,
-						vacate: translations.VACATE,
-						back: translations.BACK
-					}
-				});
 	      	}
 	      }
 	    });

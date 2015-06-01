@@ -1,0 +1,111 @@
+$break-small: 320px;
+$break-large: 375px;
+$btn-bg-color: rgb(60, 181, 74);
+$btn-txt-color: #fff;
+
+$default-footer-size: 145px;
+$iphone6-footer-height: 120px;
+$iphone6plus-footer-height: 110px;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  direction: rtl;
+  margin-bottom: $default-footer-size;
+  /*
+  iphone 6;
+  */
+  @media only screen 
+      and (min-device-width : 375px) 
+      and (max-device-width : 667px) 
+      and (orientation : portrait) 
+      and (-webkit-min-device-pixel-ratio : 2)
+  { 
+    margin-bottom: $iphone6-footer-height;
+  }
+
+  /*
+  iphone 6+;
+  */
+  @media only screen 
+      and (min-device-width : 414px) 
+      and (max-device-width : 736px) 
+      and (orientation : portrait) 
+      and (-webkit-min-device-pixel-ratio : 3) 
+  { 
+    margin-bottom: $iphone6plus-footer-height;
+  }
+}
+
+.scroll-container{
+  overflow: scroll;
+  height: $default-footer-size;
+  /*
+  iphone 6;
+  */
+  @media only screen 
+      and (min-device-width : 375px) 
+      and (max-device-width : 667px) 
+      and (orientation : portrait) 
+      and (-webkit-min-device-pixel-ratio : 2)
+  { 
+    height: $iphone6-footer-height;
+  }
+
+  /*
+  iphone 6+;
+  */
+  @media only screen 
+      and (min-device-width : 414px) 
+      and (max-device-width : 736px) 
+      and (orientation : portrait) 
+      and (-webkit-min-device-pixel-ratio : 3) 
+  { 
+    height: $iphone6plus-footer-height;
+  }
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: $default-footer-size;
+  background-color: $btn-bg-color;
+  /*
+  iphone 6;
+  */
+  @media only screen 
+      and (min-device-width : 375px) 
+      and (max-device-width : 667px) 
+      and (orientation : portrait) 
+      and (-webkit-min-device-pixel-ratio : 2)
+  { 
+    height: $iphone6-footer-height;
+  }
+
+  /*
+  iphone 6+;
+  */
+  @media only screen 
+      and (min-device-width : 414px) 
+      and (max-device-width : 736px) 
+      and (orientation : portrait) 
+      and (-webkit-min-device-pixel-ratio : 3) 
+  { 
+    height: $iphone6plus-footer-height;
+  }
+}
+
+.nav-btn{
+  background-color: $btn-bg-color;
+  color: $btn-txt-color;
+  margin: 0px;
+  padding: 10px;
+  border: none;
+
+}
+

@@ -1,57 +1,71 @@
-<form class="addRide" novalidate name="addride">
+<form class="add-ride" novalidate name="addride">
 	<div class="form-group" show-errors="{ showSuccess: true }">
-		<label for="ridetype" class="control-label">{{'RIDE_TYPE' | translate}}</label>
-		<select name="ridetype" class="form-control foum-input" ng-model="ride.ride_type" ng-options="ridetype.label for ridetype in ridetypes" required>
-			<option value="">{{'SELECT' | translate}} {{'RIDE_TYPE' | translate}}</option>
-		</select>
-		<p class="help-block" ng-if="addride.ridetype.$error.required">{{'RIDE_TYPE' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		<div class="col-xs-8">
+			<select name="ridetype" class="form-control" ng-model="ride.ride_type" ng-options="ridetype.label for ridetype in ridetypes" required>
+				<option value="">{{'SELECT' | translate}} {{'RIDE_TYPE' | translate}}</option>
+			</select>
+			<p class="help-block" ng-if="addride.$submitted && addride.ridetype.$error.required">{{'RIDE_TYPE' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label class="col-xs-4 control-label" for="ridetype">{{'RIDE_TYPE' | translate}}</label>
 	</div>
-	<div class="form-group date" show-errors="{ showSuccess: true, trigger: 'change' }">
-		<label for="ridedateselector" class="control-label">{{'VACATE_DATE' | translate}}</label>
-        <div class="input-group">
-          <input name="vacant_date" type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="ride.vacant_date" is-open="vacant_date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" required/>
-          <span class="input-group-btn">
-            <button type="button" class="btn btn-default" ng-click="toggle_vacant_date($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-          </span>
-        </div>
-        <p class="help-block" ng-if="addride.vacant_date.$error.required">{{'VACATE_DATE' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+	<div class="form-group" show-errors="{ showSuccess: true, trigger: 'change' }">
+        <div class="col-xs-8">
+	        <div class="input-group">
+	          <input name="vacant_date" type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="ride.vacant_date" is-open="vacant_date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" required/>
+	          <span class="input-group-btn">
+	            <button type="button" class="btn btn-default" ng-click="toggle_vacant_date($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+	          </span>
+	        </div>
+	        <p class="help-block" ng-if="addride.$submitted && addride.vacant_date.$error.required">{{'VACATE_DATE' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+	    </div>
+	    <label for="ridedateselector" class="col-xs-4 control-label">{{'VACATE_DATE' | translate}}</label>
     </div>
     <div class="form-group" show-errors="{ showSuccess: true }">
-		<label for="vehicletype" class="control-label">{{'VEHICLE_TYPE' | translate}}</label>
-		<select name="vehicletype" id="vehicletype" class="form-control foum-input" ng-model="ride.vehicle" ng-options="vehicle.label for vehicle in vehicles" required>
-			<option value="">{{'SELECT' | translate}} {{'VEHICLE_TYPE' | translate}}</option>
-		</select>
-		<p class="help-block" ng-if="addride.vehicletype.$error.required">{{'VEHICLE_TYPE' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		<div class="col-xs-8">
+			<select name="vehicletype" id="vehicletype" class="form-control" ng-model="ride.vehicle" ng-options="vehicle.label for vehicle in vehicles" required>
+				<option value="">{{'SELECT' | translate}} {{'VEHICLE_TYPE' | translate}}</option>
+			</select>
+			<p class="help-block" ng-if="addride.$submitted && addride.vehicletype.$error.required">{{'VEHICLE_TYPE' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="vehicletype" class="col-xs-4 control-label">{{'VEHICLE_TYPE' | translate}}</label>
 	</div>
 	<div class="form-group" show-errors="{ showSuccess: true }">
-		<label for="vehiclecount" class="control-label">{{'VEHICLE_COUNT' | translate}}</label>
-		<select name="vehiclecount" id="vehiclecount" class="form-control foum-input" ng-model="ride.vehicle_count" ng-options="vcount for vcount in vehicleCount" required>
-			<option value="">{{'SELECT' | translate}} {{'VEHICLE_COUNT' | translate}}</option>
-		</select>
-		<p class="help-block" ng-if="addride.vehiclecount.$error.required">{{'VEHICLE_COUNT' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		<div class="col-xs-8">
+			<select name="vehiclecount" id="vehiclecount" class="form-control foum-input" ng-model="ride.vehicle_count" ng-options="vcount for vcount in vehicleCount" required>
+				<option value="">{{'SELECT' | translate}} {{'VEHICLE_COUNT' | translate}}</option>
+			</select>
+			<p class="help-block" ng-if="addride.$submitted && addride.vehiclecount.$error.required">{{'VEHICLE_COUNT' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="vehiclecount" class="col-xs-4 control-label">{{'VEHICLE_COUNT' | translate}}</label>
 	</div>
 	<div class="form-group" show-errors="{ showSuccess: true }">
-		<label for="vacantarea" class="control-label">{{'VACANT_AREA' | translate}}</label>
-		<input type="text" name="vacantarea" id="vacantarea" data-provide="typeahead" class="form-control typeahead foum-input" ng-model="ride.vacant_area" required>
-		<p class="help-block" ng-if="addride.vacantarea.$error.required">{{'VACANT_AREA' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		<div class="col-xs-8">
+			<input type="text" name="vacantarea" id="vacantarea" data-provide="typeahead" class="form-control typeahead foum-input" ng-model="ride.vacant_area" required>
+			<p class="help-block" ng-if="addride.$submitted && addride.vacantarea.$error.required">{{'VACANT_AREA' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="vacantarea" class="col-xs-4 control-label">{{'VACANT_AREA' | translate}}</label>
 	</div> 
 	<div class="form-group date" show-errors="{ showSuccess: true }">
-		<label for="ridereturndate" class="control-label">{{'RETURN_DATE' | translate}}</label>
-        <div class="input-group">
-          <input name="return_date" type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="ride.return_date" is-open="return_date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" required/>
-          <span class="input-group-btn">
-            <button type="button" class="btn btn-default" ng-click="toggle_return_date($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-          </span>
+        <div class="col-xs-8">
+	        <div class="input-group">
+	          <input name="return_date" type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="ride.return_date" is-open="return_date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" required/>
+	          <span class="input-group-btn">
+	            <button type="button" class="btn btn-default" ng-click="toggle_return_date($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+	          </span>
+	        </div>
+	        <p class="help-block" ng-if="addride.$submitted && addride.return_date.$error.required">{{'RETURN_DATE' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
         </div>
-        <p class="help-block" ng-if="addride.ridereturndate.$error.required">{{'RETURN_DATE' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+        <label for="ridereturndate" class="col-xs-4 control-label">{{'RETURN_DATE' | translate}}</label>
     </div>
     <div class="form-group" show-errors="{ showSuccess: true }">
-		<label for="returnarea" class="control-label">{{'RETURN_AREA' | translate}}</label>
-		<input type="text" name="returnarea" id="returnarea" class="form-control typeahead foum-input" ng-model="ride.return_area" required>
-		<p class="help-block" ng-if="addride.returnarea.$error.required">{{'RETURN_AREA' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		<div class="col-xs-8">
+			<input type="text" name="returnarea" id="returnarea" class="form-control typeahead foum-input" ng-model="ride.return_area" required>
+			<p class="help-block" ng-if="addride.$submitted && addride.returnarea.$error.required">{{'RETURN_AREA' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="returnarea" class="col-xs-4 control-label">{{'RETURN_AREA' | translate}}</label>
 	</div>
 	<div class="form-group">
 		<textarea id="more-details" class="form-control" placeholder="{{'MORE_DETAILS' | translate}}" ng-model="ride.remarks"></textarea>
 	</div>
-	<button type="submit" ng-click="save(ride)" class="btn btn-default addRide">{{'SUBMIT_NEW_RIDE' | translate}}</button>
+	<button type="submit" ng-click="save(ride)" class="col-xs-12 btn btn-default">{{'SUBMIT_NEW_RIDE' | translate}}</button>
 </form>
