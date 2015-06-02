@@ -1,4 +1,4 @@
-<form class="add-ride" novalidate name="addride">
+<form class="add-ride form-horizontal" novalidate name="addride">
 	<div class="form-group" show-errors="{ showSuccess: true }">
 		<div class="col-xs-8">
 			<select name="ridetype" class="form-control" ng-model="ride.ride_type" ng-options="ridetype.label for ridetype in ridetypes" required>
@@ -65,7 +65,9 @@
 		<label for="returnarea" class="col-xs-4 control-label">{{'RETURN_AREA' | translate}}</label>
 	</div>
 	<div class="form-group">
-		<textarea id="more-details" class="form-control" placeholder="{{'MORE_DETAILS' | translate}}" ng-model="ride.remarks"></textarea>
-	</div>
-	<button type="submit" ng-click="save(ride)" class="col-xs-12 btn btn-default">{{'SUBMIT_NEW_RIDE' | translate}}</button>
+        <div class="col-xs-12">
+		<textarea id="more-details" class="form-control" rows="4" placeholder="{{'MORE_DETAILS' | translate}}" ng-model="ride.remarks"></textarea>
+	    </div>
+        </div>
+	<button type="submit" ng-click="save(ride)" class="btn btn-success">{{'SUBMIT_NEW_RIDE' | translate}}</button>
 </form>

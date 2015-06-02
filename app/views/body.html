@@ -1,40 +1,44 @@
-<div id="header" data-role="header" class="row">
-    <div class="col-xs-3">  
-      <a href="#notification" class="ui-btn-left"><img src="images/notification.png"></a>
-    </div>
-    <div class="col-xs-6">
-      <img src="images/logotop.png" class="img-responsive center-block">
-    </div>
-    <div class="col-xs-3">
-      <a href="#navside" class="ui-btn-right"><img src="images/sidemenu.png"></a>
+<div id="header" data-role="header">
+    <div class="row">
+        <div class="col-xs-3">  
+          <a href="#notification"><img src="images/notification.png" class="img-responsive" id="notificationsIcon"></a>
+        </div>
+        <div class="col-xs-6">
+          <img src="images/logotop.png" class="img-responsive">
+        </div>
+        <div class="col-xs-3">
+          <a href="#navside"><img src="images/sidemenu.png" class="img-responsive"  id="menuIcon"></a>
+        </div>
     </div>
 </div>
+<div id="betweenHeaderAndFooter">
 <div data-role="main" class="row">
   <div class="col-xs-6 text-left">
-    <button class="btn btn-default" ng-show="addridebtn" id="addride" ui-sref="app.addride"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>{{ 'ADD_RIDE' | translate }}</button>
+    <button class="btn btn-success" ng-show="addridebtn" id="addride" ui-sref="app.addride"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>{{ 'ADD_RIDE' | translate }}</button>
   </div>
-  <div class="col-xs-6"><h4>{{pagetitle}}</h4></div>
+  <div class="col-xs-6"><h4 class="pageTitle">{{pagetitle}}</h4></div>
 </div>
-<div class="container scroll-container">
+
+
   <ui-view ng-hide="doingResolve"></ui-view>
 </div>
 <div class="footer" role="navigation">
   <div class="row">
-    <button class="nav-btn col-xs-3" ui-sref="app.rides">
+    <button ui-sref="app.rides">
       <img class="img-responsive" ng-src="images/icons/home-small.png">
-      <div class="center-block">{{'HOMEPAGE' | translate}}</div>
-    </button>
-    <button class="nav-btn col-xs-3" ui-sref="app.openrides">
+      <div>{{'HOMEPAGE' | translate}}</div>
+    </button><!-- remove extra space
+    --><button ui-sref="app.openrides">
       <img class="img-responsive" ng-src="images/icons/openreq-small.png">
-      <div class="center-block">{{'OPEN_REQUESTS' | translate}}</div>
-    </button>
-    <button class="nav-btn col-xs-3" ui-sref="app.forum">
+      <div>{{'OPEN_REQUESTS' | translate}}</div>
+    </button><!-- remove extra space
+    --><button ui-sref="app.forum">
       <img class="img-responsive" ng-src="images/icons/forum-small.png">
-      <div class="center-block">{{'FORUM' | translate}}</div>
-    </button>
-    <button class="nav-btn col-xs-3" ui-sref="app.settings">
+      <div>{{'FORUM' | translate}}</div>
+    </button><!-- remove extra space
+    --><button ui-sref="app.settings">
       <img class="img-responsive" ng-src="images/icons/settings-small.png">
-      <div class="center-block">{{'SETTINGS' | translate}}</div>
+      <div>{{'SETTINGS' | translate}}</div>
     </button>
   </div>
 </div>

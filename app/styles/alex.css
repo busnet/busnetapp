@@ -1,0 +1,122 @@
+body {
+    text-align: center;
+    overflow-x: hidden;
+}
+.container-fluid {
+    margin: 0 5px !important;
+    padding: 0 5px !important;
+}
+.img-responsive {
+    margin: 0 auto;
+}
+textarea {
+    resize: vertical;
+}
+
+
+/*************** if hebrew*****************************/
+.footer, input {
+    direction: rtl;
+}
+.gridRowDetails, label, textarea {
+    text-align: right;
+}
+/****************** else ************************************
+.gridRowDetails, label {
+    text-align: left;
+}
+*****************************************************************/
+
+
+/*---------------------------header------------------------------------*/
+#header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background-color: white;
+    z-index: 99999999999;
+}
+#notificationsIcon {
+    float: left;
+    height: 50px;
+}
+#menuIcon {
+    float: right;
+    height: 50px;
+    width: auto;
+}
+
+
+/*---------------------------footer------------------------------------*/
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: 99999999999;
+}
+.footer button {
+    padding: 0;
+    width: 25%;
+    border: 0;
+    margin: 0;
+    outline: none;
+    background-color: rgb(60, 181, 74);
+    color: white;
+}
+.footer img {
+    height: 30px;
+}
+
+
+
+
+
+#betweenHeaderAndFooter {
+    padding: 60px 0;
+}
+
+
+
+
+/*--------------------------------login-form----------------------------------*/
+.login-form .bus {
+    margin: 20px auto;
+}
+
+
+
+
+
+
+/*-------------------------fixes for controllers-------------------------------------*/
+.dropdown-menu-form, .dropdown-menu-form {
+    overflow: visible !important;
+    cursor: pointer;
+}
+.input-group, .dropdown-multiselect, .input-group button {
+    width: 100% !important;
+}
+.ui-grid-icon-angle-down {
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+.ui-grid-menu.ng-scope {
+    left: 0;
+}
+.form-group {
+    border-bottom: 5px solid white;
+}
+
+
+
+
+
+
+
+
+.pageTitle {
+    float: right;
+}

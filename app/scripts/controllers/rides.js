@@ -79,7 +79,7 @@ angular.module('busnetApp.rides', [
   	$scope.gridOptions = {
   		data: rides.data,
   		columnDefs:[
-  			{name: "id", field:"_id", displayName:translations.num},
+  	/*		{name: "id", field:"_id", displayName:translations.num},    */
   			{name: "aviliableDate", field:"aviliableDate", displayName:translations.date},
   			{name: "vacate", field:"area", displayName:translations.vacate},
   			{name: "back", field:"destination", displayName:translations.back},
