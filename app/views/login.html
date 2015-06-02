@@ -3,25 +3,26 @@
 	<img class="bus" src="images/ebus.png"></img>
 	<!-- Login Form -->
 	<form name="loginForm" role="login" ng-submit="loginMe()" ng-hide="login.isLogged">
-	<div class="form-group">
-	  <input type="text" class="form-control" ng-model="login.username" name="username" placeholder="{{'USERNAME' | translate}}">
-	</div>
-	<div class="form-group">
-	  <input type="password" class="form-control" ng-model="login.password" name="password" placeholder="{{'PASSWORD' | translate}}">
-	</div>
-	<button type="submit" class="btn btn-default hidden-devices" ng-disabled="login.working">{{ 'LOGIN' | translate }}<i class="fa" ng-class="login.working ? 'fa-cog fa-spin' : 'fa-sign-in'"></i></button>
+		<div class="form-group">
+		  <input type="text" class="form-control" ng-model="login.username" name="username" placeholder="{{'USERNAME' | translate}}">
+		</div>
+		<div class="form-group">
+		  <input type="password" class="form-control" ng-model="login.password" name="password" placeholder="{{'PASSWORD' | translate}}">
+		</div>
+		<button type="submit" ng-disabled="login.working">{{ 'LOGIN' | translate }}<i class="fa" ng-class="login.working ? 'fa-cog fa-spin' : 'fa-sign-in'"></i></button>
 	</form>
 	<!-- Spinner -->
 	<div ng-show="login.working">
 		<i class="fa fa-spinner fa-spin"></i>
 	</div>
 	<!-- Logout Form -->
+	{{login.isLogged}}
 	<form class="navbar-form navbar-right" role="logout" ng-submit="logoutMe()" ng-show="login.isLogged">
 		<div class="form-group">
 		  <label>{{ 'WELCOME' | translate }} {{ login.user.dtl.companyName }}</label>
 		</div>
 		<div class="form-group">
-		  <button  type="submit" class="btn btn-default">{{ 'LOGOUT' | translate }} <i class="fa fa-signout"></i></button>
+		  <button  type="submit" class="btn-default">{{ 'LOGOUT' | translate }} <i class="fa fa-signout"></i></button>
 		</div>
 	</form>
 	<div class="login-error" ng-show="login.wrong">

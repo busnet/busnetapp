@@ -1,5 +1,5 @@
-$break-small: 320px;
-$break-large: 375px;
+$container-small: 375px;
+$container-large: 400px;
 $btn-bg-color: rgb(60, 181, 74);
 $btn-txt-color: #fff;
 
@@ -42,30 +42,7 @@ body {
 
 .scroll-container{
   overflow: scroll;
-  height: $default-footer-size;
-  /*
-  iphone 6;
-  */
-  @media only screen 
-      and (min-device-width : 375px) 
-      and (max-device-width : 667px) 
-      and (orientation : portrait) 
-      and (-webkit-min-device-pixel-ratio : 2)
-  { 
-    height: $iphone6-footer-height;
-  }
-
-  /*
-  iphone 6+;
-  */
-  @media only screen 
-      and (min-device-width : 414px) 
-      and (max-device-width : 736px) 
-      and (orientation : portrait) 
-      and (-webkit-min-device-pixel-ratio : 3) 
-  { 
-    height: $iphone6plus-footer-height;
-  }
+  height: $container-large;
 }
 
 .footer{

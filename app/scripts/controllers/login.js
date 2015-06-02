@@ -26,6 +26,9 @@ angular.module('busnetApp.login', ['busnetApp.grandfather', 'loginService'])
     $state, 
     REST_URLS) {
     // loginService exposed and a new Object containing login user/pwd
+    if(loginService.isLogged){
+      $state.go('app.rides');
+    }
     $scope.ls = loginService;
     
     $scope.login = {
