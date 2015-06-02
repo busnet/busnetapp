@@ -12,7 +12,7 @@ angular.module('busnetApp.grandfather', ['ui.router'  ])
   $stateProvider
     .state('app', {
       abstract: true,
-      templateUrl: 'views/body-'+size+'.html',
+      templateUrl: 'views/body.html',
       controller: 'BodyCtrl',
       resolve: {
           translations: function($translate){
