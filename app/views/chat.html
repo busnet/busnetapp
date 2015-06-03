@@ -1,7 +1,3 @@
-<div ng-if="!requests"> 
-	<input ng-model="message" type="text" class="form-control" placeholder="{{'ENTER_MSG' | translate}}">
-	<buton ng-click="sendMessage(rideid, rideowner, message, false)" type="submit" class="btn btn-default">{{'SEND' | translate}}</buton>
-</div>
 <div ng-repeat="(key, request) in requests" heading="{{request.from}}">
 	<ul class="list-group chat-main">
 		<li class="list-group-item chat-list" ng-repeat="msg in request.msgs"><span class="time">{{msg.time}}</span><span class="name">{{msg.name}}</span><br><textarea class="message">{{msg.message}}</textarea></li>
