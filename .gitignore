@@ -6,3 +6,4 @@ www
 .sass-cache
 .idea
 bower_components
+.elasticbeanstalk/
