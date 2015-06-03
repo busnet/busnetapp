@@ -13,7 +13,6 @@ var getRides = function(config, $http, filter){
 };
 
 angular.module('busnetApp.rides', [
-	'busnetApp.grandfather', 
 	'angularjs-dropdown-multiselect',
 	'ui.bootstrap',
 	'ui.grid',
@@ -79,14 +78,14 @@ angular.module('busnetApp.rides', [
   	$scope.gridOptions = {
   		data: rides.data,
   		columnDefs:[
-  	/*		{name: "id", field:"_id", displayName:translations.num},    */
-  			{name: "aviliableDate", field:"aviliableDate", displayName:translations.date},
-  			{name: "vacate", field:"area", displayName:translations.vacate},
-  			{name: "back", field:"destination", displayName:translations.back},
+  	  		{name: "id", field:"_id", displayName:translations.num, cellTooltip: true, visible: false},      
+  			{name: "aviliableDate", field:"aviliableDate", displayName:translations.date, cellTooltip: true},
+  			{name: "vacate", field:"area", displayName:translations.vacate, cellTooltip: true},
+  			{name: "back", field:"destination", displayName:translations.back, cellTooltip: true},
   		],
   		expandableRowTemplate: "views/ride-details.html",
-  		expandableRowHeight: 150,
-  		enableRowSelection: true,
+  		expandableRowHeight: 145,
+  		enableRowSelection: false,
   		expandableRowScope: {ridetypes: ridetypes}
   	};
   	

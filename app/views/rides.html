@@ -17,14 +17,13 @@
     </div>
 <div class="row">
     <div class="col-xs-12">
-        <div ui-grid="gridOptions" dir="rtl" ui-grid-expandable class="rides-grid"></div>
+        <div ui-grid="gridOptions" dir="rtl" ui-grid-expandable class="rides-grid" id="rides"></div>
     </div>
 </div>
 
 <script>
-    $(function() {
-        $(".ui-grid-viewport.ng-isolate-scope,.rides-grid").height($(".footer").offset().top - $("header").height() - 150);
+    $(function () {
+        $(".ui-grid-viewport.ng-isolate-scope,.rides-grid").height($(".footer").offset().top - $("header").height() - 155);
     })
-    
 </script>
   

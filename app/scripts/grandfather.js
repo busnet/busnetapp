@@ -1,14 +1,7 @@
 'use strict';
 
 angular.module('busnetApp.grandfather', ['ui.router'  ])
-.config(function ($stateProvider, $windowProvider) {
-  var window = $windowProvider.$get();
-  var display = {
-    iphone6: window.matchMedia('only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2)').matches,
-    iphone6plus: window.matchMedia('only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 3) ').matches
-  };
-  var size = display.iphone6 ? 'small' :
-      display.iphone6plus ? 'large' : 'medium'; 
+.config(function ($stateProvider) {
   $stateProvider
     .state('app', {
       abstract: true,

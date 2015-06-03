@@ -68,6 +68,7 @@ module.exports = function (grunt) {
       dev: {
         constants: {
           REST_URLS: {
+            SOCKET_SERVER: 'http://localhost:3002',
             VEHICLES: 'http://localhost:3002/rest/vehicles',
             RIDE_TYPES: 'http://localhost:3002/rest/ridetypes',
             AREAS: 'http://localhost:3002/rest/areas',
@@ -82,6 +83,7 @@ module.exports = function (grunt) {
       phonegap: {
         constants: {
           REST_URLS: {
+            SOCKET_SERVER: 'http://10.0.0.1:3002',
             VEHICLES: 'http://10.0.0.1:3002/rest/vehicles',
             RIDE_TYPES: 'http://10.0.0.1:3002/rest/ridetypes',
             AREAS: 'http://10.0.0.1:3002/rest/areas',

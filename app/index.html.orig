@@ -15,6 +15,10 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+<<<<<<< HEAD
+      <!--link href="/styles/alex.css" rel="stylesheet" type="text/css"-->
+=======
+>>>>>>> 5680422402ddd806723c674cd4788ca303740a05
   </head>
   <body class="container-fluid">
     <!--[if lt IE 7]>

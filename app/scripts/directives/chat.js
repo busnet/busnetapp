@@ -7,7 +7,7 @@
  * # chat
  */
 angular.module('busnetApp.directives', ['angularMoment'])
-  .directive('chat', function (loginService) {
+  .directive('chat', function (loginService, REST_URLS) {
     return {
       templateUrl: 'views/chat.html',
       restrict: 'E',
@@ -17,18 +17,18 @@ angular.module('busnetApp.directives', ['angularMoment'])
       	rideowner: "=rideowner"
       },
       link: function postLink(scope, element, attrs) {
-      	var socket = io('http://localhost:3002');
-
-        scope.sendMessage = function(rideid, to, msg, reply){
-        	var messageType = reply ? 'reply' : 'send';
+      	var socket = io(REST_URLS.SOCKET_SERVER);
+        scope.sendMessage = function(message){
+        	var messageType = scope.requests ? 'reply' : 'send';
         	var user = loginService.user;
+          console.log(user);
         	var msg = {
-        		message: msg, 
-        		rideID: rideid,
+        		message: message, 
+        		rideID: scope.rideid,
         		username: user._id,
         		name: user.dtl.companyName,
         		time: moment().format('HH:mm'), 
-        		toUser: to 
+        		toUser: scope.rideowner
         	};
 
         	if(!scope.requests){
@@ -36,12 +36,12 @@ angular.module('busnetApp.directives', ['angularMoment'])
         	}
 
         	if(_.size(scope.requests) == 0){
-        		scope.requests[to] = {
+        		scope.requests[scope.rideowner] = {
         			from: user.dtl.companyName,
         			msgs: []
         		};
         	}
-        	scope.requests[to].msgs.push(msg);
+        	scope.requests[scope.rideowner].msgs.push(msg);
         	socket.emit(messageType, msg);
         }
       }

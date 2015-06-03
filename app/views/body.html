@@ -1,16 +1,32 @@
 <div id="header" data-role="header">
     <div class="row">
         <div class="col-xs-3">  
-          <a href="#notification"><img src="images/notification.png" class="img-responsive" id="notificationsIcon"></a>
+          <a href="#notification" id="notificationsIcon"><img src="images/notification.png" class="img-responsive"><span class="badge">2</span></a>
+            <ul id="notificationsMenu" class="list-group">
+                <li><a href="#" class="list-group-item">New ride added near you home</a></li>
+                <li><a href="#" class="list-group-item">Yosi Perets wants to use your bus</a></li>
+            </ul>
         </div>
         <div class="col-xs-6">
           <img src="images/logotop.png" class="img-responsive">
         </div>
-        <div class="col-xs-3">
-          <a href="#navside"><img src="images/sidemenu.png" class="img-responsive"  id="menuIcon"></a>
+        <div class="col-xs-3" id="menuDiv">
+          <a href="#"><img src="images/sidemenu.png" class="img-responsive" id="menuIcon"></a>
+            <ul class="subMenu list-group">
+                <li><a href="#navside" class="list-group-item">{{"LOGIN" | translate}}</a></li> <!--Improve semantic link to login page!!!!!!!!! can't be #navside-->
+                <li><a href="/#/rides" class="list-group-item">{{"MY_RIDES" | translate}}</a></li>
+                <li><a href="/#/addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li>
+                <li><a href="#" class="list-group-item">{{"STATS" | translate}}</a></li>
+                <li><a href="#" class="list-group-item">{{"ABOUT" | translate}}</a></li>
+                <li><a href="#" class="list-group-item">{{"BUSINESS_INDEX" | translate}}</a></li>
+                <li><a href="#" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
+            </ul>
         </div>
     </div>
 </div>
+
+
+
 <div id="betweenHeaderAndFooter">
 <div data-role="main" class="row">
   <div class="col-xs-6 text-left">
@@ -42,3 +58,44 @@
     </button>
   </div>
 </div>
+
+<script>
+    /*--------------------------subMenu functionality ---------------------------------------------------------*/
+    var menuOpen = false;
+    var $elementsToFadeInAndOut = $("#betweenHeaderAndFooter, .footer, #header .row div").not("#menuDiv");
+    var menuWidth = "80%";
+    var speed = 300;
+
+    $("html").click(function () {
+        $(".subMenu").animate({ "right": "-" + menuWidth }, speed);
+        $("#menuIcon").animate({ "right": "0" }, speed).removeAttr("style");
+        $elementsToFadeInAndOut.fadeIn(speed);
+        menuOpen = false;
+    });
+    $("#menuIcon").click(function (e) {
+        e.stopPropagation();
+        if (menuOpen) {
+            $("html").click();
+        }
+        else {
+            $(".subMenu").animate({ "right": "0" }, speed);
+            $(this).css({ "position": "fixed", "float": "none" }).animate({ "right": menuWidth }, speed);
+            $elementsToFadeInAndOut.fadeOut(speed);
+            menuOpen = true;
+        }
+    });
+
+    /*--------------------------Notifications functionality ---------------------------------------------------------*/
+    var notificationsSpeed = 300;
+
+    $("html").click(function () {
+        $("#notificationsMenu").slideUp(speed);
+    });
+    $("#notificationsIcon").click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $("#notificationsMenu").toggle(speed);
+    });
+    
+
+</script>
