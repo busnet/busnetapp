@@ -75,7 +75,16 @@ angular
         "BEGIN": "התחל",
         "CONTINUE": "המשך",
         "CHAT": "שיחה",
-        "RIDE_ADDED_SUCCESSFULLY": "הנסיעה הוספה בהצלחה"
+        "RIDE_ADDED_SUCCESSFULLY": "הנסיעה הוספה בהצלחה",
+        /*-----------------------------------------------subMenu -------------------------------*/
+        // "LOGIN":"כניסה למערכת", allready exists as a page title
+        "MY_RIDES": "הנסיעות שלי",
+        // "ADD_RIDE" : "הוספת נסיעה", allready exists as a button in !!!
+        "STATS": "דוחות",
+        "ABOUT": "פרטי החברה",
+        "BUSINESS_INDEX": "אינדקס עסקים",
+        "SIDE_MAP": "מפת צד"
+        /*---------------------------------------------------------------------------------------*/
       });
     /*$translateProvider.useStaticFilesLoader({
       prefix: '/languages/',

@@ -1,88 +1,159 @@
-$container-small: 375px;
-$container-large: 400px;
-$btn-bg-color: rgb(60, 181, 74);
-$btn-txt-color: green;
-
-$default-footer-size: 145px;
-$iphone6-footer-height: 120px;
-$iphone6plus-footer-height: 110px;
-
-html {
-  position: relative;
-  min-height: 100%;
-}
+$busNet-green: rgb(60, 181, 74);
+$busNet-lightFontColor: white;
+$headerFooter-height: 50px;
 
 body {
-  direction: rtl;
-  margin-bottom: $default-footer-size;
-  /*
-  iphone 6;
-  */
-  @media only screen 
-      and (min-device-width : 375px) 
-      and (max-device-width : 667px) 
-      and (orientation : portrait) 
-      and (-webkit-min-device-pixel-ratio : 2)
-  { 
-    margin-bottom: $iphone6-footer-height;
-  }
-
-  /*
-  iphone 6+;
-  */
-  @media only screen 
-      and (min-device-width : 414px) 
-      and (max-device-width : 736px) 
-      and (orientation : portrait) 
-      and (-webkit-min-device-pixel-ratio : 3) 
-  { 
-    margin-bottom: $iphone6plus-footer-height;
-  }
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+}
+.container-fluid {
+    margin: 0 5px !important;
+    padding: 0 5px !important;
+}
+.img-responsive {
+    margin: 0 auto;
+}
+textarea {
+    resize: vertical;
 }
 
-.scroll-container{
-  overflow: scroll;
-  height: $container-large;
+
+
+
+/*************** if hebrew*****************************/
+.footer, input, .subMenu {
+    direction: rtl;
+}
+.gridRowDetails, label, textarea {
+    text-align: right;
+}
+/****************** else ************************************
+.gridRowDetails, label {
+    text-align: left;
+}
+*****************************************************************/
+
+
+/*---------------------------header------------------------------------*/
+#header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background-color: white;
+    z-index: 99999999999;
+}
+#menuIcon {
+    float: right;
+    height: $headerFooter-height;
+    width: auto;
+    position: relative;
+}
+#notificationsIcon {
+    float: left;
+    position: relative;
+}
+#notificationsIcon img {
+    height: $headerFooter-height;
+    width: auto;
+}
+#notificationsIcon .badge {
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    left: 29px;
 }
 
-.footer{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: $default-footer-size;
-  background-color: $btn-bg-color;
-  /*
-  iphone 6;
-  */
-  @media only screen 
-      and (min-device-width : 375px) 
-      and (max-device-width : 667px) 
-      and (orientation : portrait) 
-      and (-webkit-min-device-pixel-ratio : 2)
-  { 
-    height: $iphone6-footer-height;
-  }
 
-  /*
-  iphone 6+;
-  */
-  @media only screen 
-      and (min-device-width : 414px) 
-      and (max-device-width : 736px) 
-      and (orientation : portrait) 
-      and (-webkit-min-device-pixel-ratio : 3) 
-  { 
-    height: $iphone6plus-footer-height;
-  }
+/*---------------------------footer------------------------------------*/
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: 99999999999;
+}
+.footer button {
+    padding: 0;
+    width: 25%;
+    border: 0;
+    margin: 0;
+    outline: none;
+    background-color: $busNet-green;
+    color: white;
+}
+.footer img {
+    height: 30px;
 }
 
-.nav-btn{
-  background-color: $btn-bg-color;
-  color: $btn-txt-color;
-  margin: 0px;
-  padding: 10px;
-  border: none;
 
+
+
+
+#betweenHeaderAndFooter {
+    padding: 60px 0;
 }
 
+
+
+
+/*--------------------------------login-form----------------------------------*/
+.login-form .bus {
+    margin: 20px auto;
+}
+
+
+
+
+
+
+.pageTitle {
+    float: right;
+}
+
+
+
+
+/*--------------------------subMenu -----------------------------------------*/
+$subMenu-width: 80%;
+
+.subMenu {
+    display: block;
+    position: fixed;
+    width: $subMenu-width;
+    top: 0;
+    right: -$subMenu-width;
+    padding: 0;
+}
+.subMenu a {
+    color: $busNet-lightFontColor;
+    background-color: $busNet-green;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+}
+.subMenu li {
+    list-style: none;
+    margin: 0;
+}
+
+
+
+
+/*--------------------------notificationsMenu -----------------------------------------*/
+
+#notificationsMenu {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    padding: 0;
+}
+
+#notificationsMenu li {
+    list-style: none;
+    margin: 0;
+}
