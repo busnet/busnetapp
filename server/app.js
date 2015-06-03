@@ -7,6 +7,6 @@ var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('distributed app listening at http://%s:%s', host, port);
+  console.log('distributed app at '+ __dirname + '/../dist listening at http://%s:%s', host, port);
 
 });
