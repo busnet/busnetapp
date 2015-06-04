@@ -1,15 +1,17 @@
+<!-- no need for this --------------------------------------------------------
 <div class="chat-ride-details row">
-	<div class="label col-md-2">{{'NUM' | translate}}</div>
-	<div class="label col-md-2">{{'DATE' | translate}}</div>
-	<div class="label col-md-2">{{'VACATE' | translate}}</div>
-	<div class="label col-md-2">{{'BACKAT' | translate}}</div>
-	<div class="label col-md-2">{{'BACK' | translate}}</div>
+	<div class="label col-xs-2">{{'NUM' | translate}}</div>
+	<div class="label col-xs-2">{{'DATE' | translate}}</div>
+	<div class="label col-xs-2">{{'VACATE' | translate}}</div>
+	<div class="label col-xs-2">{{'BACKAT' | translate}}</div>
+	<div class="label col-xs-2">{{'BACK' | translate}}</div>
 </div>
+-->
 <div class="chat-ride-details row">
-	<div class="info col-md-2">{{ride._id}}</div>
-	<div class="info col-md-2">{{ride.aviliableDate}}</div>
-	<div class="info col-md-2">{{ride.area}}</div>
-	<div class="info col-md-2">{{ride.destination}}</div>
-	<div class="info col-md-2">{{ride.returnDate}}</div>
+    <div class="col-xs-12">
+        <div class="panel panel-primary">
+	        <div class="info panel-heading"><!--{{ride._id}} | --><div>{{ride.area}}<br>{{ride.aviliableDate}}</div> <div><span class="glyphicon glyphicon-arrow-left"></span><br>&nbsp;</div> <div>{{ride.destination}}<br>{{ride.returnDate}}</div></div>
+        </div>
+    </div>
 </div>
 <chat requests="ride.requests" rideid="ride._id" rideowner="ride.username"/>

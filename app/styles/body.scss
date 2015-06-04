@@ -1,6 +1,4 @@
-$busNet-green: rgb(60, 181, 74);
-$busNet-lightFontColor: white;
-$headerFooter-height: 50px;
+@import 'colorsAndDimensions';
 
 body {
     text-align: center;
@@ -23,14 +21,14 @@ textarea {
 
 
 /*************** if hebrew*****************************/
-.footer, input, .subMenu {
+.footer, input, .subMenu, textarea, .chat-ride-details {
     direction: rtl;
 }
-.gridRowDetails, label, textarea {
+.gridRowDetails, label, textarea, .chat-main li {
     text-align: right;
 }
 /****************** else ************************************
-.gridRowDetails, label {
+.gridRowDetails, label, .chat-main li {
     text-align: left;
 }
 *****************************************************************/
@@ -156,4 +154,63 @@ $subMenu-width: 80%;
 #notificationsMenu li {
     list-style: none;
     margin: 0;
+}
+
+
+
+
+/*------------------------- ridesGrid -----------------------------------------------*/
+.rideType2 * {
+    background-color: $busNet-green !important;
+    color: $busNet-lightFontColor !important;
+}
+
+.ui-grid-header * {
+    background-color: $busNet-blue !important;
+    color: $busNet-lightFontColor !important;
+}
+
+
+
+
+
+/*------------------------chat -----------------------------------*/
+#sendDiv {
+    position: fixed;
+    bottom: $headerFooter-height;
+    width: 100%;
+    right: 0;
+    background-color: $busNet-blue;
+    padding: 5px;
+}
+#sendDiv input {
+    width: 100%;
+}
+#sendDiv button {
+    min-width: 100%;
+}
+
+
+
+.chat-main {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+.chat-main .time {
+    float: left;
+}
+.chat-main .name {
+    float: right;
+}
+.chat-main li {
+    /* text-align: right; in hebrew if */
+}
+
+
+.chat-ride-details {
+    /* direction: rtl; in hebrew if */
+}
+.chat-ride-details div {
+    display: inline-block;
 }

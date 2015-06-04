@@ -23,7 +23,37 @@
 
 <script>
     $(function () {
-        $(".ui-grid-viewport.ng-isolate-scope,.rides-grid").height($(".footer").offset().top - $("header").height() - 155);
+
+        /*-------------------------------fix grid height to use maximum power of screen size ----------------------*/
+        $(".ui-grid-viewport.ng-isolate-scope,.rides-grid").height($(".footer").offset().top - $("#header").height() - 100);
+
+        
+
+        /*-------------------------------color ride type 2 -----------------------------------------------------*/
+        for (var i = 0; i < 1000; i += 200) { // done 12 times to surely catch angular rendering finish!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            setTimeout(function () {
+                $(".ui-grid-cell").each(function () {
+                    if ($(this).data("ridetype") == "2") {
+                        $(this).addClass("rideType2");
+                    }
+                })
+            }, 1000);
+        }
+        setTimeout(function () {
+            $(".ui-grid-cell").each(function () {
+                if ($(this).data("ridetype") == "2") {
+                    $(this).addClass("rideType2");
+                }
+            })
+        }, 5000);
+        setTimeout(function () {
+            $(".ui-grid-cell").each(function () {
+                if ($(this).data("ridetype") == "2") {
+                    $(this).addClass("rideType2");
+                }
+            })
+        }, 10000);
     })
+
 </script>
   

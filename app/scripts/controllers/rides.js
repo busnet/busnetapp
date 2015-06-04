@@ -83,7 +83,8 @@ angular.module('busnetApp.rides', [
   			{name: "vacate", field:"area", displayName:translations.vacate, cellTooltip: true},
   			{name: "back", field:"destination", displayName:translations.back, cellTooltip: true},
   		],
-  		expandableRowTemplate: "views/ride-details.html",
+  		rowTemplate: "views/ride-row.html",
+        expandableRowTemplate: "views/ride-details.html",
   		expandableRowHeight: 145,
   		enableRowSelection: false,
   		expandableRowScope: {ridetypes: ridetypes}

@@ -39,6 +39,9 @@ angular.module('busnetApp.addride', [
 	    });	
 	})
   .controller('AddRideCtrl',function ($scope, $http, $state, $modal, ridetypes, vehicles, REST_URLS) {
+    /*---------------------new variables added by Alex-------------------------------------------------------------*/
+    $scope.today = new Date();
+    /*-----------------------------------------------------------------------------------------------*/
     $scope.ridetypes = ridetypes;
     $scope.vehicles = vehicles;
     $scope.vehicleCount = ['1', '2', '3', '4','5+'];

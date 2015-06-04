@@ -11,7 +11,7 @@
 	<div class="form-group" show-errors="{ showSuccess: true, trigger: 'change' }">
         <div class="col-xs-8">
 	        <div class="input-group">
-	          <input name="vacant_date" type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="ride.vacant_date" is-open="vacant_date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" required/>
+	          <input name="vacant_date" type="text" min-date="today" class="form-control" datepicker-popup="dd/MM/yyyy" min-date="0" ng-model="ride.vacant_date" is-open="vacant_date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" required/>
 	          <span class="input-group-btn">
 	            <button type="button" class="btn btn-default" ng-click="toggle_vacant_date($event)"><i class="glyphicon glyphicon-calendar"></i></button>
 	          </span>
@@ -48,7 +48,7 @@
 	<div class="form-group date" show-errors="{ showSuccess: true }">
         <div class="col-xs-8">
 	        <div class="input-group">
-	          <input name="return_date" type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="ride.return_date" is-open="return_date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" required/>
+	          <input name="return_date" type="text" min-date="ride.vacant_date || today" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="ride.return_date" is-open="return_date_opened" ng-required="true"  show-button-bar="false" show-weeks="false" required/>
 	          <span class="input-group-btn">
 	            <button type="button" class="btn btn-default" ng-click="toggle_return_date($event)"><i class="glyphicon glyphicon-calendar"></i></button>
 	          </span>
