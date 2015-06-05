@@ -21,7 +21,7 @@ textarea {
 
 
 /*************** if hebrew*****************************/
-.footer, input, .subMenu, textarea, .chat-ride-details {
+.footer, input, label, .subMenu, textarea, .chat-ride-details {
     direction: rtl;
 }
 .gridRowDetails, label, textarea, .chat-main li {
@@ -213,4 +213,13 @@ $subMenu-width: 80%;
 }
 .chat-ride-details div {
     display: inline-block;
+}
+
+
+
+
+/*-----------------settings (areasFilter) -------------------------*/
+#areasFilter {
+    overflow-x: hidden;
+    overflow-y: scroll;
 }

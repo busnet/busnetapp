@@ -1,0 +1,28 @@
+<div class="row">
+    <ul class="list-group" id="areasFilter">
+        <li><a href="#" class="list-group-item active">Eilat</a></li>
+        <li><a href="#" class="list-group-item">Tel Aviv</a></li>
+        <li><a href="#" class="list-group-item active">Beer Sheva</a></li>
+        <li><a href="#" class="list-group-item active">Haifa</a></li>
+        <li><a href="#" class="list-group-item">Ashqelon</a></li>
+        <li><a href="#" class="list-group-item active">Eilat</a></li>
+        <li><a href="#" class="list-group-item">Tel Aviv</a></li>
+        <li><a href="#" class="list-group-item active">Beer Sheva</a></li>
+        <li><a href="#" class="list-group-item active">Haifa</a></li>
+        <li><a href="#" class="list-group-item">Ashqelon</a></li>
+        <li><a href="#" class="list-group-item active">Eilat</a></li>
+        <li><a href="#" class="list-group-item">Tel Aviv</a></li>
+        <li><a href="#" class="list-group-item active">Beer Sheva</a></li>
+        <li><a href="#" class="list-group-item active">Haifa</a></li>
+        <li><a href="#" class="list-group-item">Ashqelon</a></li>
+    </ul>
+</div>
+
+<script>
+    $("#areasFilter a").click(function () {
+        $(this).toggleClass("active");
+    });
+    $(function() {
+        $("#areasFilter").height($(".footer").offset().top - $("#header").height() - 80);
+    })
+</script>
