@@ -42,6 +42,7 @@ angular.module('busnetApp.login', ['busnetApp.grandfather', 'loginService'])
       var loginPromise = $http.post(REST_URLS.LOGIN_SERVER, $scope.login);
       $scope.login.working = true;
       $scope.login.wrong = false;
+      $scope.login.deviceToken = '';
 
       loginService.loginUser(loginPromise);
       loginPromise.error(function () {

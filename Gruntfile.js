@@ -83,15 +83,15 @@ module.exports = function (grunt) {
       phonegap: {
         constants: {
           REST_URLS: {
-            SOCKET_SERVER: 'http://10.0.0.1:3002',
-            VEHICLES: 'http://10.0.0.1:3002/rest/vehicles',
-            RIDE_TYPES: 'http://10.0.0.1:3002/rest/ridetypes',
-            AREAS: 'http://10.0.0.1:3002/rest/areas',
-            CITIES: 'http://10.0.0.1:3002/rest/cities',
-            RIDES: 'http://10.0.0.1:3002/rest/rides',
-            RIDE: 'http://10.0.0.1:3002/rest/ride',
-            LOGIN_SERVER: 'http://10.0.0.1:3002/rest/login',
-            USER: 'http://localhost:3002/rest/user'
+            SOCKET_SERVER: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002',
+            VEHICLES: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/vehicles',
+            RIDE_TYPES: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/ridetypes',
+            AREAS: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/areas',
+            CITIES: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/cities',
+            RIDES: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/rides',
+            RIDE: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/ride',
+            LOGIN_SERVER: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/login',
+            USER: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/user'
           }
         }
       }
