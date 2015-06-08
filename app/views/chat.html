@@ -1,10 +1,25 @@
-<div ng-repeat="(key, request) in requests" heading="{{request.from}}">
-	<ul class="list-group chat-main">
-		<li class="list-group-item chat-list" ng-repeat="msg in request.msgs"><span class="time">{{msg.time}}</span><span class="name">{{msg.name}}</span><br><textarea class="message">{{msg.message}}</textarea></li>
-	</ul>
+<div ng-repeat="(key, request) in requests" class="row">
+    <div class="col-xs-12">
+        <ul class="chat-main">
+		    <li class="chat-list list-group-item" ng-repeat="msg in request.msgs">
+                <div class="list-group-item-success">
+                <span class="time">{{msg.time}}</span>
+                <span class="name">{{msg.name}}</span>
+                </div>
+                <br>
+                <div>{{msg.message}}</div>
+            </li>
+	    </ul>
+    </div>
 </div>
-<div class="send">
-	    <input ng-model="message" type="text" class="form-control chat-input"  placeholder="{{'ENTER_MSG' | translate}}">
-	 	<buton ng-click="sendMessage(message)" type="submit" class="btn btn-default send-chat">{{'SEND' | translate}}</buton>
-	</div>
+<div  id="sendDiv">
+    <div class="row">
+        <div class="col-xs-2 ">
+	 	    <button ng-click="sendMessage(message)" type="submit" class="btn btn-success send-chat">{{'SEND' | translate}}</button>
+        </div>
+        <div class="col-xs-10">
+	        <input ng-model="message" type="text" class="form-control chat-input" placeholder="{{'ENTER_MSG' | translate}}">
+        </div>
+    </div>
 </div>
+

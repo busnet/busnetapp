@@ -1,0 +1,100 @@
+<form class="form-horizontal" name="companyDetails">
+	<div class="form-group">
+		<div class="col-xs-8">
+			<input type="text" name="userId" id="userId" class="form-control disabled" disabled value="2">
+		</div>
+		<label for="userId" class="col-xs-4 control-label">{{'NUM' | translate}}</label>
+	</div> 
+    <div class="form-group" show-errors="{ showSuccess: true }">
+		<div class="col-xs-8">
+			<input type="text" name="companyName" id="companyName" class="form-control" required ng-model="companyName">
+			<p class="help-block" ng-if="companyDetails.$submitted && companyDetails.companyName.$error.required">{{'COMPANY_NAME' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="companyName" class="col-xs-4 control-label">{{'COMPANY_NAME' | translate}}</label>
+	</div>
+    <div class="form-group" show-errors="{ showSuccess: true }">
+		<div class="col-xs-8">
+			<input type="text" name="contactGuyName" id="contactGuyName" class="form-control" required ng-model="contactGuyName">
+			<p class="help-block" ng-if="companyDetails.$submitted && companyDetails.contactGuyName.$error.required">{{'CONTACT_GUY_NAME' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="contactGuyName" class="col-xs-4 control-label">{{'CONTACT_GUY_NAME' | translate}}</label>
+	</div>
+    <div class="form-group" show-errors="{ showSuccess: true }">
+		<div class="col-xs-8">
+			<input type="tel" name="fax" id="fax" class="form-control" required ng-model="fax">
+			<p class="help-block" ng-if="companyDetails.$submitted && companyDetails.fax.$error.required">{{'FAX' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="fax" class="col-xs-4 control-label">{{'FAX' | translate}}</label>
+	</div>
+    <div class="form-group" show-errors="{ showSuccess: true }">
+		<div class="col-xs-8">
+			<input type="text" name="adress" id="adress" class="form-control" required ng-model="adress">
+			<p class="help-block" ng-if="companyDetails.$submitted && companyDetails.adress.$error.required">{{'ADRESS' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="adress" class="col-xs-4 control-label">{{'ADRESS' | translate}}</label>
+	</div>
+    <div class="form-group" show-errors="{ showSuccess: true }">
+		<div class="col-xs-8">
+			<input type="tel" name="phone" id="phone" class="form-control" required ng-model="phone">
+			<p class="help-block" ng-if="companyDetails.$submitted && companyDetails.phone.$error.required">{{'PHONE' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="phone" class="col-xs-4 control-label">{{'PHONE' | translate}}</label>
+	</div>
+    <div class="form-group" show-errors="{ showSuccess: true }">
+		<div class="col-xs-8">
+			<input type="email" name="email" id="email" class="form-control" required ng-model="email">
+			<p class="help-block" ng-if="companyDetails.$submitted && companyDetails.email.$error.required">{{'EMAIL' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="email" class="col-xs-4 control-label">{{'EMAIL' | translate}}</label>
+	</div>
+    <div class="form-group" show-errors="{ showSuccess: true }">
+		<div class="col-xs-8">
+			<input type="tel" name="om" id="om" class="form-control" required ng-model="om">
+			<p class="help-block" ng-if="companyDetails.$submitted && companyDetails.om.$error.required">{{'OM' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="om" class="col-xs-4 control-label">{{'OM' | translate}}</label>
+	</div>
+    <div class="form-group" show-errors="{ showSuccess: true }">
+		<div class="col-xs-8">
+			<input type="tel" name="numBuses" id="numBuses" class="form-control" required ng-model="numBuses">
+			<p class="help-block" ng-if="companyDetails.$submitted && companyDetails.numBuses.$error.required">{{'NUM_BUSES' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="numBuses" class="col-xs-4 control-label">{{'NUM_BUSES' | translate}}</label>
+	</div>
+    <div class="form-group" show-errors="{ showSuccess: true }">
+		<div class="col-xs-8">
+			<input type="tel" name="numMiniBuses" id="numMiniBuses" class="form-control" required ng-model="numMiniBuses">
+			<p class="help-block" ng-if="companyDetails.$submitted && companyDetails.numMiniBuses.$error.required">{{'NUM_MINIBUSES' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label for="numMiniBuses" class="col-xs-4 control-label">{{'NUM_MINIBUSES' | translate}}</label>
+	</div>
+    <div class="form-group" show-errors="{ showSuccess: true }">
+		<div class="col-xs-8">
+			<select name="locationProvider" id="locationProvider" class="form-control" ng-model="locationProvider" required>
+				<option value=""></option>
+                <option value="Ituran">Ituran</option>
+                <option value="Pointer">Pointer</option>
+			</select>
+			<p class="help-block" ng-if="companyDetails.$submitted && companyDetails.locationProvider.$error.required">{{'LOCATION_PROVIDER' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label class="col-xs-4 control-label" for="locationProvider">{{'LOCATION_PROVIDER' | translate}}</label>
+	</div>
+    <div class="form-group" show-errors="{ showSuccess: true }">
+		<div class="col-xs-8">
+			<select name="arangementSoftware" id="arangementSoftware" class="form-control" ng-model="arangementSoftware" required>
+				<option value=""></option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+			</select>
+			<p class="help-block" ng-if="companyDetails.$submitted && companyDetails.arangementSoftware.$error.required">{{'ARANGEMENT_SOFTWARE' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+		<label class="col-xs-4 control-label" for="locationProvider">{{'ARANGEMENT_SOFTWARE' | translate}}</label>
+	</div>
+	<div class="form-group">
+        <div class="col-xs-12">
+		    <textarea id="more-details" class="form-control" rows="4" placeholder="{{'MORE_DETAILS' | translate}}" ng-model="ride.remarks"></textarea>
+	    </div>
+    </div>
+	<button type="submit" ng-click="save(ride)" class="btn btn-success">{{'SUBMIT_NEW_RIDE' | translate}}</button>
+</form>

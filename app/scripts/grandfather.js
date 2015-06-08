@@ -23,7 +23,11 @@ angular.module('busnetApp.grandfather', ['ui.router'  ])
                 'BACK',
                 'RIDE_BOARD',
                 'CHAT',
-                'ADD_RIDE']).then(function (translations) {
+                'ADD_RIDE',
+                // new added by Alex
+                'SETTINGS',
+                'COMPANY_DETAILS'
+                ]).then(function (translations) {
             return {
               checkAll: translations.CHECK_ALL,
               uncheckAll: translations.UNCHECK_ALL,
@@ -39,7 +43,10 @@ angular.module('busnetApp.grandfather', ['ui.router'  ])
               back: translations.BACK,
               rideBoard: translations.RIDE_BOARD,
               chat: translations.CHAT,
-              addRide: translations.ADD_RIDE
+              addRide: translations.ADD_RIDE,
+              //new added by Alex
+              settings: translations.SETTINGS,
+              companyDetails: translations.COMPANY_DETAILS
             }
           });
         },

@@ -26,7 +26,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    // new added by Alex
+    'busnetApp.company-details',
+    'busnetApp.settings'
   ])
   .config(function ($urlRouterProvider, $translateProvider) {
     $urlRouterProvider.otherwise('/');
@@ -81,10 +84,21 @@ angular
         "MY_RIDES": "הנסיעות שלי",
         // "ADD_RIDE" : "הוספת נסיעה", allready exists as a button in !!!
         "STATS": "דוחות",
-        "ABOUT": "פרטי החברה",
+        "COMPANY_DETAILS": "פרטי החברה",
         "BUSINESS_INDEX": "אינדקס עסקים",
-        "SIDE_MAP": "מפת צד"
-        /*---------------------------------------------------------------------------------------*/
+        "SIDE_MAP": "מפת צד",
+        /*----------------------------------------------company details-----------------------------------*/
+        "COMPANY_NAME": "שם החברה",
+        "CONTACT_GUY_NAME": "איש קשר",
+        "FAX": "פקס",
+        "ADRESS": "כתובת",
+        "PHONE": "טלפון",
+        "EMAIL": "מייל",
+        "OM": "ח.פ/ע.מ",
+        "NUM_BUSES": "מס' אוטובוסים",
+        "NUM_MINIBUSES": "מס' מיניבוסים",
+        "LOCATION_PROVIDER": "ספק מיקום",
+        "ARANGEMENT_SOFTWARE": "תוכנת סדרן"
       });
     /*$translateProvider.useStaticFilesLoader({
       prefix: '/languages/',
