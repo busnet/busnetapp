@@ -9,4 +9,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <preference name="DisallowOverscroll" value="true"/>
+    <platform name="android">
+        <preference name="Fullscreen" value="true" />
+    </platform>
 </widget>
