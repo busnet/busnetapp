@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
@@ -15,27 +16,13 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-<<<<<<< HEAD
-      <!--link href="/styles/alex.css" rel="stylesheet" type="text/css"-->
-=======
->>>>>>> 5680422402ddd806723c674cd4788ca303740a05
   </head>
   <body class="container-fluid">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div ui-view></div>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
-
+    <script src="cordova.js"></script>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -80,8 +67,11 @@
         <script src="scripts/directives/chat.js"></script>
         <script src="scripts/controllers/ride-chat.js"></script>
         <script src="scripts/controllers/add-ride-modal.js"></script>
+        <!--bew made by Alex-->
+        <script src="scripts/controllers/company-details.js"></script>
+        <script src="scripts/controllers/settings.js"></script>
         <!-- endbuild -->
-        <script src="http://localhost:3002/socket.io/socket.io.js"></script>
+        <script src="<%- socket_server%>/socket.io/socket.io.js"></script>
         <script src="languages/angular-locale_he-il.js"></script>
 <script>
 /**

@@ -9,9 +9,15 @@
  */
 
 angular.module('busnetApp')
-  	.controller('BodyCtrl', function ($scope, $state, translations) {
+  	.controller('BodyCtrl', function ($scope, $state, translations, loginService) {
+  	    $scope.isLogged = loginService.isLogged ? true : false;
+  	    $scope.logoutMe = function () {
+	      loginService.logoutUser();
+	    };
   	    $scope.$on('$stateChangeSuccess',
 		function (event, toState, toParams, fromState, fromParams) {
+		    $scope.isLogged = loginService.isLogged ? true : false;
+
 		    var pageTitle = '';
 		    var addRideBtn = false;
 		    switch ($state.current.name) {
@@ -36,5 +42,4 @@ angular.module('busnetApp')
 		    $scope.pagetitle = pageTitle;
 		    $scope.addridebtn = addRideBtn;
 		});
-
   	});

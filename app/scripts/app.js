@@ -20,6 +20,7 @@ angular
     'busnetApp.addride',
     // components
     'busnetApp.directives',
+    'ngCordova',
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -88,7 +89,6 @@ angular
         "BUSINESS_INDEX": "אינדקס עסקים",
         "SIDE_MAP": "מפת צד",
         /*----------------------------------------------company details-----------------------------------*/
-        "COMPANY_NAME": "שם החברה",
         "CONTACT_GUY_NAME": "איש קשר",
         "FAX": "פקס",
         "ADRESS": "כתובת",
@@ -106,7 +106,46 @@ angular
     });*/
     $translateProvider.preferredLanguage('he');
   })
-  .run(function($rootScope, $state, $stateParams, loginService){
+  .run(function($rootScope, $state, $stateParams, loginService, $cordovaPush){
+
+    //google push service registration
+    var googleConfig = {
+        "senderID":"163438544120"
+    };
+    document.addEventListener("deviceready", function(){
+        $cordovaPush.register(googleConfig).then(function(result) {
+            console.log('push register success: ' + result);
+        }, function(err) {
+            console.log('push register error: ' + err);
+        })
+    });
+
+    $rootScope.$on('$cordovaPush:notificationReceived', function(event, notification) {
+      switch(notification.event) {
+        case 'registered':
+          if (notification.regid.length > 0 ) {
+            loginService.user.google = {
+                regid: notification.regid
+            }
+            console.log('registration ID = ' + notification.regid);
+          }
+          break;
+
+        case 'message':
+          // this is the actual push notification. its format depends on the data model from the push server
+          alert('message = ' + notification.message + ' msgCount = ' + notification.msgcnt);
+          break;
+
+        case 'error':
+          console.log('GCM error = ' + notification.msg);
+          break;
+
+        default:
+          console.log('An unknown GCM event has occurred');
+          break;
+      }
+    });
+
     var resolveDone = function () { $rootScope.doingResolve = false; };
     $rootScope.doingResolve = false;
 

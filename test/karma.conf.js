@@ -41,6 +41,7 @@ module.exports = function(config) {
       'bower_components/angular-ui-grid/ui-grid.js',
       'bower_components/moment/moment.js',
       'bower_components/angular-moment/angular-moment.js',
+      'bower_components/ngCordova/dist/ng-cordova.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

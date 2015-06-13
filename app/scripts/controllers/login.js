@@ -39,6 +39,7 @@ angular.module('busnetApp.login', ['busnetApp.grandfather', 'loginService'])
     };
     $scope.loginMe = function () {
       // setup promise, and 'working' flag
+      $scope.login.google = loginService.user.google;
       var loginPromise = $http.post(REST_URLS.LOGIN_SERVER, $scope.login);
       $scope.login.working = true;
       $scope.login.wrong = false;

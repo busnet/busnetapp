@@ -34,6 +34,14 @@ angular.module('loginService', ['ui.router'])
       setHeaders(token);
     };
 
+    var setGoogleRegId = function(regId){
+      if(!regId){
+        localStorage.removeItem('googleRegId');
+      }else{
+        localStorage.setItem('googleRegId', regId);
+      }
+    };
+
     var getLoginData = function () {
       if (userToken) {
         setHeaders(userToken);
@@ -149,9 +157,9 @@ angular.module('loginService', ['ui.router'])
           user.userRole = userRoles.user;
          }
          user.token = user.hash;
-
         // setup token
         setToken(user.token);
+
         // update user
         angular.extend(wrappedService.user, user);
         // flag true on isLogged

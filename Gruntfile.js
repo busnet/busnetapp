@@ -28,30 +28,6 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: appConfig,
 
-    phonegap:{
-      config:{
-        root: 'www',
-        config: 'config.xml',
-        path: 'phonegap',
-        cordova: '.cordova',
-        cli: 'cordova',
-        cleanBeforeBuild: true,
-        platforms: ['ios'],
-        maxBuffer: 200,
-        verbose: false,
-        releases: 'releases',
-        releaseName: function(){
-          var pkg = grunt.file.readJSON('package.json');
-          return(pkg.name + '-' + pkg.version);
-        },
-        debuggable: false,
-        name: function(){
-          var pkg = grunt.file.readJSON('package.json');
-          return pkg.name;
-        }
-      }
-    },
-
     ngconstant: {
       options: {
         name: 'config',
@@ -83,6 +59,21 @@ module.exports = function (grunt) {
       phonegap: {
         constants: {
           REST_URLS: {
+            SOCKET_SERVER: 'http://10.0.0.6:3002',
+            VEHICLES: 'http://10.0.0.6:3002/rest/vehicles',
+            RIDE_TYPES: 'http://10.0.0.6:3002/rest/ridetypes',
+            AREAS: 'http://10.0.0.6:3002/rest/areas',
+            CITIES: 'http://10.0.0.6:3002/rest/cities',
+            RIDES: 'http://10.0.0.6:3002/rest/rides',
+            RIDE: 'http://10.0.0.6:3002/rest/ride',
+            LOGIN_SERVER: 'http://10.0.0.6:3002/rest/login',
+            USER: 'http://10.0.0.6:3002/rest/user'
+          }
+        }
+      },
+      release: {
+        constants: {
+          REST_URLS: {
             SOCKET_SERVER: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002',
             VEHICLES: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/vehicles',
             RIDE_TYPES: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/ridetypes',
@@ -93,6 +84,33 @@ module.exports = function (grunt) {
             LOGIN_SERVER: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/login',
             USER: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/user'
           }
+        }
+      }
+    },
+
+    template: {
+      dev:{
+        options:{
+          data: function(){
+            return {
+              socket_server: grunt.config.get('ngconstant.dev.constants.REST_URLS.SOCKET_SERVER')
+            }
+          }
+        },
+        files: {
+          '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/index.html.tpl']
+        }
+      },
+      phonegap:{
+        options:{
+          data: function(){
+            return {
+              socket_server: grunt.config.get('ngconstant.phonegap.constants.REST_URLS.SOCKET_SERVER')
+            }
+          }
+        },
+        files: {
+          '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/index.html.tpl']
         }
       }
     },
@@ -150,6 +168,14 @@ module.exports = function (grunt) {
               connect().use(
                 '/bower_components',
                 connect.static('./bower_components')
+              ),
+              connect().use(
+                '/plugins',
+                connect.static('./plugins')
+              ),
+              connect().use(
+                '/platforms',
+                connect.static('./platforms')
               ),
               connect().use(
                 '/app/styles',
@@ -328,7 +354,8 @@ module.exports = function (grunt) {
         flow: {
           html: {
             steps: {
-              js: ['concat', 'uglifyjs'],
+              //js: ['concat', 'uglifyjs'],
+              js: ['concat'],
               css: ['cssmin']
             },
             post: {}
@@ -445,7 +472,7 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            '*.{ico,png,txt}',
+            '*.{ico,png,txt,svg,ttf,woff}',
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
@@ -463,13 +490,18 @@ module.exports = function (grunt) {
           cwd: '.',
           src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
           dest: '<%= yeoman.dist %>'
+        }, {
+          expand: true,
+          flatten: true,
+          src: 'bower_components/angular-ui-grid/*.{ttf,woff}',
+          dest: '<%= yeoman.dist %>/styles'
         }]
       },
       styles: {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
-        src: '{,*/}*.css'
+        src: '{,*/}*.{css,svg,ttf,woff}'
       },
       phonegap: {
         expand: true,
@@ -504,7 +536,7 @@ module.exports = function (grunt) {
     
     shell: {
       phonegapBuild: {
-        command: 'cordova build'
+        command: 'cordova build android --debug'
       },
       phonegapServ:{
         command: 'cordova serve'
@@ -521,6 +553,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'template:'+target,
       'wiredep',
       'concurrent:server',
       'autoprefixer:server',
@@ -550,6 +583,7 @@ module.exports = function (grunt) {
       grunt.task.run([
         'clean:phonegap',
         'clean:dist',
+        'template:'+target,
         'ngconstant:'+target,
         'wiredep',
         'useminPrepare',
@@ -560,7 +594,7 @@ module.exports = function (grunt) {
         'copy:dist',
         'cdnify',
         'cssmin',
-        'uglify',
+        //'uglify',
         'filerev',
         'usemin',
         'htmlmin',
@@ -570,6 +604,7 @@ module.exports = function (grunt) {
     }else{
       grunt.task.run([
         'clean:dist',
+        'template:'+target,
         'ngconstant:'+target,
         'wiredep',
         'useminPrepare',
@@ -594,3 +629,4 @@ module.exports = function (grunt) {
     'build'
   ]);
 };
+
