@@ -112,6 +112,18 @@ module.exports = function (grunt) {
         files: {
           '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/index.html.tpl']
         }
+      },
+      release:{
+        options:{
+          data: function(){
+            return {
+              socket_server: grunt.config.get('ngconstant.release.constants.REST_URLS.SOCKET_SERVER')
+            }
+          }
+        },
+        files: {
+          '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/index.html.tpl']
+        }
       }
     },
 
@@ -536,7 +548,7 @@ module.exports = function (grunt) {
     
     shell: {
       phonegapBuild: {
-        command: 'cordova build android --debug'
+        command: 'cordova build android --release'
       },
       phonegapServ:{
         command: 'cordova serve'
@@ -579,7 +591,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', 'build task', function(target){
     target = target || 'dev';
-    if(target === 'phonegap'){
+    if(target === 'phonegap' || target == 'release'){
       grunt.task.run([
         'clean:phonegap',
         'clean:dist',
