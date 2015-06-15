@@ -46,13 +46,15 @@ angular.module('busnetApp.login', ['busnetApp.grandfather', 'loginService'])
       $scope.login.deviceToken = '';
 
       loginService.loginUser(loginPromise);
+      loginPromise.success(function(){
+        $state.go('app.rides');
+      });
       loginPromise.error(function () {
         $scope.login.wrong = true;
         $timeout(function () { $scope.login.wrong = false; }, 8000);
       });
       loginPromise.finally(function () {
         $scope.login.working = false;
-        $state.go('app.rides');
       });
     };
     $scope.logoutMe = function () {
