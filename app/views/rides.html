@@ -23,9 +23,16 @@
 
 <script>
     $(function () {
-        /*-------------------------------fix grid height to use maximum power of screen size ----------------------*/
-        $(".ui-grid-viewport.ng-isolate-scope,.rides-grid").height($(".footer").offset().top - $("#header").height() - 100);
+        fixGridHeight();
+    });
+
+    $(window).resize(function () {
+        location.reload();
     })
 
+
+    function fixGridHeight() {
+        $(".ui-grid-viewport.ng-isolate-scope,.rides-grid").height($(window).height() - 220);
+    }
 </script>
   
