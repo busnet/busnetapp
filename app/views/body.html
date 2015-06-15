@@ -1,29 +1,52 @@
 <div id="header" data-role="header">
     <div class="row">
-        <div class="col-xs-3">  
-          <a href="#notification" id="notificationsIcon"><img src="images/notification.png" class="img-responsive"><span class="badge">2</span></a>
+        <div class="col-xs-3 col-sm-3">  
+            <a href="#notification" id="notificationsIcon"><img src="images/notification.png" class="img-responsive"><span class="badge">2</span></a>
             <ul id="notificationsMenu" class="list-group">
                 <li><a href="#" class="list-group-item">New ride added near you home</a></li>
                 <li><a href="#" class="list-group-item">Yosi Perets wants to use your bus</a></li>
             </ul>
         </div>
-        <div class="col-xs-6">
-          <img src="images/logotop.png" class="img-responsive">
+        <div class="col-xs-6 col-sm-3 col-sm-push-6">
+            <img src="images/logotop.png" class="img-responsive" id="logo">
         </div>
-        <div class="col-xs-3" id="menuDiv">
-          <a href="#"><img src="images/sidemenu.png" class="img-responsive" id="menuIcon"></a>
-            <ul class="subMenu list-group">
-                <li><a href="#navside" class="list-group-item">{{"LOGIN" | translate}}</a></li> <!--Improve semantic link to login page!!!!!!!!! can't be #navside-->
-                <li><a href="/#/rides" class="list-group-item">{{"MY_RIDES" | translate}}</a></li>
-                <li><a href="/#/addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li>
-                <li><a href="#" class="list-group-item">{{"STATS" | translate}}</a></li>
-                <li><a href="/#/company-details" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li>
-                <li><a href="#" class="list-group-item">{{"BUSINESS_INDEX" | translate}}</a></li>
-                <li><a href="#" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
-            </ul>
+            <div class="col-xs-3 col-sm-6 col-sm-pull-3" id="menuDiv">
+                <a href="#"><img src="images/sidemenu.png" class="img-responsive" id="menuIcon"></a>
+                <div class="footer" role="navigation">
+                <div class="row">
+                    <button ui-sref="app.rides">
+                        <img class="img-responsive" src="images/icons/home-small.png">
+                        <div>{{'HOMEPAGE' | translate}}</div>
+                    </button><!-- remove extra space
+                    --><button ui-sref="app.openrides">
+                        <img class="img-responsive" src="images/icons/openreq-small.png">
+                        <div>{{'OPEN_REQUESTS' | translate}}</div>
+                    </button><!-- remove extra space
+                    --><button ui-sref="app.forum">
+                        <img class="img-responsive" src="images/icons/forum-small.png">
+                        <div>{{'FORUM' | translate}}</div>
+                    </button><!-- remove extra space
+                    --><button ui-sref="app.settings">
+                        <img class="img-responsive" src="images/icons/settings-small.png">
+                        <div>{{'SETTINGS' | translate}}</div>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
+    <ul class="subMenu list-group">
+        <!--Improve semantic link to login page!!!!!!!!! can't be #navside-->
+        <li><a href="#navside" class="list-group-item">{{"LOGIN" | translate}}</a></li
+        ><li><a href="/#/rides" class="list-group-item">{{"MY_RIDES" | translate}}</a></li
+        ><li><a href="/#/addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li
+        ><li><a href="#" class="list-group-item">{{"STATS" | translate}}</a></li
+        ><li><a href="/#/company-details" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li
+        ><li><a href="#" class="list-group-item">{{"BUSINESS_INDEX" | translate}}</a></li
+        ><li><a href="#" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
+    </ul>
 </div>
+
+
 
 
 
@@ -38,26 +61,7 @@
 
   <ui-view ng-hide="doingResolve"></ui-view>
 </div>
-<div class="footer" role="navigation">
-  <div class="row">
-    <button ui-sref="app.rides">
-      <img class="img-responsive" src="images/icons/home-small.png">
-      <div>{{'HOMEPAGE' | translate}}</div>
-    </button><!-- remove extra space
-    --><button ui-sref="app.openrides">
-      <img class="img-responsive" src="images/icons/openreq-small.png">
-      <div>{{'OPEN_REQUESTS' | translate}}</div>
-    </button><!-- remove extra space
-    --><button ui-sref="app.forum">
-      <img class="img-responsive" src="images/icons/forum-small.png">
-      <div>{{'FORUM' | translate}}</div>
-    </button><!-- remove extra space
-    --><button ui-sref="app.settings">
-      <img class="img-responsive" src="images/icons/settings-small.png">
-      <div>{{'SETTINGS' | translate}}</div>
-    </button>
-  </div>
-</div>
+
 
 <script>
     /*--------------------------subMenu functionality ---------------------------------------------------------*/
@@ -67,10 +71,12 @@
     var speed = 300;
 
     $("html").click(function () {
-        $(".subMenu").animate({ "right": "-" + menuWidth }, speed);
-        $("#menuIcon").animate({ "right": "0" }, speed).removeAttr("style");
-        $elementsToFadeInAndOut.fadeIn(speed);
-        menuOpen = false;
+        if (menuOpen) {
+            $(".subMenu").animate({ "right": "-" + menuWidth }, speed);
+            $("#menuIcon").animate({ "right": "0" }, speed).removeAttr("style");
+            $elementsToFadeInAndOut.fadeIn(speed);
+            menuOpen = false;
+        }
     });
     $("#menuIcon").click(function (e) {
         e.stopPropagation();
@@ -85,6 +91,25 @@
         }
     });
 
+    // big screen fix
+    function bigScreenFix() {
+        var mobileWidth = 768;
+        if (window.innerWidth >= mobileWidth) {
+            $("html").click(); //close menu and fade in all the rest if menu is open
+            $(".container-fluid").addClass("container").removeClass("container-fluid"); //convert fluid to responsive 
+        }
+        else {
+            $(".container").addClass("container-fluid").removeClass("container"); //convert responsive to fluid 
+        }
+    }
+    
+    bigScreenFix();
+    $(window).resize(function () {
+        bigScreenFix();
+    });
+    
+
+
     /*--------------------------Notifications functionality ---------------------------------------------------------*/
     var notificationsSpeed = 300;
 
@@ -98,6 +123,6 @@
     });
 
 
-    
+
 
 </script>
