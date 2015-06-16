@@ -20,7 +20,15 @@ angular.module('busnetApp')
 
 		    var pageTitle = '';
 		    var addRideBtn = false;
+		    var header = true;
+		    var headButtons = true;
+		    var footer = true;
+
 		    switch ($state.current.name) {
+		    	case 'app.login':
+		    		header = false;
+		    		footer = false;
+		    		headButtons = false;
 		        case 'app.rides':
 		            pageTitle = translations.rideBoard;
 		            addRideBtn = true;
@@ -41,5 +49,8 @@ angular.module('busnetApp')
 		    }
 		    $scope.pagetitle = pageTitle;
 		    $scope.addridebtn = addRideBtn;
+		    $scope.header = header;
+		    $scope.headButtons = headButtons;
+		    $scope.footer = footer;
 		});
   	});

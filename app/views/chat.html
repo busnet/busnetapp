@@ -1,17 +1,13 @@
-<div ng-repeat="(key, request) in requests" class="row">
-    <div class="col-xs-12">
-        <ul class="chat-main">
-		    <li class="chat-list list-group-item" ng-repeat="msg in request.msgs">
-                <div class="list-group-item-success">
-                <span class="time">{{msg.time}}</span>
-                <span class="name">{{msg.name}}</span>
-                </div>
-                <br>
-                <div>{{msg.message}}</div>
-            </li>
-	    </ul>
-    </div>
-</div>
+<ul class="chat-main">
+    <li class="chat-list list-group-item" ng-repeat="msg in messages">
+        <div class="list-group-item-success">
+        <span class="time">{{msg.time}}</span>
+        <span class="name">{{msg.name}}</span>
+        </div>
+        <br>
+        <div>{{msg.message}}</div>
+    </li>
+</ul>
 <div  id="sendDiv">
     <div class="row">
         <div class="col-xs-2 ">

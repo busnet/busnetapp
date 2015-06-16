@@ -12,36 +12,25 @@ angular.module('busnetApp.directives', ['angularMoment'])
       templateUrl: 'views/chat.html',
       restrict: 'E',
       scope:{
-      	requests: "=requests",
-      	rideid: "=rideid",
-      	rideowner: "=rideowner"
+      	ride: "=ride",
       },
       link: function postLink(scope, element, attrs) {
       	var socket = io(REST_URLS.SOCKET_SERVER);
+        var user = loginService.user;
+        scope.messages = scope.ride.requests && scope.ride.requests[user._id] ? scope.ride.requests[user._id].msgs : [];
+        console.log(scope.messages);
         scope.sendMessage = function(message){
-        	var messageType = scope.requests ? 'reply' : 'send';
-        	var user = loginService.user;
-          console.log(user);
+        	var messageType = _.size(scope.messages) > 0 ? 'reply' : 'send';
         	var msg = {
         		message: message, 
-        		rideID: scope.rideid,
+        		rideID: scope.ride._id,
         		username: user._id,
         		name: user.dtl.companyName,
         		time: moment().format('HH:mm'), 
-        		toUser: scope.rideowner
+        		toUser: scope.ride.username
         	};
 
-        	if(!scope.requests){
-        		scope.requests = {};
-        	}
-
-        	if(_.size(scope.requests) == 0){
-        		scope.requests[scope.rideowner] = {
-        			from: user.dtl.companyName,
-        			msgs: []
-        		};
-        	}
-        	scope.requests[scope.rideowner].msgs.push(msg);
+        	scope.messages.push(msg);
         	socket.emit(messageType, msg);
         }
       }

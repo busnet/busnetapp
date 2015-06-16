@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
     id="com.busnet.busnetapp" 
-    version="0.0.3" 
+    version="0.0.4" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:cdv="http://cordova.apache.org/ns/1.0" 
     xmlns:gap="http://phonegap.com/ns/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
-    <name>busnetApp</name>
+    <name>busnet</name>
     <description>
-        Busnet mobile application
+        Busnet application for mobile devices
     </description>
     <author email="info@busnet.co.il" href="http://busnet.co.il">
        Busnet team
@@ -19,6 +19,20 @@
     <preference name="DisallowOverscroll" value="true"/>
     <platform name="android">
         <preference name="Fullscreen" value="true" />
+        
+        <icon src="assets/android/drawable-ldpi/icon.png" density="ldpi" />
+        <icon src="assets/android/drawable-mdpi/icon.png" density="mdpi" />
+        <icon src="assets/android/drawable-hdpi/icon.png" density="hdpi" />
+        <icon src="assets/android/drawable-xhdpi/icon.png" density="xhdpi" />
+        
+        <!--splash src="assets/android/drawable-land-hdpi/screen.png" density="land-hdpi"/>
+        <splash src="assets/android/drawable-land-ldpi/screen.png" density="land-ldpi"/>
+        <splash src="assets/android/drawable-land-mdpi/screen.png" density="land-mdpi"/>
+        <splash src="assets/android/drawable-land-xhdpi/screen.png" density="land-xhdpi"/>
+
+        <splash src="assets/android/drawable-port-hdpi/screen.png" density="port-hdpi"/>
+        <splash src="assets/android/drawable-port-ldpi/screen.png" density="port-ldpi"/>
+        <splash src="assets/android/drawable-port-xhdpi/screen.png" density="port-xhdpi"/-->
     </platform>
     <gap:config-file platform="android" parent="/manifest">
          <application android:debuggable="true" />

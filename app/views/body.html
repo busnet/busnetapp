@@ -1,4 +1,4 @@
-<div id="header" data-role="header">
+<div id="header" data-role="header" ng-show="header">
     <div class="row">
         <div class="col-xs-3">  
           <a href="#notification" id="notificationsIcon"><img src="images/notification.png" class="img-responsive"><span class="badge">2</span></a>
@@ -18,15 +18,15 @@
                 <li ng-show="isLogged"><a ui-sref="app.rides" class="list-group-item">{{"MY_RIDES" | translate}}</a></li>
                 <li ng-show="isLogged"><a ui-sref="app.addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li>
                 <li ng-show="isLogged"><a href="#none" class="list-group-item">{{"STATS" | translate}}</a></li>
-                <li ng-show="isLogged" class="list-group-item"><a href="#none" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li>
-                <li ng-show="isLogged" class="list-group-item"><a href="#none" class="list-group-item">{{"BUSINESS_INDEX" | translate}}</a></li>
-                <li ng-show="isLogged" class="list-group-item"><a href="#none" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
+                <li ng-show="isLogged"><a href="#none" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li>
+                <li ng-show="isLogged"><a href="#none" class="list-group-item">{{"BUSINESS_INDEX" | translate}}</a></li>
+                <li ng-show="isLogged"><a href="#none" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
             </ul>
         </div>
     </div>
 </div>
 <div id="betweenHeaderAndFooter">
-<div data-role="main" class="row">
+<div data-role="main" class="row" ng-show="headButtons">
   <div class="col-xs-6 text-left">
     <button class="btn btn-success" ng-show="addridebtn" id="addride" ui-sref="app.addride"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>{{ 'ADD_RIDE' | translate }}</button>
   </div>
@@ -34,21 +34,21 @@
 </div>
   <ui-view ng-hide="doingResolve"></ui-view>
 </div>
-<div class="footer" role="navigation">
+<div class="footer" role="navigation" ng-show="footer">
   <div class="row">
     <button ui-sref="app.rides">
       <img class="img-responsive" src="images/icons/home-small.png">
       <div>{{'HOMEPAGE' | translate}}</div>
     </button><!-- remove extra space
-    --><button ui-sref="app.openrides">
+    --><button>
       <img class="img-responsive" src="images/icons/openreq-small.png">
       <div>{{'OPEN_REQUESTS' | translate}}</div>
     </button><!-- remove extra space
-    --><button ui-sref="app.forum">
+    --><button>
       <img class="img-responsive" src="images/icons/forum-small.png">
       <div>{{'FORUM' | translate}}</div>
     </button><!-- remove extra space
-    --><button ui-sref="app.settings">
+    --><button>
       <img class="img-responsive" src="images/icons/settings-small.png">
       <div>{{'SETTINGS' | translate}}</div>
     </button>
