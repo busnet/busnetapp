@@ -59,15 +59,15 @@ module.exports = function (grunt) {
       phonegap: {
         constants: {
           REST_URLS: {
-            SOCKET_SERVER: 'http://10.0.0.6:3002',
-            VEHICLES: 'http://10.0.0.6:3002/rest/vehicles',
-            RIDE_TYPES: 'http://10.0.0.6:3002/rest/ridetypes',
-            AREAS: 'http://10.0.0.6:3002/rest/areas',
-            CITIES: 'http://10.0.0.6:3002/rest/cities',
-            RIDES: 'http://10.0.0.6:3002/rest/rides',
-            RIDE: 'http://10.0.0.6:3002/rest/ride',
-            LOGIN_SERVER: 'http://10.0.0.6:3002/rest/login',
-            USER: 'http://10.0.0.6:3002/rest/user'
+            SOCKET_SERVER: 'http://192.168.1.11:3002',
+            VEHICLES: 'http://192.168.1.11:3002/rest/vehicles',
+            RIDE_TYPES: 'http://192.168.1.11:3002/rest/ridetypes',
+            AREAS: 'http://192.168.1.11:3002/rest/areas',
+            CITIES: 'http://192.168.1.11:3002/rest/cities',
+            RIDES: 'http://192.168.1.11:3002/rest/rides',
+            RIDE: 'http://192.168.1.11:3002/rest/ride',
+            LOGIN_SERVER: 'http://192.168.1.11:3002/rest/login',
+            USER: 'http://192.168.1.11:3002/rest/user'
           }
         }
       },
@@ -548,6 +548,9 @@ module.exports = function (grunt) {
     
     shell: {
       phonegapBuild: {
+        command: 'cordova build android --debug'
+      },
+      releaseBuild: {
         command: 'cordova build android --release'
       },
       phonegapServ:{
