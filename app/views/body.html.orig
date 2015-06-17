@@ -10,6 +10,20 @@
         <div class="col-xs-6 col-sm-3 col-sm-push-6">
             <img src="images/logotop.png" class="img-responsive" id="logo">
         </div>
+<<<<<<< HEAD
+        <div class="col-xs-3" id="menuDiv">
+          <a href="#"><img src="images/sidemenu.png" class="img-responsive" id="menuIcon"></a>
+            <ul class="subMenu list-group">
+                <li ng-hide="isLogged"><a ui-sref="app.login" class="list-group-item">{{"LOGIN" | translate}}</a></li>
+                <li ng-show="isLogged"><a ng-click="logoutMe()" class="list-group-item">{{"LOGOUT" | translate}}</a></li>
+                <li ng-show="isLogged"><a ui-sref="app.rides" class="list-group-item">{{"MY_RIDES" | translate}}</a></li>
+                <li ng-show="isLogged"><a ui-sref="app.addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li>
+                <li ng-show="isLogged"><a href="#none" class="list-group-item">{{"STATS" | translate}}</a></li>
+                <li ng-show="isLogged"><a href="#none" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li>
+                <li ng-show="isLogged"><a href="#none" class="list-group-item">{{"BUSINESS_INDEX" | translate}}</a></li>
+                <li ng-show="isLogged"><a href="#none" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
+            </ul>
+=======
             <div class="col-xs-3 col-sm-6 col-sm-pull-3" id="menuDiv">
                 <a href="#"><img src="images/sidemenu.png" class="img-responsive" id="menuIcon"></a>
                 <div class="footer" role="navigation">
@@ -32,6 +46,7 @@
                     </button>
                 </div>
             </div>
+>>>>>>> all-screens
         </div>
     </div>
     <ul class="subMenu list-group">
@@ -45,11 +60,14 @@
         ><li><a href="#" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
     </ul>
 </div>
+<<<<<<< HEAD
+=======
 
 
 
 
 
+>>>>>>> all-screens
 <div id="betweenHeaderAndFooter">
 <div data-role="main" class="row" ng-show="headButtons">
   <div class="col-xs-6 text-left">
@@ -59,7 +77,30 @@
 </div>
   <ui-view ng-hide="doingResolve"></ui-view>
 </div>
+<<<<<<< HEAD
+<div class="footer" role="navigation" ng-show="footer">
+  <div class="row">
+    <button ui-sref="app.rides">
+      <img class="img-responsive" src="images/icons/home-small.png">
+      <div>{{'HOMEPAGE' | translate}}</div>
+    </button><!-- remove extra space
+    --><button>
+      <img class="img-responsive" src="images/icons/openreq-small.png">
+      <div>{{'OPEN_REQUESTS' | translate}}</div>
+    </button><!-- remove extra space
+    --><button>
+      <img class="img-responsive" src="images/icons/forum-small.png">
+      <div>{{'FORUM' | translate}}</div>
+    </button><!-- remove extra space
+    --><button>
+      <img class="img-responsive" src="images/icons/settings-small.png">
+      <div>{{'SETTINGS' | translate}}</div>
+    </button>
+  </div>
+</div>
+=======
 
+>>>>>>> all-screens
 
 <script>
     /*--------------------------subMenu functionality ---------------------------------------------------------*/

@@ -40,20 +40,22 @@ angular.module('busnetApp.login', ['busnetApp.grandfather', 'loginService'])
     $scope.loginMe = function () {
       // setup promise, and 'working' flag
       $scope.login.google = loginService.user.google;
-      var loginPromise = $http.post(REST_URLS.LOGIN_SERVER, $scope.login);
       $scope.login.working = true;
       $scope.login.wrong = false;
       $scope.login.deviceToken = '';
 
-      loginService.loginUser(loginPromise);
+      var loginPromise = $http.post(REST_URLS.LOGIN_SERVER, $scope.login);
+      loginPromise.success(function(){
+        $state.go('app.rides');
+      });
       loginPromise.error(function () {
         $scope.login.wrong = true;
         $timeout(function () { $scope.login.wrong = false; }, 8000);
       });
       loginPromise.finally(function () {
         $scope.login.working = false;
-        $state.go('app.rides');
       });
+      loginService.loginUser(loginPromise);
     };
     $scope.logoutMe = function () {
       loginService.logoutUser();

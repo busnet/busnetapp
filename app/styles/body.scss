@@ -19,13 +19,28 @@ textarea {
 
 
 
-
 /*************** if hebrew*****************************/
-.footer, input, label, .subMenu, textarea, .chat-ride-details {
+.footer, input, label, .subMenu, textarea, select, .chat-ride-details {
     direction: rtl;
 }
-.gridRowDetails, label, textarea, .chat-main li {
+.gridRowDetails, label, textarea, .chat-main li, .dropdown-menu li {
     text-align: right;
+}
+
+.control-label {
+    text-align: left !important;
+}
+.help-block {
+    text-align: right;
+}
+
+@media screen and (max-width: 767px) {
+    .control-label {
+        text-align: right !important;
+    }
+    .help-block {
+        text-align: center;
+    }
 }
 /****************** else ************************************
 .gridRowDetails, label, .chat-main li {
@@ -34,154 +49,113 @@ textarea {
 *****************************************************************/
 
 
-/*---------------------------header------------------------------------*/
-#header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    right: 0;
-    background-color: white;
-    z-index: 99999999999;
-}
-#menuIcon {
-    float: right;
-    height: $headerFooter-height;
-    width: auto;
-    position: relative;
-}
-#notificationsIcon {
-    float: left;
-    position: relative;
-}
-#notificationsIcon img {
-    height: $headerFooter-height;
-    width: auto;
-}
-#notificationsIcon .badge {
-    background-color: red;
-    position: absolute;
-    bottom: 0;
-    left: 29px;
-}
-
-
-/*---------------------------footer------------------------------------*/
-.footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    z-index: 99999999999;
-}
-.footer button {
-    padding: 0;
-    width: 25%;
-    border: 0;
-    margin: 0;
-    outline: none;
-    background-color: $busNet-green;
-    color: white;
-}
-.footer img {
-    height: 30px;
-}
-
-
-
-
-
-#betweenHeaderAndFooter {
-    padding: 60px 0;
-}
-
-
-
-
-/*--------------------------------login-form----------------------------------*/
-.login-form .bus {
-    margin: 20px auto;
-}
-
-
-
-
-
-
-.pageTitle {
-    float: right;
-}
 
 
 
 
 /*--------------------------subMenu -----------------------------------------*/
-$subMenu-width: 80%;
-
+#menuIcon {
+    display: none;
+}
 .subMenu {
-    display: block;
-    position: fixed;
-    width: $subMenu-width;
-    top: 0;
-    right: -$subMenu-width;
     padding: 0;
 }
 .subMenu a {
     color: $busNet-lightFontColor;
     background-color: $busNet-green;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: right;
 }
 .subMenu li {
     list-style: none;
     margin: 0;
+    display: inline-block;
 }
 
+
+/*-------------header----------------------------------*/
+#logo {
+    float: right;
+}
 
 
 
 /*--------------------------notificationsMenu -----------------------------------------*/
 
-#notificationsMenu {
-    display: none;
+    #notificationsMenu {
+        display: none;
+        position: fixed;
+        top: 50px;
+        left: 0;
+        padding: 0;
+        z-index: 9999;
+    }
+    #notificationsMenu li {
+        list-style: none;
+        margin: 0;
+    }
+
+
+    #notificationsIcon {
+        float: left;
+        position: relative;
+    }
+    #notificationsIcon img {
+        height: $headerFooter-height;
+        width: auto;
+    }
+    #notificationsIcon .badge {
+        background-color: red;
+        position: absolute;
+        bottom: 0;
+        left: 29px;
+    }
+
+
+
+
+
+
+
+
+#addride {
+    display: none; /*shown in menu*/
+}
+
+
+
+
+
+/*
+.footer {
     position: fixed;
-    width: 100%;
-    top: 50px;
-    left: 0;
-    padding: 0;
+    top: 150px;
+    right: 20px;
 }
-
-#notificationsMenu li {
-    list-style: none;
-    margin: 0;
-}
-
-
-
-
-/*------------------------- ridesGrid -----------------------------------------------*/
-.rideType2 * {
+.footer button {
+    display: block;
+    width: 100px;
     background-color: $busNet-green !important;
-    color: $busNet-lightFontColor !important;
-}
-
-.ui-grid-header * {
-    background-color: $busNet-blue !important;
-    color: $busNet-lightFontColor !important;
 }
 
 
+*/
 
 
+#areasFilter {
+    list-style: none;
+    margin: 0 auto;
+    width: 70%;
+    overflow-y: visible;
+}
 
 /*------------------------chat -----------------------------------*/
 #sendDiv {
     position: fixed;
-    bottom: $headerFooter-height;
+    bottom: 0;
     width: 100%;
     right: 0;
     background-color: $busNet-blue;
     padding: 5px;
+    margin-bottom: 0;
 }
 #sendDiv input {
     width: 100%;
@@ -217,9 +191,192 @@ $subMenu-width: 80%;
 
 
 
+chat > div {
+    margin-bottom: 50px;
+}
 
-/*-----------------settings (areasFilter) -------------------------*/
-#areasFilter {
-    overflow-x: hidden;
-    overflow-y: scroll;
+
+
+
+
+
+ /*---------------------------footer------------------------------------*/
+    .footer button {
+        padding: 0;
+        width: 23%;
+        border: 0;
+        margin: 1px;
+        outline: none;
+        background-color: $busNet-green;
+        color: white;
+        border-radius: 5px;
+    }
+    .footer button:hover {
+        background-color: $busNet-blue;
+    }
+    .footer img {
+        height: 30px;
+    }
+
+
+
+
+
+
+
+/*------------------------- ridesGrid -----------------------------------------------*/
+.rideType2 * {
+    background-color: $busNet-green !important;
+    color: $busNet-lightFontColor !important;
+}
+
+.ui-grid-header * {
+    background-color: $busNet-blue !important;
+    color: $busNet-lightFontColor !important;
+}
+
+
+
+
+
+/*------------------------------------------------------------------------------------------mobile-------------------------------------*/
+@media screen and (max-width: 767px) {
+    
+    #addride {
+        display: block;
+    }
+
+
+    /*---------------------------header------------------------------------*/
+    #header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        right: 0;
+        background-color: white;
+        z-index: 99999999999;
+    }
+    #menuIcon {
+    display: block;
+        float: right;
+        height: $headerFooter-height;
+        width: auto;
+        position: relative;
+    }
+    #logo {
+        float: none;
+    }
+    
+
+
+    /*--------------------------notificationsMenu -----------------------------------------*/
+
+    #notificationsMenu {
+        width: 100%;
+    }
+
+
+
+
+
+   /*---------------------------footer------------------------------------*/
+    .footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        z-index: 99999999999;
+    }
+    .footer button {
+        width: 25%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+
+
+
+
+    #betweenHeaderAndFooter {
+        padding: 60px 0;
+    }
+
+
+
+
+    /*--------------------------------login-form----------------------------------*/
+    .login-form .bus {
+        margin: 20px auto;
+    }
+
+
+
+
+
+
+    .pageTitle {
+        float: right;
+    }
+
+
+
+
+    /*--------------------------subMenu -----------------------------------------*/
+    $subMenu-width: 80%;
+
+    .subMenu {
+        display: block;
+        position: fixed;
+        width: $subMenu-width;
+        top: 0;
+        right: -$subMenu-width;
+        padding: 0;
+    }
+    .subMenu a {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: right;
+    }
+    .subMenu li {
+        list-style: none;
+        margin: 0;
+        display: block;
+    }
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+
+    
+/*------------------------chat -----------------------------------*/
+#sendDiv {
+    bottom: $headerFooter-height;
+}
+
+
+
+
+
+
+
+    /*-----------------settings (areasFilter) -------------------------*/
+    #areasFilter {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        width: 100%;
+    }
+
+
+
+
 }

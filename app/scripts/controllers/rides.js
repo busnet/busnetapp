@@ -73,21 +73,34 @@ angular.module('busnetApp.rides', [
   			$scope.gridOptions.data = res.data;
   		});
   	}
+    var rideColumns = [];
+    if(window.innerWidth < 768) {
+        rideColumns = [
+  	  		{name: "id", field:"_id", displayName:translations.num, cellTooltip: true, visible: false},      
+  			{name: "aviliableDate", field:"aviliableDate", displayName:translations.date, cellTooltip: true},
+  			{name: "vacate", field:"area", displayName:translations.vacate, cellTooltip: true},
+  			{name: "back", field:"destination", displayName:translations.back, cellTooltip: true}
+  		];
+    }
+    else {
+        rideColumns = [
+  	  		{name: "id", field:"_id", displayName:translations.num, cellTooltip: true, visible: true},      
+  			{name: "aviliableDate", field:"aviliableDate", displayName:translations.date, cellTooltip: true},
+  			{name: "vacate", field:"area", displayName:translations.vacate, cellTooltip: true},
+  			{name: "back", field:"destination", displayName:translations.back, cellTooltip: true}
+  		];
+    }
   	$scope.ridetypes = ridetypes;
   	$scope.ride = {};
   	$scope.gridOptions = {
   		data: rides.data,
-  		columnDefs:[
-  	  		{name: "id", field:"_id", displayName:translations.num, cellTooltip: true, visible: false},      
-  			{name: "aviliableDate", field:"aviliableDate", displayName:translations.date, cellTooltip: true},
-  			{name: "vacate", field:"area", displayName:translations.vacate, cellTooltip: true},
-  			{name: "back", field:"destination", displayName:translations.back, cellTooltip: true},
-  		],
+  		columnDefs: rideColumns,
   		rowTemplate: "views/ride-row.html",
         expandableRowTemplate: "views/ride-details.html",
   		expandableRowHeight: 145,
   		enableRowSelection: false,
-  		expandableRowScope: {ridetypes: ridetypes}
+  		expandableRowScope: {ridetypes: ridetypes},
+        enableExpandableRowHeader: false
   	};
   	
   	$scope.areas = areas;
