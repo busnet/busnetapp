@@ -87,3 +87,15 @@
     </div>
 	<button type="submit" ng-click="save(ride)" class="btn btn-success">{{'SUBMIT_NEW_RIDE' | translate}}</button>
 </form>
+
+<script>
+    $(function () {
+        $("#vacantarea, #returnarea").each(function () {
+            $(this).focus(function () {
+                $("body").animate({
+                    scrollTop: $(this).offset().top
+                }, 300);
+            })
+        })
+    })
+</script>
