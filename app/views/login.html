@@ -4,10 +4,10 @@
 	<!-- Login Form -->
 	<form name="loginForm" role="login" ng-submit="loginMe()" ng-hide="login.isLogged">
 		<div class="form-group">
-		  <input type="text" class="form-control" ng-model="login.username" name="username" placeholder="{{'USERNAME' | translate}}">
+		  <input type="text" class="form-control" ng-model="login.username" name="username" placeholder="{{'USERNAME' | translate}}" id="username">
 		</div>
 		<div class="form-group">
-		  <input type="password" class="form-control" ng-model="login.password" name="password" placeholder="{{'PASSWORD' | translate}}">
+		  <input type="password" class="form-control" ng-model="login.password" name="password" placeholder="{{'PASSWORD' | translate}}" id="password">
 		</div>
 		<button type="submit" ng-disabled="login.working" class="btn btn-success">{{ 'LOGIN' | translate }}<i class="fa" ng-class="login.working ? 'fa-cog fa-spin' : 'fa-sign-in'"></i></button>
 	</form>
@@ -32,3 +32,17 @@
 		<h1><i class="fa fa-refresh fa-2x fa-spin"></i> Loading</h1>
 	</div>
 </div>
+
+
+<script>
+    /*-----------------scroll to top of an input on focus -------------------*/
+    $(function () {
+        $("#username, #password").each(function () {
+            $(this).focus(function () {
+                $("body").animate({
+                    scrollTop: $(this).offset().top
+                }, 300);
+            })
+        })
+    })
+</script>
