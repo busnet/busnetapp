@@ -79,6 +79,7 @@ angular
         "BEGIN": "התחל",
         "CONTINUE": "המשך",
         "CHAT": "שיחה",
+        "CHAT_WITH": "שיחה עם",
         "RIDE_ADDED_SUCCESSFULLY": "הנסיעה הוספה בהצלחה",
         /*-----------------------------------------------subMenu -------------------------------*/
         // "LOGIN":"כניסה למערכת", allready exists as a page title

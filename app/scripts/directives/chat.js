@@ -13,12 +13,13 @@ angular.module('busnetApp.directives', ['angularMoment'])
       restrict: 'E',
       scope:{
       	ride: "=ride",
+        target: "=target"
       },
       link: function postLink(scope, element, attrs) {
       	var socket = io(REST_URLS.SOCKET_SERVER);
         var user = loginService.user;
-        scope.messages = scope.ride.requests && scope.ride.requests[user._id] ? scope.ride.requests[user._id].msgs : [];
-        console.log(scope.messages);
+        scope.messages = scope.ride.requests && scope.ride.requests[scope.target] ? scope.ride.requests[scope.target].msgs : [];
+
         scope.sendMessage = function(message){
         	var messageType = _.size(scope.messages) > 0 ? 'reply' : 'send';
         	var msg = {
@@ -27,7 +28,7 @@ angular.module('busnetApp.directives', ['angularMoment'])
         		username: user._id,
         		name: user.dtl.companyName,
         		time: moment().format('HH:mm'), 
-        		toUser: scope.ride.username
+        		toUser: scope.target
         	};
 
         	scope.messages.push(msg);

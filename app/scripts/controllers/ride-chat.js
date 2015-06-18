@@ -11,7 +11,7 @@ angular.module('busnetApp.RideChat', [])
 	.config(function ($stateProvider, REST_URLS) {
 	    $stateProvider
 	      .state('app.ridechat', {
-	      	url: '/ridechat/:rideid',
+	      	url: '/ridechat/:rideid/:target',
 	        templateUrl: 'views/ride-chat.html',
 	        controller: 'RideChatCtrl',
 	        accessLevel: accessLevels.public,
@@ -25,6 +25,17 @@ angular.module('busnetApp.RideChat', [])
 	        }
 	      });
 	  })
-	.controller('RideChatCtrl', function ($scope, ride) {
+	.controller('RideChatCtrl', function ($scope, ride, loginService, $stateParams) {
 		$scope.ride = ride;
+		var companies = [];
+		_.forEach(ride.requests, function(val, key){
+			companies.push({name: val.from, id: key});
+		});
+		$scope.companies = companies;
+		$scope.isOwner = ride.username == loginService.user._id;
+
+		var firstCompany = _.first(companies) ? _.first(companies).id : null;
+		var defaultCompny = $scope.isOwner ? firstCompany : loginService.user._id;
+
+		$scope.target = $stateParams.target || defaultCompny;
 	});

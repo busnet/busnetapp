@@ -5,4 +5,10 @@
         </div>
     </div>
 </div>
-<chat ride="ride"/>
+<div ng-show="isOwner">
+	<span>{{'CHAT_WITH' | translate}}</span>
+	<ul class="nav nav-pills">
+		<li role="presentation" ng-class="{active: company.id==target}" ng-repeat="company in companies"><a ui-sref="app.ridechat({rideid: ride._id, target: company.id})">{{company.name}}</a></li>
+	</ul>
+</div>
+<chat ride="ride" target="target"/>
