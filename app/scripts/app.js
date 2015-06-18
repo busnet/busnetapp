@@ -32,11 +32,7 @@ angular
     'busnetApp.company-details',
     'busnetApp.settings'
   ])
-  .config(function ($urlRouterProvider, $translateProvider, $httpProvider) {
-    $httpProvider.defaults.useXDomain = true;
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    delete $httpProvider.defaults.headers.post['Content-Type'];
-    
+  .config(function ($urlRouterProvider, $translateProvider) {
     $urlRouterProvider.otherwise('/');
     $translateProvider.translations('he',{
         "WELCOME": "ברוכים הבאים",
@@ -139,6 +135,7 @@ angular
             var modalInstance = $modal.open({
                 animation: true,
                 templateUrl: 'views/notification-modal.html',
+                controller: 'NotificationModalCtrl',
                 size: 'sm',
                 resolve: {
                     notification: function () {
@@ -149,10 +146,10 @@ angular
 
             modalInstance.result.then(function (response) {
                 if(response){
-                    console.log('Modal closed');
+                    //do nothing
                 }
             }, function () {
-                console.log('Modal dismissed');
+                console.log('Modal dismissed at: ' + new Date());
             });
           // this is the actual push notification. its format depends on the data model from the push server
           //alert('message = ' + notification.message + ' msgCount = ' + notification.msgcnt);

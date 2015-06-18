@@ -14,5 +14,9 @@ angular.module('busnetApp.company-details', ['busnetApp.grandfather'])
 	    });
 	})
 	.controller('CompanyDetailsCtrl', function ($scope) {
-		
+		$scope.awesomeThings = [
+		  'HTML5 Boilerplate',
+		  'AngularJS',
+		  'Karma'
+		];
 	});

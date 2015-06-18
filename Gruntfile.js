@@ -550,7 +550,7 @@ module.exports = function (grunt) {
       phonegapBuild: {
         command: 'cordova build android --debug'
       },
-      releaseBuild: {
+      releaseBuild:{
         command: 'cordova build android --release'
       },
       phonegapServ:{
@@ -614,7 +614,7 @@ module.exports = function (grunt) {
         'usemin',
         'htmlmin',
         'copy:phonegap',
-        'shell:'+ target +'Build',
+        'shell:'+target+'Build',
         ]);
     }else{
       grunt.task.run([

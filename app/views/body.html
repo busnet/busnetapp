@@ -35,14 +35,15 @@
         </div>
     </div>
     <ul class="subMenu list-group">
+        <!--Improve semantic link to login page!!!!!!!!! can't be #navside-->
         <li ng-hide="isLogged"><a ui-sref="app.login" class="list-group-item">{{"LOGIN" | translate}}</a></li>
         <li ng-show="isLogged"><a ng-click="logoutMe()" class="list-group-item">{{"LOGOUT" | translate}}</a></li>
-        <li><a class="list-group-item">{{"MY_RIDES" | translate}}</a></li>
-        <li><a href="/#/addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li>
-        <li><a onclick="javascript: return true" class="list-group-item">{{"STATS" | translate}}</a></li>
-        <li><a onclick="javascript: return true" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li>
-        <li><a onclick="javascript: return true" class="list-group-item">{{"BUSINESS_INDEX" | translate}}</a></li>
-        <li><a onclick="javascript: return true" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
+        <li><a ui-sref="app.rides" class="list-group-item">{{"MY_RIDES" | translate}}</a></li>
+        <li><a ui-sref="app.addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li>
+        <li><a href="#" class="list-group-item">{{"STATS" | translate}}</a></li>
+        <li><a href="#" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li>
+        <li><a href="#" class="list-group-item">{{"BUSINESS_INDEX" | translate}}</a></li>
+        <li><a href="#" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
     </ul>
 </div>
 
@@ -122,6 +123,5 @@
 
 
 
-    
 
 </script>

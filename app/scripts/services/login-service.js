@@ -171,9 +171,8 @@ angular.module('loginService', ['ui.router'])
       loginUser: function (httpPromise, success) {
         var that = this;
         httpPromise.success(function(user){
-          var user = that.loginHandler(user);
-          if(success)
-            success(user);
+          that.loginHandler(user);
+          success(user);
         });
       },
       logoutUser: function () {

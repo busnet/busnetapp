@@ -5,9 +5,4 @@
         </div>
     </div>
 </div>
-<div ng-show="isOwner">
-<ul>
-	<li ng-repeat="company in companies"><a ui-sref="app.ridechat({ rideid: ride.id, target: company.id})">{{company.name}}</a></li>
-</ul>
-</div>
-<chat ride="ride" target-user="target"/>
+<chat ride="ride"/>
