@@ -168,8 +168,13 @@ angular.module('loginService', ['ui.router'])
         wrappedService.userRole = user.userRole;
         return user;
       },
-      loginUser: function (httpPromise) {
-        httpPromise.success(this.loginHandler);
+      loginUser: function (httpPromise, success) {
+        var that = this;
+        httpPromise.success(function(user){
+          var user = that.loginHandler(user);
+          if(success)
+            success(user);
+        });
       },
       logoutUser: function () {
         /**

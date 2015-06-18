@@ -32,7 +32,11 @@ angular
     'busnetApp.company-details',
     'busnetApp.settings'
   ])
-  .config(function ($urlRouterProvider, $translateProvider) {
+  .config(function ($urlRouterProvider, $translateProvider, $httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    delete $httpProvider.defaults.headers.post['Content-Type'];
+    
     $urlRouterProvider.otherwise('/');
     $translateProvider.translations('he',{
         "WELCOME": "ברוכים הבאים",
@@ -106,7 +110,7 @@ angular
     });*/
     $translateProvider.preferredLanguage('he');
   })
-  .run(function($rootScope, $state, $stateParams, loginService, $cordovaPush){
+  .run(function($rootScope, $state, $stateParams, loginService, $cordovaPush, $modal){
 
     //google push service registration
     var googleConfig = {
@@ -132,8 +136,26 @@ angular
           break;
 
         case 'message':
+            var modalInstance = $modal.open({
+                animation: true,
+                templateUrl: 'views/notification-modal.html',
+                size: 'sm',
+                resolve: {
+                    notification: function () {
+                      return notification;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (response) {
+                if(response){
+                    console.log('Modal closed');
+                }
+            }, function () {
+                console.log('Modal dismissed');
+            });
           // this is the actual push notification. its format depends on the data model from the push server
-          alert('message = ' + notification.message + ' msgCount = ' + notification.msgcnt);
+          //alert('message = ' + notification.message + ' msgCount = ' + notification.msgcnt);
           break;
 
         case 'error':
