@@ -19,7 +19,12 @@ angular.module('busnetApp.directives', ['angularMoment'])
       	var socket = io(REST_URLS.SOCKET_SERVER);
         var user = loginService.user;
         scope.messages = scope.ride.requests && scope.ride.requests[scope.target] ? scope.ride.requests[scope.target].msgs : [];
-
+        socket.on('message2User', function(data){
+          console.log(data);
+        });
+        socket.on('message2Owner', function(data){
+          console.log(data);
+        });
         scope.sendMessage = function(message){
         	var messageType = _.size(scope.messages) > 0 ? 'reply' : 'send';
         	var msg = {
