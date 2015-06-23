@@ -62,14 +62,26 @@ angular.module('busnetApp.addride', [
 		$scope.return_date_opened = !$scope.return_date_opened;
   	}
 
-  	$('.typeahead').typeahead({
-  		ajax: {
-  			url: REST_URLS.CITIES,
-  			method: 'post',
-  			displayField: 'city',
-  			valueField: '_id'
-  		}
-  	});	
+  	var typeaheadAjax = {
+		url: REST_URLS.CITIES,
+		method: 'post',
+		displayField: 'city',
+		valueField: '_id'
+	};
+
+  	$('#vacantarea').typeahead({
+  		onSelect: function(item){
+  			$scope.ride.cityID = _.parseInt(item.value);
+  		},
+  		ajax: typeaheadAjax
+  	});
+
+  	$('#returnarea').typeahead({
+  		onSelect: function(item){
+  			$scope.ride.dstCityID = _.parseInt(item.value);
+  		},
+  		ajax: typeaheadAjax
+  	});
 
   	$scope.save = function(ride){
   		$scope.$broadcast('show-errors-check-validity');
