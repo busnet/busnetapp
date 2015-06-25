@@ -16,20 +16,20 @@
                 <div class="row">
                     <button ui-sref="app.rides">
                         <img class="img-responsive" src="images/icons/home-small.png">
-                        <div>{{'HOMEPAGE' | translate}}</div>
+                <li ng-show="isLogged"><a ng-click="logoutMe()" class="list-group-item">{{"LOGOUT" | translate}}</a></li>
                     </button><!-- remove extra space
-                    --><button ui-sref="app.openrides">
+                <li ng-show="isLogged"><a ui-sref="app.rides" class="list-group-item">{{"MY_RIDES" | translate}}</a></li>
                         <img class="img-responsive" src="images/icons/openreq-small.png">
                         <div>{{'OPEN_REQUESTS' | translate}}</div>
                     </button><!-- remove extra space
-                    --><button ui-sref="app.forum">
+                <li ng-show="isLogged"><a ui-sref="app.addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li>
                         <img class="img-responsive" src="images/icons/forum-small.png">
-                        <div>{{'FORUM' | translate}}</div>
+                <li ng-show="isLogged"><a href="#none" class="list-group-item">{{"STATS" | translate}}</a></li>
                     </button><!-- remove extra space
-                    --><button ui-sref="app.settings">
-                        <img class="img-responsive" src="images/icons/settings-small.png">
+                <li ng-show="isLogged" class="list-group-item"><a href="#none" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li>
+                <li ng-show="isLogged" class="list-group-item"><a href="#none" class="list-group-item">{{"BUSINESS_INDEX" | translate}}</a></li>
                         <div>{{'SETTINGS' | translate}}</div>
-                    </button>
+                <li ng-show="isLogged" class="list-group-item"><a href="#none" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
                 </div>
             </div>
         </div>
@@ -46,11 +46,6 @@
         <li><a href="#" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
     </ul>
 </div>
-
-
-
-
-
 <div id="betweenHeaderAndFooter">
 <div data-role="main" class="row" ng-show="headButtons">
   <div class="col-xs-6 text-left">
@@ -107,7 +102,6 @@
         bigScreenFix();
     });
     
-
 
     /*--------------------------Notifications functionality ---------------------------------------------------------*/
     var notificationsSpeed = 300;
