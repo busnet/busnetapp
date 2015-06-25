@@ -4,7 +4,7 @@
             <a href="#notification" id="notificationsIcon"><img src="images/notification.png" class="img-responsive"><span class="badge">2</span></a>
             <ul id="notificationsMenu" class="list-group">
                 <li><a href="#" class="list-group-item">New ride added near you home</a></li>
-                <li><a href="#" class="list-group-item">Yosi Perets wants to use your bus</a></li>
+                <li><a href="#" class="list-group-item">Yosi Perets wants to use your truck</a></li>
             </ul>
         </div>
         <div class="col-xs-6 col-sm-3 col-sm-push-6">
@@ -16,34 +16,33 @@
                 <div class="row">
                     <button ui-sref="app.rides">
                         <img class="img-responsive" src="images/icons/home-small.png">
-                <li ng-show="isLogged"><a ng-click="logoutMe()" class="list-group-item">{{"LOGOUT" | translate}}</a></li>
-                    </button><!-- remove extra space
-                <li ng-show="isLogged"><a ui-sref="app.rides" class="list-group-item">{{"MY_RIDES" | translate}}</a></li>
+                        <div>{{'HOMEPAGE' | translate}}</div>
+                    </button
+                    ><button ui-sref="app.openrides">
                         <img class="img-responsive" src="images/icons/openreq-small.png">
                         <div>{{'OPEN_REQUESTS' | translate}}</div>
-                    </button><!-- remove extra space
-                <li ng-show="isLogged"><a ui-sref="app.addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li>
+                    </button
+                    ><button ui-sref="app.forum">
                         <img class="img-responsive" src="images/icons/forum-small.png">
-                <li ng-show="isLogged"><a href="#none" class="list-group-item">{{"STATS" | translate}}</a></li>
-                    </button><!-- remove extra space
-                <li ng-show="isLogged" class="list-group-item"><a href="#none" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li>
-                <li ng-show="isLogged" class="list-group-item"><a href="#none" class="list-group-item">{{"BUSINESS_INDEX" | translate}}</a></li>
+                        <div>{{'FORUM' | translate}}</div>
+                    </button
+                    ><button ui-sref="app.settings">
+                        <img class="img-responsive" src="images/icons/settings-small.png">
                         <div>{{'SETTINGS' | translate}}</div>
-                <li ng-show="isLogged" class="list-group-item"><a href="#none" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
     <ul class="subMenu list-group">
-        <!--Improve semantic link to login page!!!!!!!!! can't be #navside-->
-        <li ng-hide="isLogged"><a ui-sref="app.login" class="list-group-item">{{"LOGIN" | translate}}</a></li>
-        <li ng-show="isLogged"><a ng-click="logoutMe()" class="list-group-item">{{"LOGOUT" | translate}}</a></li>
-        <li><a ui-sref="app.rides" class="list-group-item">{{"MY_RIDES" | translate}}</a></li>
-        <li><a ui-sref="app.addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li>
-        <li><a href="#" class="list-group-item">{{"STATS" | translate}}</a></li>
-        <li><a href="#" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li>
-        <li><a href="#" class="list-group-item">{{"BUSINESS_INDEX" | translate}}</a></li>
-        <li><a href="#" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
+        <li ng-hide="isLogged"><a ui-sref="app.login" class="list-group-item">{{"LOGIN" | translate}}</a></li
+        ><li ng-show="isLogged"><a ng-click="logoutMe()" class="list-group-item">{{"LOGOUT" | translate}}</a></li
+        ><li><a ui-sref="app.rides" class="list-group-item">{{"MY_RIDES" | translate}}</a></li
+        ><li><a ui-sref="app.addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li
+        ><li><a href="#" class="list-group-item">{{"STATS" | translate}}</a></li
+        ><li><a href="#" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li
+        ><li><a href="#" class="list-group-item">{{"BUSINESS_INDEX" | translate}}</a></li
+        ><li><a href="#" class="list-group-item">{{"SIDE_MAP" | translate}}</a></li>
     </ul>
 </div>
 <div id="betweenHeaderAndFooter">
