@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
-    id="com.busnet.busnetapp" 
-    version="0.0.56" 
+    id="com.trucknet.trucknetapp" 
+    version="0.0.1" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:cdv="http://cordova.apache.org/ns/1.0" 
     xmlns:gap="http://phonegap.com/ns/1.0"
@@ -9,9 +9,9 @@
     >
     <name>busnet</name>
     <description>
-        Busnet application for mobile devices
+        TruckNet transportation fusion system
     </description>
-    <author email="info@busnet.co.il" href="http://busnet.co.il">
+    <author email="info@trucknet.co.il" href="http://busnet.co.il">
        Busnet team
     </author>
     <content src="index.html" />
