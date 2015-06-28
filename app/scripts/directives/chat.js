@@ -17,14 +17,17 @@ angular.module('busnetApp.directives', ['angularMoment'])
       },
       link: function postLink(scope, element, attrs) {
       	var socket = io(REST_URLS.SOCKET_SERVER);
-        var user = loginService.user;
+        var user = loginService.user; 
         scope.messages = scope.ride.requests && scope.ride.requests[scope.target] ? scope.ride.requests[scope.target].msgs : [];
-        socket.on('message2User', function(data){
-          console.log(data);
-        });
-        socket.on('message2Owner', function(data){
-          console.log(data);
-        });
+        var addMessage = function(message){
+          if(!message){
+            return;
+          }
+          scope.$apply(function(){
+            scope.messages.push(message);
+          });
+        };
+        socket.on('message2Owner', addMessage);
         scope.sendMessage = function(message){
         	var messageType = _.size(scope.messages) > 0 ? 'reply' : 'send';
         	var msg = {
@@ -36,8 +39,9 @@ angular.module('busnetApp.directives', ['angularMoment'])
         		toUser: scope.target
         	};
 
-        	scope.messages.push(msg);
+        	//scope.messages.push(msg);
         	socket.emit(messageType, msg);
+          scope.message = '';
         }
       }
     };

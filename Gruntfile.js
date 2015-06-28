@@ -74,15 +74,15 @@ module.exports = function (grunt) {
       release: {
         constants: {
           REST_URLS: {
-            SOCKET_SERVER: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002',
-            VEHICLES: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/vehicles',
-            RIDE_TYPES: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/ridetypes',
-            AREAS: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/areas',
-            CITIES: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/cities',
-            RIDES: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/rides',
-            RIDE: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/ride',
-            LOGIN_SERVER: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/login',
-            USER: 'http://busnet-v104-env-rpphgjmzkz.elasticbeanstalk.com:3002/rest/user'
+            SOCKET_SERVER: 'http://app.busnet.co.il',
+            VEHICLES: 'http://app.busnet.co.il/rest/vehicles',
+            RIDE_TYPES: 'http://app.busnet.co.il/rest/ridetypes',
+            AREAS: 'http://app.busnet.co.il/rest/areas',
+            CITIES: 'http://app.busnet.co.il/rest/cities',
+            RIDES: 'http://app.busnet.co.il/rest/rides',
+            RIDE: 'http://app.busnet.co.il/rest/ride',
+            LOGIN_SERVER: 'http://app.busnet.co.il/rest/login',
+            USER: 'http://app.busnet.co.il/rest/user'
           }
         }
       }

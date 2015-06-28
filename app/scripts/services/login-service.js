@@ -7,10 +7,12 @@
  * Provider in the busnetApp.
  */
 angular.module('loginService', ['ui.router'])
-.provider('loginService', function () {
+.provider('loginService', function (REST_URLS) {
   var userToken = localStorage.getItem('userToken'),
       errorState = 'app.error',
       logoutState = 'app.login';
+
+  var socket = io(REST_URLS.SOCKET_SERVER);
 
   this.$get = function ($rootScope, $http, $q, $state) {
 
@@ -166,6 +168,8 @@ angular.module('loginService', ['ui.router'])
         wrappedService.isLogged = true;
         // update userRole
         wrappedService.userRole = user.userRole;
+
+        socket.emit('hello', {username: (user._id).toString()});
         return user;
       },
       loginUser: function (httpPromise, success) {
