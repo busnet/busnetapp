@@ -16,7 +16,7 @@ angular.module('busnetApp.directives', ['angularMoment'])
         target: "=target"
       },
       link: function postLink(scope, element, attrs) {
-      	var socket = io(REST_URLS.SOCKET_SERVER);
+        var socket = io(REST_URLS.SOCKET_SERVER);
         var user = loginService.user; 
         scope.messages = scope.ride.requests && scope.ride.requests[scope.target] ? scope.ride.requests[scope.target].msgs : [];
         var addMessage = function(message){
@@ -25,11 +25,12 @@ angular.module('busnetApp.directives', ['angularMoment'])
           }
           scope.$apply(function(){
             scope.messages.push(message);
+            scrollToBottom();
           });
         };
         socket.on('message2Owner', addMessage);
         scope.sendMessage = function(message){
-        	var messageType = _.size(scope.messages) > 0 ? 'reply' : 'send';
+        	var messageType = 'reply'; // _.size(scope.messages) > 0 ? 'reply' : 'send';
         	var msg = {
         		message: message, 
         		rideID: scope.ride._id,
@@ -43,6 +44,15 @@ angular.module('busnetApp.directives', ['angularMoment'])
         	socket.emit(messageType, msg);
           scope.message = '';
         }
+        var scrollToBottom = function(){
+          //$.mobile.silentScroll(100);
+          /*$(element).find('#chat-main li:last').animate({ 
+             scrollTop: $(document).height()-$(window).height()}, 
+             1400, 
+             "slow"
+          );*/
+        }
+        
       }
     };
   });

@@ -111,7 +111,7 @@ angular
 
     //google push service registration
     var googleConfig = {
-        "senderID":"217839684458"
+        "senderID":"163438544120"
     };
     document.addEventListener("deviceready", function(){
         $cordovaPush.register(googleConfig).then(function(result) {

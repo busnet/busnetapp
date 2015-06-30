@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
-    id="com.trucknet.trucknetapp" 
-    version="0.0.2" 
+    id="com.busnet.busnetapp" 
+    version="0.0.59" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:cdv="http://cordova.apache.org/ns/1.0" 
     xmlns:gap="http://phonegap.com/ns/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
-    <name>TruckNet</name>
+    <name>BusNet</name>
     <description>
-        TruckNet transportation fusion system
+        Busnet application for mobile devices
     </description>
-    <author email="info@trucknet.co.il" href="http://busnet.co.il">
-       Trucknet team
+    <author email="info@busnet.co.il" href="http://busnet.co.il">
+       Busnet team
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -29,7 +29,6 @@
         <splash src="assets/android/drawable-land-ldpi/screen.png" density="land-ldpi"/>
         <splash src="assets/android/drawable-land-mdpi/screen.png" density="land-mdpi"/>
         <splash src="assets/android/drawable-land-xhdpi/screen.png" density="land-xhdpi"/>
-
         <splash src="assets/android/drawable-port-hdpi/screen.png" density="port-hdpi"/>
         <splash src="assets/android/drawable-port-ldpi/screen.png" density="port-ldpi"/>
         <splash src="assets/android/drawable-port-xhdpi/screen.png" density="port-xhdpi"/-->
