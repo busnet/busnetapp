@@ -9,11 +9,34 @@
  */
 
 angular.module('busnetApp')
-  	.controller('BodyCtrl', function ($scope, $state, translations, loginService) {
+  	.controller('BodyCtrl', function ($scope, $state, $http, translations, loginService, REST_URLS) {
+
+  	    var socket = io(REST_URLS.SOCKET_SERVER);
   	    $scope.isLogged = loginService.isLogged ? true : false;
   	    $scope.logoutMe = function () {
 	      loginService.logoutUser();
 	    };
+
+	    $scope.notifications = [];
+	    $scope.notifications.count = null;
+	    var notificationsCount = function(){
+	    	$scope.notifications.count = $scope.notifications.length;
+	    }
+	    var getNotifications = function(){
+	    	$http.get(REST_URLS.NOTIFICATIONS).
+	    	success(function(res){
+	    		if(res.data){
+	    			$scope.notifications = res.data;
+	    			notificationsCount();
+	    		}
+	    	});
+	    };
+
+	    socket.on('notify', function (data){
+	    	getNotifications();
+	    });
+	    getNotifications();
+
   	    $scope.$on('$stateChangeSuccess',
 		function (event, toState, toParams, fromState, fromParams) {
 		    $scope.isLogged = loginService.isLogged ? true : false;
@@ -52,5 +75,6 @@ angular.module('busnetApp')
 		    $scope.header = header;
 		    $scope.headButtons = headButtons;
 		    $scope.footer = footer;
+
 		});
   	});

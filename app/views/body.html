@@ -1,10 +1,9 @@
 <div id="header" data-role="header" ng-show="header">
     <div class="row">
         <div class="col-xs-3 col-sm-3">  
-            <a href="#notification" id="notificationsIcon"><img src="images/notification.png" class="img-responsive"><span class="badge">2</span></a>
-            <ul id="notificationsMenu" class="list-group">
-                <li><a href="#" class="list-group-item">New ride added near you home</a></li>
-                <li><a href="#" class="list-group-item">Yosi Perets wants to use your truck</a></li>
+            <a href="#notification" id="notificationsIcon"><img src="images/notification.png" class="img-responsive"><span class="badge">{{notifications.count}}</span></a>
+            <ul id="notificationsMenu" class="list-group" dir="rtl">
+                <li ng-repeat="notification in notifications"><a ui-sref="app.ridechat({rideid: notification.rideID, target: notification.from})" class="list-group-item">{{notification.senderName}}: {{notification.msg}}</a></li>
             </ul>
         </div>
         <div class="col-xs-6 col-sm-3 col-sm-push-6">
@@ -18,15 +17,15 @@
                         <img class="img-responsive" src="images/icons/home-small.png">
                         <div>{{'HOMEPAGE' | translate}}</div>
                     </button
-                    ><button ui-sref="app.openrides">
+                    ><button>
                         <img class="img-responsive" src="images/icons/openreq-small.png">
                         <div>{{'OPEN_REQUESTS' | translate}}</div>
                     </button
-                    ><button ui-sref="app.forum">
+                    ><button>
                         <img class="img-responsive" src="images/icons/forum-small.png">
                         <div>{{'FORUM' | translate}}</div>
                     </button
-                    ><button ui-sref="app.settings">
+                    ><button>
                         <img class="img-responsive" src="images/icons/settings-small.png">
                         <div>{{'SETTINGS' | translate}}</div>
                     </button>
