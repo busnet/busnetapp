@@ -41,6 +41,7 @@ angular
         "SERVER_ERROR": "שגיאת שרת",
         "LOGIN":"כניסה למערכת",
         "LOGOUT": "התנתק",
+        "REGISTER": "הרשמה למערכת",
         "USERNAME": "שם משתמש",
         "PASSWORD": "סיסמא",
         "LOGIN_ERROR": "קוד המשתמש ו/או הסיסמא אינם נכונים",

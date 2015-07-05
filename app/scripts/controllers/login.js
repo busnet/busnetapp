@@ -56,7 +56,13 @@ angular.module('busnetApp.login', ['busnetApp.grandfather', 'loginService'])
         $state.go('app.rides');
       });
     };
+    
     $scope.logoutMe = function () {
       loginService.logoutUser();
+    };
+
+    $scope.register = function(){
+      var ref = window.open(REST_URLS.REGISTER, '_blank', 'location=yes');
+      return false;
     };
   });

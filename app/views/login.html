@@ -9,7 +9,8 @@
 		<div class="form-group">
 		  <input type="password" class="form-control" ng-model="login.password" name="password" placeholder="{{'PASSWORD' | translate}}">
 		</div>
-		<button type="submit" ng-disabled="login.working" class="btn btn-success">{{ 'LOGIN' | translate }}<i class="fa" ng-class="login.working ? 'fa-cog fa-spin' : 'fa-sign-in'"></i></button>
+		<button type="button" ng-click="register()" class="btn btn-success">{{'REGISTER' | translate}}</button>
+		<button type="submit" ng-disabled="true" class="btn btn-success">{{ 'LOGIN' | translate }}<i class="fa" ng-class="login.working ? 'fa-cog fa-spin' : 'fa-sign-in'"></i></button>
 	</form>
 	<!-- Spinner -->
 	<div ng-show="login.working">
