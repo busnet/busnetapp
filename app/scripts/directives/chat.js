@@ -17,7 +17,8 @@ angular.module('busnetApp.directives', ['angularMoment'])
       },
       link: function postLink(scope, element, attrs) {
         var socket = io(REST_URLS.SOCKET_SERVER);
-        var user = loginService.user; 
+        var user = loginService.user;
+        scope.isOwner = scope.ride.username == user._id;
         scope.messages = scope.ride.requests && scope.ride.requests[scope.target] ? scope.ride.requests[scope.target].msgs : [];
         var addMessage = function(message){
           if(!message){
@@ -30,7 +31,7 @@ angular.module('busnetApp.directives', ['angularMoment'])
         };
         socket.on('message2Owner', addMessage);
         scope.sendMessage = function(message){
-        	var messageType = 'reply'; // _.size(scope.messages) > 0 ? 'reply' : 'send';
+        	var messageType =  scope.isOwner ? 'reply' : 'send';
         	var msg = {
         		message: message, 
         		rideID: scope.ride._id,

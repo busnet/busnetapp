@@ -3,7 +3,7 @@
         <div class="col-xs-3 col-sm-3">  
             <a href="#notification" id="notificationsIcon"><img src="images/notification.png" class="img-responsive"><span class="badge">{{notifications.count}}</span></a>
             <ul id="notificationsMenu" class="list-group" dir="rtl">
-                <li ng-repeat="notification in notifications"><a ui-sref="app.ridechat({rideid: notification.rideID, target: notification.from})" class="list-group-item">{{notification.senderName}}: {{notification.msg}}</a></li>
+                <li class="list-group-item" ng-class="{'list-group-item-info': !notification.read}" ng-repeat="notification in notifications"><a ui-sref="app.ridechat({rideid: notification.rideID, target: notification.from})">{{notification.formatedMsg}}</a></li>
             </ul>
         </div>
         <div class="col-xs-6 col-sm-3 col-sm-push-6">

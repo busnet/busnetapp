@@ -61,6 +61,10 @@ angular
         "RIDE_BOARD" : "לוח נסיעות",
         "ADD_RIDE" : "הוספת נסיעה",
         "RIDE_TYPE": "סוג נסיעה",
+        "RIDE_PRICE_APPROVED": "אישר את מחיר הנסיעה",
+        "RIDE_PRICE_DECLINED": "סרב למחיר הנסיעה",
+        "RIDE_PRICE_OFFER": "הציע מחיר לנסיעה",
+        "RIDE_CONTRACT_APPROVED": "אישר את הסכם הנסיעה",
         "VACATE_DATE": "תאריך פינוי",
         "VACATE_HOUR": "שעת פינוי",
         "VEHICLE_COUNT": "מס׳ רכבים",
@@ -80,16 +84,16 @@ angular
         "CONTINUE": "המשך",
         "CHAT": "שיחה",
         "CHAT_WITH": "שיחה עם",
+        "IN_CHAT": "בצ׳אט",
+        "SENT_MESSAGE": "שלח הודעה",
         "RIDE_ADDED_SUCCESSFULLY": "הנסיעה הוספה בהצלחה",
-        /*-----------------------------------------------subMenu -------------------------------*/
-        // "LOGIN":"כניסה למערכת", allready exists as a page title
+        /*--subMenu--*/
         "MY_RIDES": "הנסיעות שלי",
-        // "ADD_RIDE" : "הוספת נסיעה", allready exists as a button in !!!
         "STATS": "דוחות",
         "COMPANY_DETAILS": "פרטי החברה",
         "BUSINESS_INDEX": "אינדקס עסקים",
         "SIDE_MAP": "מפת צד",
-        /*----------------------------------------------company details-----------------------------------*/
+        /*--company details--*/
         "CONTACT_GUY_NAME": "איש קשר",
         "FAX": "פקס",
         "ADRESS": "כתובת",

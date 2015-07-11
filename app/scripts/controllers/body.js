@@ -26,7 +26,33 @@ angular.module('busnetApp')
 	    	$http.get(REST_URLS.NOTIFICATIONS).
 	    	success(function(res){
 	    		if(res.data){
-	    			$scope.notifications = res.data;
+	    			var notifications = [];
+	    			_.forEach(res.data, function(item){
+	    				switch(item.type){
+	    					case 'Chat':
+	    					case 'RequestChat':
+	    						var template = _.template('<%=senderName%> '+ translations.sentMessage + ' ' + translations.inChat + ': <%=msg%>');
+	    						break;
+	    					case 'RideApproved':
+	    						var template = _.template('<%=senderName%> '+ translations.ridePriceApproved);
+	    						break;
+	    					case 'PriceDeclined':
+	    						var template = _.template('<%=senderName%> '+ translations.ridePriceDeclined);
+	    						break;
+	    					case 'updateRidePrice':
+	    						var template = _.template('<%=senderName%> '+ translations.ridePriceOffer);
+	    						break;
+	    					case 'ownerApprovedAgreement':
+	    						var template = _.template('<%=senderName%> '+ translations.rideContractApproved);
+	    						break;
+	    					default:
+	    						var template = _.template('<%=msg%>');
+	    						break;
+	    				}
+	    				item.formatedMsg = template(item);
+	    				notifications.push(item);
+	    			})
+	    			$scope.notifications = notifications;
 	    			notificationsCount();
 	    		}
 	    	});
