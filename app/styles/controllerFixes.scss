@@ -23,8 +23,12 @@
     top: 100px;
 }
 
-
 .typeahead.dropdown-menu {
   top: auto !important;
   bottom: 36px  !important;
+}
+
+.panel-heading {
+    padding: 0px;
+    margin: 5px;
 }

@@ -44,6 +44,7 @@ angular
         "USERNAME": "שם משתמש",
         "PASSWORD": "סיסמא",
         "LOGIN_ERROR": "קוד המשתמש ו/או הסיסמא אינם נכונים",
+        "LOADING": "טוען...",
         "NUM": "מס׳",
         "NUMBER": "מספר",
         "DATE": "תאריך",

@@ -17,7 +17,8 @@ angular.module('busnetApp.rides', [
 	'ui.bootstrap',
 	'ui.grid',
 	'ui.grid.expandable',
-	'busnetApp.RideChat'])
+	'busnetApp.RideChat',
+  'infinite-scroll'])
 	.config(function ($stateProvider, REST_URLS) {
 	  $stateProvider
 	    .state('app.rides', {
@@ -26,9 +27,9 @@ angular.module('busnetApp.rides', [
 	      controller: 'RidesCtrl',
 	      accessLevel: accessLevels.user,
 	      resolve: {
-	      	rides: function($http){
+	      	/*rides: function($http){
 	      		return getRides(REST_URLS, $http);
-	      	},
+	      	},*/
 	      	areas: function($http){
 	      		return $http.post(REST_URLS.AREAS).then(function(res){
 	      			return _.map(res.data, function(item){
@@ -39,7 +40,7 @@ angular.module('busnetApp.rides', [
 	      	vehicles: function($http){
 	      		return $http.post(REST_URLS.VEHICLES).then(function(res){
 	      			return _.map(res.data, function(item){
-	      				return {id: item.name, label: item.name};
+	      				return {id: item.name, label: item.name, _id: item._id};
 	      			});
 	      		});
 	      	},
@@ -55,57 +56,49 @@ angular.module('busnetApp.rides', [
 	})
   .controller('RidesCtrl', function (
   	$scope, 
-  	$http, 
+  	$http,
+    $state,
   	rides,
   	ridetypes,
   	areas, 
   	vehicles, 
   	translations,
   	REST_URLS) {
-  	var filterRides = function(){
-  		var filter = {};
-  		if($scope.ride.date){
-  			filter.aviliableDateObj = $scope.ride.date;
-  		}
-  		filter.selectedVehicles = $scope.selectedVehicles;
-  		filter.selectedAreas = $scope.selectedAreas;
-  		getRides(REST_URLS, $http, filter).then(function(res){
-  			$scope.gridOptions.data = res.data;
-  		});
-  	}
-    var rideColumns = [];
-    if(window.innerWidth < 768) {
-        rideColumns = [
-  	  		{name: "id", field:"_id", displayName:translations.num, cellTooltip: true, visible: false},      
-  			{name: "aviliableDate", field:"aviliableDate", displayName:translations.date, cellTooltip: true},
-  			{name: "vacate", field:"area", displayName:translations.vacate, cellTooltip: true},
-  			{name: "back", field:"destination", displayName:translations.back, cellTooltip: true}
-  		];
+
+    var ridesList = new rides();
+    ridesList.setMapHandler(function(item){
+      var typeName = item.type == "1" ? ridetypes[0].label : ridetypes[1].label;
+      var vehicle = _.find(vehicles, {label: item.vehicleType});
+      var typeImg = "/images/vehicles/vehicle-" + vehicle._id +".png";
+      var typeClass = item.type == "1" ? 'rideType1' : 'rideType2';
+      var formatedItem = {
+        typeName: typeName,
+        typeImg: typeImg,
+        typeClass: typeClass
+      }
+      _.assign(formatedItem, item);
+      return formatedItem;  
+    });
+    var filterRides = function(){
+      var filter = {};
+      if($scope.ride.date){
+        filter.aviliableDateObj = $scope.ride.date;
+      }
+      filter.selectedVehicles = $scope.selectedVehicles;
+      filter.selectedAreas = $scope.selectedAreas;
+      ridesList.setFilter(filter);
     }
-    else {
-        rideColumns = [
-  	  		{name: "id", field:"_id", displayName:translations.num, cellTooltip: true, visible: true},      
-  			{name: "aviliableDate", field:"aviliableDate", displayName:translations.date, cellTooltip: true},
-  			{name: "vacate", field:"area", displayName:translations.vacate, cellTooltip: true},
-  			{name: "back", field:"destination", displayName:translations.back, cellTooltip: true}
-  		];
-    }
+    $scope.ride = {};
+    $scope.rides = ridesList;
   	$scope.ridetypes = ridetypes;
-  	$scope.ride = {};
-  	$scope.gridOptions = {
-  		data: rides.data,
-  		columnDefs: rideColumns,
-  		rowTemplate: "views/ride-row.html",
-        expandableRowTemplate: "views/ride-details.html",
-  		expandableRowHeight: 145,
-  		enableRowSelection: false,
-  		expandableRowScope: {ridetypes: ridetypes},
-        enableExpandableRowHeader: false
-  	};
-  	
   	$scope.areas = areas;
   	$scope.selectedAreas = [];
-  	var areaTranslation = _.clone(translations);
+  	
+    $scope.gotoRide = function(rideId){
+      $state.go('app.ridedetails', {rideId: rideId});
+    }
+
+    var areaTranslation = _.clone(translations);
   	areaTranslation.buttonDefaultText = areaTranslation.buttonDefaultText + ' ' + areaTranslation.areas
   	$scope.areaTranslation = areaTranslation;
   	
@@ -124,11 +117,11 @@ angular.module('busnetApp.rides', [
 
   	$scope.date_opened = false;
   	$scope.date_toggle = function($event) {
-		$event.preventDefault();
-		$event.stopPropagation();
-		$scope.date_opened = !$scope.date_opened;
-	};
-	$scope.date_change = function(){
+		  $event.preventDefault();
+		  $event.stopPropagation();
+		  $scope.date_opened = !$scope.date_opened;
+	 };
+	 $scope.date_change = function(){
   		filterRides();
-  	};
+   };
 });

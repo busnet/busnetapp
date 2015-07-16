@@ -225,15 +225,15 @@ chat > div {
 
 
 /*------------------------- ridesGrid -----------------------------------------------*/
-.rideType2 * {
+.hand {
+    cursor: pointer;
+}
+
+.rideType2 {
     background-color: $busNet-green !important;
     color: $busNet-lightFontColor !important;
 }
 
-.ui-grid-header * {
-    background-color: $busNet-blue !important;
-    color: $busNet-lightFontColor !important;
-}
 
 
 

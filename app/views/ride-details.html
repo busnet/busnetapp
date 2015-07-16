@@ -1,21 +1,32 @@
-<div class="gridRowDetails">
-	<div>
-		<span>{{'NUM' | translate}}:</span> {{row.entity._id}}
+<div class="panel panel-default">
+	<div dir="rtl" class="panel-heading {{ride.typeClass}}">
+	{{ride.typeName}} - {{ride.vehicleNumber}} {{ride.vehicleType}} ({{ride._id}})
 	</div>
-    <div>
-		<span>{{'COMPANY_NAME' | translate}}:</span> {{row.entity.companyName}}
+	<div class="panel-body">
+		<div class="row">
+		  <div class="col-xs-3 center-block"><div class="center-block">{{ride.destination}} {{ride.returnDate}}</div></div>
+		  <div class="col-xs-1"><div class="center-block"><span class="glyphicon glyphicon-arrow-left red"></span></div></div>
+		  <div class="col-xs-3"><div class="center-block">{{ride.area}} {{ride.aviliableDate}}</div></div>
+		  <div class="col-xs-2"><img width="90" ng-src="{{ride.typeImg}}" alt="{{ride.vehicleType}}"></div>
+		</div>
+		<div class="row">
+		  <div class="col-xs-7 pull-right">
+		  	<div class="pull-right"><span>{{'NUM' | translate}}:</span> {{ride._id}}</div>
+		  	<br/>
+		  	<div class="pull-right"><span>{{'COMPANY_NAME' | translate}}:</span> {{ride.companyName}}</div>
+		  	<br/>
+		  	<div class="pull-right"><span>{{'RIDE_TYPE' | translate}}:</span> {{ride.typeName}}</div>
+		  	<br/>
+		  	<div class="pull-right"><span>{{'VACATE_HOUR' | translate}}:</span> {{ride.aviliableHour}}</div>
+		  	<br/>
+		  	<div class="pull-right"><span>{{'VEHICLE_TYPE' | translate}}:</span> {{ride.vehicleType}}</div>	
+		  </div>
+		  <div class="col-xs-2 pull-right">
+		  	{{ride.extraDetails}}
+		  </div>
+		</div>
 	</div>
-	<div>
-		<span>{{'RIDE_TYPE' | translate}}:</span> {{row.entity.type == '1' ? ridetypes[0].label : ridetypes[1].label}}
-	</div>
-	<div>
-		<span>{{'VACATE_HOUR' | translate}}:</span> {{row.entity.aviliableHour}}
-	</div>
-	<div>
-		<span>{{'VEHICLE_TYPE' | translate}}:</span> {{row.entity.vehicleType}}
-	</div>
-
-    <div>
-		<button class="btn btn-default" type="button" ui-sref="app.ridechat({ rideid: row.entity._id})"><span ng-if="!row.entity.requests">{{'BEGIN' | translate}}</span><span ng-if="row.entity.requests">{{'CONTINUE' | translate}}</span> {{'CHAT' | translate}}</button>
+	<div class="panel-footer">
+		<button class="btn btn-default" type="button" ui-sref="app.ridechat({ rideid: ride._id})"><span ng-if="!ride.requests">{{'BEGIN' | translate}}</span><span ng-if="ride.requests">{{'CONTINUE' | translate}}</span> {{'CHAT' | translate}}</button>
 	</div>
 </div>
