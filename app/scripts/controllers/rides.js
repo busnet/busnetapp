@@ -69,12 +69,12 @@ angular.module('busnetApp.rides', [
     ridesList.setMapHandler(function(item){
       var typeName = item.type == "1" ? ridetypes[0].label : ridetypes[1].label;
       var vehicle = _.find(vehicles, {label: item.vehicleType});
-      var typeImg = "/images/vehicles/vehicle-" + vehicle._id +".png";
-      var typeClass = item.type == "1" ? 'rideType1' : 'rideType2';
+      var typeImg = "images/vehicles/vehicle-" + vehicle._id +".png";
+      var isSubContractor = item.type == "2" ? true : false;
       var formatedItem = {
         typeName: typeName,
         typeImg: typeImg,
-        typeClass: typeClass
+        isSubContractor: isSubContractor
       }
       _.assign(formatedItem, item);
       return formatedItem;  

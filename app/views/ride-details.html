@@ -1,28 +1,31 @@
 <div class="panel panel-default">
-	<div dir="rtl" class="panel-heading {{ride.typeClass}}">
-	{{ride.typeName}} - {{ride.vehicleNumber}} {{ride.vehicleType}} ({{ride._id}})
+	<div dir="rtl" class="panel-heading" ng-class="{'rideType1': !ride.isSubContractor,'rideType2': ride.isSubContractor}">
+	{{ride.typeName}} - {{ride.vehicleNumber}} {{ride.vehicleType}} ({{ride.aviliableHour}})
 	</div>
 	<div class="panel-body">
 		<div class="row">
 		  <div class="col-xs-3 center-block"><div class="center-block">{{ride.destination}} {{ride.returnDate}}</div></div>
-		  <div class="col-xs-1"><div class="center-block"><span class="glyphicon glyphicon-arrow-left red"></span></div></div>
+		  <div class="col-xs-1"><div class="center-block"><span class="glyphicon glyphicon-arrow-left" ng-class="{'blue-arrow': !ride.isSubContractor, 'green-arrow': ride.isSubContractor}"></span></div></div>
 		  <div class="col-xs-3"><div class="center-block">{{ride.area}} {{ride.aviliableDate}}</div></div>
-		  <div class="col-xs-2"><img width="90" ng-src="{{ride.typeImg}}" alt="{{ride.vehicleType}}"></div>
+		  <div class="col-xs-4"><img width="90" ng-src="{{ride.typeImg}}" alt="{{ride.vehicleType}}"></div>
 		</div>
 		<div class="row">
-		  <div class="col-xs-7 pull-right">
+		  <div class="col-xs-6 pull-right">
 		  	<div class="pull-right"><span>{{'NUM' | translate}}:</span> {{ride._id}}</div>
 		  	<br/>
 		  	<div class="pull-right"><span>{{'COMPANY_NAME' | translate}}:</span> {{ride.companyName}}</div>
 		  	<br/>
 		  	<div class="pull-right"><span>{{'RIDE_TYPE' | translate}}:</span> {{ride.typeName}}</div>
-		  	<br/>
+		  </div>
+		  <div class="col-xs-6 pull-right">
 		  	<div class="pull-right"><span>{{'VACATE_HOUR' | translate}}:</span> {{ride.aviliableHour}}</div>
 		  	<br/>
 		  	<div class="pull-right"><span>{{'VEHICLE_TYPE' | translate}}:</span> {{ride.vehicleType}}</div>	
 		  </div>
-		  <div class="col-xs-2 pull-right">
-		  	{{ride.extraDetails}}
+		 </div>
+		 <div class="row">
+		  <div class="col-xs-12">
+		  	<div class="bg-info">{{ride.extraDetails}}</div>
 		  </div>
 		</div>
 	</div>

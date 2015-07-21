@@ -30,6 +30,7 @@ angular.module('busnetApp.directives', ['angularMoment'])
           });
         };
         socket.on('message2Owner', addMessage);
+        socket.on('message2User', addMessage);
         scope.sendMessage = function(message){
         	var messageType =  scope.isOwner ? 'reply' : 'send';
         	var msg = {

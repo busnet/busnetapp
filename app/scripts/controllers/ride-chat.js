@@ -21,12 +21,39 @@ angular.module('busnetApp.RideChat', [])
 	        		return $http.get(REST_URLS.RIDE + '/'+ rideId).then(function(res){
 		      			return res.data;
 		      		});
-	        	}
+	        	},
+	        	ridetypes: function($http){
+		      		return $http.post(REST_URLS.RIDE_TYPES).then(function(res){
+		      			return _.map(res.data, function(item){
+		      				return {id: item._id, label: item.name};
+		      			});
+		      		});
+		      	},
+		      	vehicles: function($http){
+		      		return $http.post(REST_URLS.VEHICLES).then(function(res){
+		      			return _.map(res.data, function(item){
+		      				return {id: item.name, label: item.name, _id: item._id};
+		      			});
+		      		});
+		      	},
 	        }
 	      });
 	  })
-	.controller('RideChatCtrl', function ($scope, ride, loginService, $stateParams) {
-		$scope.ride = ride;
+	.controller('RideChatCtrl', function ($scope, ride, ridetypes, vehicles, loginService, $stateParams) {
+		var mapRide = function(item){
+			var typeName = item.type == "1" ? ridetypes[0].label : ridetypes[1].label;
+			var vehicle = _.find(vehicles, {label: item.vehicleType});
+			var typeImg = "images/vehicles/vehicle-" + vehicle._id +".png";
+			var isSubContractor = item.type == "2" ? true : false;
+			var formatedItem = {
+				typeName: typeName,
+				typeImg: typeImg,
+				isSubContractor: isSubContractor
+			}
+			_.assign(formatedItem, item);
+			return formatedItem;
+		}
+		$scope.ride = mapRide(ride);
 		var companies = [];
 		_.forEach(ride.requests, function(val, key){
 			companies.push({name: val.from, id: key});

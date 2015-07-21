@@ -11,7 +11,7 @@
         </div>
             <div class="col-xs-3 col-sm-6 col-sm-pull-3" id="menuDiv">
                 <a href="#"><img src="images/sidemenu.png" class="img-responsive" id="menuIcon"></a>
-                <div class="footer" role="navigation">
+                <!--div class="footer" role="navigation">
                 <div class="row">
                     <button ui-sref="app.rides">
                         <img class="img-responsive" src="images/icons/home-small.png">
@@ -30,13 +30,13 @@
                         <div>{{'SETTINGS' | translate}}</div>
                     </button>
                 </div>
-            </div>
+            </div-->
         </div>
     </div>
     <ul class="subMenu list-group">
         <li ng-hide="isLogged"><a ui-sref="app.login" class="list-group-item">{{"LOGIN" | translate}}</a></li
         ><li ng-show="isLogged"><a ng-click="logoutMe()" class="list-group-item">{{"LOGOUT" | translate}}</a></li
-        ><li><a ui-sref="app.rides" class="list-group-item">{{"MY_RIDES" | translate}}</a></li
+        ><li><a ui-sref="app.rides" class="list-group-item">{{"RIDE_BOARD" | translate}}</a></li
         ><li><a ui-sref="app.addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li
         ><li><a href="#" class="list-group-item">{{"STATS" | translate}}</a></li
         ><li><a href="#" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li

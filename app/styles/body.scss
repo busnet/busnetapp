@@ -109,20 +109,9 @@ textarea {
         left: 29px;
     }
 
-
-
-
-
-
-
-
 #addride {
     display: none; /*shown in menu*/
 }
-
-
-
-
 
 /*
 .footer {
@@ -231,6 +220,11 @@ chat > div {
 
 .rideType2 {
     background-color: $busNet-green !important;
+    color: $busNet-lightFontColor !important;
+}
+
+.rideType1 {
+    background-color: $busNet-blue !important;
     color: $busNet-lightFontColor !important;
 }
 
@@ -352,23 +346,10 @@ chat > div {
     }
 
 
-
-
-    
-
-
-
-
-    
-
-
-
-
-
     
 /*------------------------chat -----------------------------------*/
 #sendDiv {
-    bottom: $headerFooter-height;
+    bottom: height;
 }
 
 
@@ -383,8 +364,4 @@ chat > div {
         overflow-y: scroll;
         width: 100%;
     }
-
-
-
-
 }

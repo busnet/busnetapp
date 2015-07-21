@@ -60,16 +60,16 @@ module.exports = function (grunt) {
       phonegap: {
         constants: {
           REST_URLS: {
-            SOCKET_SERVER: 'http://192.168.1.3:3002',
-            VEHICLES: 'http://192.168.1.3:3002/rest/vehicles',
-            RIDE_TYPES: 'http://192.168.1.3:3002/rest/ridetypes',
-            AREAS: 'http://192.168.1.3:3002/rest/areas',
-            CITIES: 'http://192.168.1.3:3002/rest/cities',
-            RIDES: 'http://192.168.1.3:3002/rest/rides',
-            RIDE: 'http://192.168.1.3:3002/rest/ride',
-            LOGIN_SERVER: 'http://192.168.1.3:3002/rest/login',
-            USER: 'http://192.168.1.3:3002/rest/user',
-            NOTIFICATIONS: 'http://192.168.1.3:3002/rest/notifications'
+            SOCKET_SERVER: 'http://app.busnet.co.il',
+            VEHICLES: 'http://app.busnet.co.il/rest/vehicles',
+            RIDE_TYPES: 'http://app.busnet.co.il/rest/ridetypes',
+            AREAS: 'http://app.busnet.co.il/rest/areas',
+            CITIES: 'http://app.busnet.co.il/rest/cities',
+            RIDES: 'http://app.busnet.co.il/rest/rides',
+            RIDE: 'http://app.busnet.co.il/rest/ride',
+            LOGIN_SERVER: 'http://app.busnet.co.il/rest/login',
+            USER: 'http://app.busnet.co.il/rest/user',
+            NOTIFICATIONS: 'http://app.busnet.co.il/rest/notifications'
           }
         }
       },
@@ -354,7 +354,8 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
           '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= yeoman.dist %>/styles/fonts/*'
+          '<%= yeoman.dist %>/styles/fonts/*',
+          '!<%= yeoman.dist %>/images/vehicles/*.*'
         ]
       }
     },
