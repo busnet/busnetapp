@@ -15,7 +15,6 @@ angular.module('loginService', ['ui.router'])
   var socket = io(REST_URLS.SOCKET_SERVER);
 
   this.$get = function ($rootScope, $http, $q, $state) {
-
     /**
      * Low-level, private functions.
      */

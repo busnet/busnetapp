@@ -1,8 +1,8 @@
-2015-04-15 10:00:42.842 ngTest[4994:775282] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Data/Application/70E6741A-7A1D-4C8D-B6C1-5C03F384B34A/Library/Cookies/Cookies.binarycookies
-2015-04-15 10:00:43.224 ngTest[4994:775282] Apache Cordova native platform version 3.8.0 is starting.
-2015-04-15 10:00:43.225 ngTest[4994:775282] Multi-tasking -> Device: YES, App: YES
-2015-04-15 10:00:43.252 ngTest[4994:775282] Unlimited access to network resources
-2015-04-15 10:00:43.281 ngTest[4994:775282] 
+2015-07-23 22:00:15.357 BusNet[46649:6724737] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/11AF5076-1776-409D-B9B1-E86B2B99350E/Library/Cookies/Cookies.binarycookies
+2015-07-23 22:00:15.763 BusNet[46649:6724737] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 22:00:15.764 BusNet[46649:6724737] Multi-tasking -> Device: YES, App: YES
+2015-07-23 22:00:15.786 BusNet[46649:6724737] Unlimited access to network resources
+2015-07-23 22:00:15.800 BusNet[46649:6724737] 
 
 Started backup to iCloud! Please be careful.
 Your application might be rejected by Apple if you store too much data.
@@ -10,13 +10,17 @@ For more information please read "iOS Data Storage Guidelines" at:
 https://developer.apple.com/icloud/documentation/data-storage/
 To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
 
-2015-04-15 10:00:44.209 ngTest[4994:775282] Resetting plugins due to page load.
-2015-04-15 10:00:44.413 ngTest[4994:775282] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Bundle/Application/97828321-3CEB-4108-B5AC-6FA34F593281/ngTest.app/www/index.html
-2015-04-15 10:11:05.983 ngTest[5252:780346] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Data/Application/C85F5ED0-3C05-4920-89D6-08299CDA855F/Library/Cookies/Cookies.binarycookies
-2015-04-15 10:11:06.101 ngTest[5252:780346] Apache Cordova native platform version 3.8.0 is starting.
-2015-04-15 10:11:06.101 ngTest[5252:780346] Multi-tasking -> Device: YES, App: YES
-2015-04-15 10:11:06.102 ngTest[5252:780346] Unlimited access to network resources
-2015-04-15 10:11:06.105 ngTest[5252:780346] 
+2015-07-23 22:00:16.624 BusNet[46649:6724737] active
+2015-07-23 22:00:16.633 BusNet[46649:6724737] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 22:00:17.307 BusNet[46649:6724737] Resetting plugins due to page load.
+2015-07-23 22:00:18.374 BusNet[46649:6724737] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/EA08026C-54E4-4415-A135-E4A9A3AD4ACD/BusNet.app/www/index.html
+2015-07-23 22:02:48.797 BusNet[46649:6724737] active
+2015-07-23 22:02:48.806 BusNet[46649:6724737] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 22:05:48.704 BusNet[47030:6773044] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/0FE7D13C-DCF1-49F5-86D3-A5C4BC269FA7/Library/Cookies/Cookies.binarycookies
+2015-07-23 22:05:48.833 BusNet[47030:6773044] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 22:05:48.833 BusNet[47030:6773044] Multi-tasking -> Device: YES, App: YES
+2015-07-23 22:05:48.835 BusNet[47030:6773044] Unlimited access to network resources
+2015-07-23 22:05:48.840 BusNet[47030:6773044] 
 
 Started backup to iCloud! Please be careful.
 Your application might be rejected by Apple if you store too much data.
@@ -24,13 +28,15 @@ For more information please read "iOS Data Storage Guidelines" at:
 https://developer.apple.com/icloud/documentation/data-storage/
 To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
 
-2015-04-15 10:11:06.308 ngTest[5252:780346] Resetting plugins due to page load.
-2015-04-15 10:11:06.736 ngTest[5252:780346] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Bundle/Application/3E75B080-2C2B-4A1E-9150-BFB544C0024E/ngTest.app/www/index.html#/
-2015-04-15 10:18:09.978 busnetApp[5507:784719] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Data/Application/BDA6B823-B359-4FF8-B440-5FD44FA5F4FB/Library/Cookies/Cookies.binarycookies
-2015-04-15 10:18:10.088 busnetApp[5507:784719] Apache Cordova native platform version 3.8.0 is starting.
-2015-04-15 10:18:10.088 busnetApp[5507:784719] Multi-tasking -> Device: YES, App: YES
-2015-04-15 10:18:10.091 busnetApp[5507:784719] Unlimited access to network resources
-2015-04-15 10:18:10.094 busnetApp[5507:784719] 
+2015-07-23 22:05:48.997 BusNet[47030:6773044] active
+2015-07-23 22:05:48.999 BusNet[47030:6773044] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 22:05:49.077 BusNet[47030:6773044] Resetting plugins due to page load.
+2015-07-23 22:05:53.462 BusNet[47030:6773044] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/C79073AE-5BA9-4028-B186-0BCF158C6C86/BusNet.app/www/index.html
+2015-07-23 22:26:38.690 BusNet[47778:6860650] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/5C172C4E-7AA8-4D1D-A3C0-1423F74304A8/Library/Cookies/Cookies.binarycookies
+2015-07-23 22:26:38.818 BusNet[47778:6860650] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 22:26:38.819 BusNet[47778:6860650] Multi-tasking -> Device: YES, App: YES
+2015-07-23 22:26:38.820 BusNet[47778:6860650] Unlimited access to network resources
+2015-07-23 22:26:38.822 BusNet[47778:6860650] 
 
 Started backup to iCloud! Please be careful.
 Your application might be rejected by Apple if you store too much data.
@@ -38,13 +44,15 @@ For more information please read "iOS Data Storage Guidelines" at:
 https://developer.apple.com/icloud/documentation/data-storage/
 To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
 
-2015-04-15 10:18:10.301 busnetApp[5507:784719] Resetting plugins due to page load.
-2015-04-15 10:18:10.399 busnetApp[5507:784719] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Bundle/Application/64D52A27-6A3D-43C0-8A24-68D5A4812D66/busnetApp.app/www/index.html#/
-2015-04-15 10:18:57.373 busnetApp[5648:785520] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Data/Application/5C696354-E388-4AB1-B99E-ED53AB572FAE/Library/Cookies/Cookies.binarycookies
-2015-04-15 10:18:57.429 busnetApp[5648:785520] Apache Cordova native platform version 3.8.0 is starting.
-2015-04-15 10:18:57.430 busnetApp[5648:785520] Multi-tasking -> Device: YES, App: YES
-2015-04-15 10:18:57.431 busnetApp[5648:785520] Unlimited access to network resources
-2015-04-15 10:18:57.434 busnetApp[5648:785520] 
+2015-07-23 22:26:38.956 BusNet[47778:6860650] active
+2015-07-23 22:26:38.958 BusNet[47778:6860650] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 22:26:39.060 BusNet[47778:6860650] Resetting plugins due to page load.
+2015-07-23 22:26:39.351 BusNet[47778:6860650] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/EAEDAE46-64EC-444C-9A3E-D3559F397931/BusNet.app/www/index.html
+2015-07-23 22:28:59.210 BusNet[48007:6875696] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/1CCF520A-6F1B-42D2-BFB7-0AB40A0A8162/Library/Cookies/Cookies.binarycookies
+2015-07-23 22:28:59.371 BusNet[48007:6875696] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 22:28:59.372 BusNet[48007:6875696] Multi-tasking -> Device: YES, App: YES
+2015-07-23 22:28:59.374 BusNet[48007:6875696] Unlimited access to network resources
+2015-07-23 22:28:59.377 BusNet[48007:6875696] 
 
 Started backup to iCloud! Please be careful.
 Your application might be rejected by Apple if you store too much data.
@@ -52,13 +60,15 @@ For more information please read "iOS Data Storage Guidelines" at:
 https://developer.apple.com/icloud/documentation/data-storage/
 To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
 
-2015-04-15 10:18:57.605 busnetApp[5648:785520] Resetting plugins due to page load.
-2015-04-15 10:18:57.776 busnetApp[5648:785520] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Bundle/Application/1D3C7D66-F1C1-49E9-9AB7-3E8FBC389386/busnetApp.app/www/index.html#/
-2015-04-15 11:58:14.387 busnetApp[8295:826604] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Data/Application/D69B6AF0-2315-40C6-89BC-3C9D844A2ED9/Library/Cookies/Cookies.binarycookies
-2015-04-15 11:58:14.505 busnetApp[8295:826604] Apache Cordova native platform version 3.8.0 is starting.
-2015-04-15 11:58:14.505 busnetApp[8295:826604] Multi-tasking -> Device: YES, App: YES
-2015-04-15 11:58:14.506 busnetApp[8295:826604] Unlimited access to network resources
-2015-04-15 11:58:14.509 busnetApp[8295:826604] 
+2015-07-23 22:28:59.579 BusNet[48007:6875696] active
+2015-07-23 22:28:59.580 BusNet[48007:6875696] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 22:28:59.691 BusNet[48007:6875696] Resetting plugins due to page load.
+2015-07-23 22:29:00.169 BusNet[48007:6875696] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/2D1D61FF-BA46-47C1-9509-29CF4CA03036/BusNet.app/www/index.html
+2015-07-23 22:31:30.569 BusNet[48348:6882633] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/4EFC02A3-0991-4A6D-98D4-F12793970D9D/Library/Cookies/Cookies.binarycookies
+2015-07-23 22:31:30.654 BusNet[48348:6882633] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 22:31:30.654 BusNet[48348:6882633] Multi-tasking -> Device: YES, App: YES
+2015-07-23 22:31:30.656 BusNet[48348:6882633] Unlimited access to network resources
+2015-07-23 22:31:30.659 BusNet[48348:6882633] 
 
 Started backup to iCloud! Please be careful.
 Your application might be rejected by Apple if you store too much data.
@@ -66,6 +76,266 @@ For more information please read "iOS Data Storage Guidelines" at:
 https://developer.apple.com/icloud/documentation/data-storage/
 To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
 
-2015-04-15 11:58:14.723 busnetApp[8295:826604] Resetting plugins due to page load.
-2015-04-15 11:58:14.923 busnetApp[8295:826604] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/686839AD-7260-42C4-9E2A-F32FC1DCEAF3/data/Containers/Bundle/Application/88E3A58F-2F22-400F-A12E-3FE16DB2C4C1/busnetApp.app/www/index.html#/
-2015-04-15 11:58:34.666 ngTest[5252:826899] Terminating since there is no system app.
+2015-07-23 22:31:30.798 BusNet[48348:6882633] active
+2015-07-23 22:31:30.800 BusNet[48348:6882633] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 22:31:30.881 BusNet[48348:6882633] Resetting plugins due to page load.
+2015-07-23 22:31:31.160 BusNet[48348:6882633] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/BC28EE82-D705-4E9A-A25E-31A3955920CD/BusNet.app/www/index.html
+2015-07-23 22:34:53.272 BusNet[48776:6901965] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/10A6F499-18D9-4C16-8F31-723A134D8A2E/Library/Cookies/Cookies.binarycookies
+2015-07-23 22:34:53.376 BusNet[48776:6901965] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 22:34:53.377 BusNet[48776:6901965] Multi-tasking -> Device: YES, App: YES
+2015-07-23 22:34:53.378 BusNet[48776:6901965] Unlimited access to network resources
+2015-07-23 22:34:53.381 BusNet[48776:6901965] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-23 22:34:53.538 BusNet[48776:6901965] active
+2015-07-23 22:34:53.539 BusNet[48776:6901965] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 22:34:53.618 BusNet[48776:6901965] Resetting plugins due to page load.
+2015-07-23 22:34:53.968 BusNet[48776:6901965] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/F92385CA-9A47-44F7-AD19-9166C91CADA8/BusNet.app/www/index.html
+2015-07-23 22:39:23.800 BusNet[49218:6932650] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/D360AB51-CA53-40D0-9163-8DD205E062FD/Library/Cookies/Cookies.binarycookies
+2015-07-23 22:39:24.020 BusNet[49218:6932650] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 22:39:24.021 BusNet[49218:6932650] Multi-tasking -> Device: YES, App: YES
+2015-07-23 22:39:24.035 BusNet[49218:6932650] Unlimited access to network resources
+2015-07-23 22:39:24.045 BusNet[49218:6932650] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-23 22:39:24.418 BusNet[49218:6932650] active
+2015-07-23 22:39:24.421 BusNet[49218:6932650] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 22:39:24.633 BusNet[49218:6932650] Resetting plugins due to page load.
+2015-07-23 22:39:25.166 BusNet[49218:6932650] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/9AB46F04-202D-4878-AAC2-31DC8748392D/BusNet.app/www/index.html
+2015-07-23 22:43:44.415 BusNet[49686:6955699] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/2A33111F-2762-498C-9B2A-2369195C6F0E/Library/Cookies/Cookies.binarycookies
+2015-07-23 22:43:44.536 BusNet[49686:6955699] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 22:43:44.536 BusNet[49686:6955699] Multi-tasking -> Device: YES, App: YES
+2015-07-23 22:43:44.538 BusNet[49686:6955699] Unlimited access to network resources
+2015-07-23 22:43:44.541 BusNet[49686:6955699] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-23 22:43:44.702 BusNet[49686:6955699] active
+2015-07-23 22:43:44.711 BusNet[49686:6955699] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 22:43:44.861 BusNet[49686:6955699] Resetting plugins due to page load.
+2015-07-23 22:43:45.162 BusNet[49686:6955699] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/96E38CDB-C414-4E32-8466-B9D55FA7C3FD/BusNet.app/www/index.html
+2015-07-23 22:47:29.381 BusNet[50055:6974510] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/38AE96CE-54FA-4E65-81C0-9FE3CCB0263D/Library/Cookies/Cookies.binarycookies
+2015-07-23 22:47:29.465 BusNet[50055:6974510] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 22:47:29.466 BusNet[50055:6974510] Multi-tasking -> Device: YES, App: YES
+2015-07-23 22:47:29.468 BusNet[50055:6974510] Unlimited access to network resources
+2015-07-23 22:47:29.472 BusNet[50055:6974510] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-23 22:47:29.662 BusNet[50055:6974510] active
+2015-07-23 22:47:29.663 BusNet[50055:6974510] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 22:47:29.744 BusNet[50055:6974510] Resetting plugins due to page load.
+2015-07-23 22:47:30.237 BusNet[50055:6974510] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/10B6277C-2692-4B3C-B24F-2547A2BEBF72/BusNet.app/www/index.html
+2015-07-23 22:49:53.422 BusNet[50389:6986010] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/456A0AC7-CFFF-4493-B5F7-2E99786CD5DF/Library/Cookies/Cookies.binarycookies
+2015-07-23 22:49:53.495 BusNet[50389:6986010] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 22:49:53.496 BusNet[50389:6986010] Multi-tasking -> Device: YES, App: YES
+2015-07-23 22:49:53.497 BusNet[50389:6986010] Unlimited access to network resources
+2015-07-23 22:49:53.500 BusNet[50389:6986010] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-23 22:49:53.641 BusNet[50389:6986010] active
+2015-07-23 22:49:53.643 BusNet[50389:6986010] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 22:49:53.717 BusNet[50389:6986010] Resetting plugins due to page load.
+2015-07-23 22:50:24.595 BusNet[50389:6986047] void SendDelegateMessage(NSInvocation *): delegate (webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:) failed to return after waiting 10 seconds. main run loop mode: kCFRunLoopDefaultMode
+2015-07-23 22:50:24.807 BusNet[50389:6986010] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/61025DC2-6361-444F-B3F5-1AED6A1A6044/BusNet.app/www/index.html
+2015-07-23 23:13:34.621 BusNet[51095:7028939] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/E4AC3F5A-82D4-4A65-A7F2-9AFE7694AC08/Library/Cookies/Cookies.binarycookies
+2015-07-23 23:13:34.689 BusNet[51095:7028939] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 23:13:34.690 BusNet[51095:7028939] Multi-tasking -> Device: YES, App: YES
+2015-07-23 23:13:34.691 BusNet[51095:7028939] Unlimited access to network resources
+2015-07-23 23:13:34.694 BusNet[51095:7028939] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-23 23:13:34.857 BusNet[51095:7028939] active
+2015-07-23 23:13:34.861 BusNet[51095:7028939] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 23:13:34.930 BusNet[51095:7028939] Resetting plugins due to page load.
+2015-07-23 23:14:06.798 BusNet[51095:7029117] void SendDelegateMessage(NSInvocation *): delegate (webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:) failed to return after waiting 10 seconds. main run loop mode: kCFRunLoopDefaultMode
+2015-07-23 23:14:07.004 BusNet[51095:7028939] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/47F9FAB3-7CDA-44BE-9EA7-65DB5404FB88/BusNet.app/www/index.html
+2015-07-23 23:16:55.247 BusNet[51469:7052468] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/1A031EF6-28E8-4577-B30C-E7405D9C7F1D/Library/Cookies/Cookies.binarycookies
+2015-07-23 23:16:55.321 BusNet[51469:7052468] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 23:16:55.321 BusNet[51469:7052468] Multi-tasking -> Device: YES, App: YES
+2015-07-23 23:16:55.323 BusNet[51469:7052468] Unlimited access to network resources
+2015-07-23 23:16:55.326 BusNet[51469:7052468] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-23 23:16:55.478 BusNet[51469:7052468] active
+2015-07-23 23:16:55.479 BusNet[51469:7052468] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 23:16:55.541 BusNet[51469:7052468] Resetting plugins due to page load.
+2015-07-23 23:16:56.069 BusNet[51469:7052468] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/8A0BC9FD-3DE0-4952-BAB4-58E684D730F4/BusNet.app/www/index.html
+2015-07-23 23:19:44.565 BusNet[51829:7065367] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/2FB16333-328E-4B29-A7D3-B54BFDDEED35/Library/Cookies/Cookies.binarycookies
+2015-07-23 23:19:44.646 BusNet[51829:7065367] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-23 23:19:44.646 BusNet[51829:7065367] Multi-tasking -> Device: YES, App: YES
+2015-07-23 23:19:44.648 BusNet[51829:7065367] Unlimited access to network resources
+2015-07-23 23:19:44.650 BusNet[51829:7065367] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-23 23:19:44.791 BusNet[51829:7065367] active
+2015-07-23 23:19:44.792 BusNet[51829:7065367] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-23 23:19:44.878 BusNet[51829:7065367] Resetting plugins due to page load.
+2015-07-23 23:19:49.922 BusNet[51829:7065367] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/6C9A08B2-44F6-4662-984D-6E337D99E98F/BusNet.app/www/index.html
+2015-07-24 20:44:43.327 BusNet[65666:8043252] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/6C908E84-46F4-4BD8-AA2A-E841F1E1DE9A/Library/Cookies/Cookies.binarycookies
+2015-07-24 20:44:43.806 BusNet[65666:8043252] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-24 20:44:43.807 BusNet[65666:8043252] Multi-tasking -> Device: YES, App: YES
+2015-07-24 20:44:43.833 BusNet[65666:8043252] Unlimited access to network resources
+2015-07-24 20:44:43.853 BusNet[65666:8043252] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-24 20:44:44.863 BusNet[65666:8043252] active
+2015-07-24 20:44:44.877 BusNet[65666:8043252] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-24 20:44:45.480 BusNet[65666:8043252] Resetting plugins due to page load.
+2015-07-24 20:44:49.952 BusNet[65666:8043252] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/DEE09105-C980-49B6-AEAE-26A82013C3F1/BusNet.app/www/index.html
+2015-07-24 20:47:33.219 BusNet[66025:8068198] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/F356CBEC-2A1E-4E69-8F13-E19D895245F8/Library/Cookies/Cookies.binarycookies
+2015-07-24 20:47:33.302 BusNet[66025:8068198] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-24 20:47:33.302 BusNet[66025:8068198] Multi-tasking -> Device: YES, App: YES
+2015-07-24 20:47:33.306 BusNet[66025:8068198] Unlimited access to network resources
+2015-07-24 20:47:33.310 BusNet[66025:8068198] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-24 20:47:33.482 BusNet[66025:8068198] active
+2015-07-24 20:47:33.484 BusNet[66025:8068198] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-24 20:47:33.613 BusNet[66025:8068198] Resetting plugins due to page load.
+2015-07-24 20:47:41.141 BusNet[66025:8068198] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/9D0144C5-D331-4DEB-B929-1955C0D7F662/BusNet.app/www/index.html#/
+2015-07-24 20:51:47.827 BusNet[66409:8122318] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/DCBB36D1-C942-4A3D-8DFD-160C36F73ECD/Library/Cookies/Cookies.binarycookies
+2015-07-24 20:51:47.975 BusNet[66409:8122318] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-24 20:51:47.976 BusNet[66409:8122318] Multi-tasking -> Device: YES, App: YES
+2015-07-24 20:51:47.980 BusNet[66409:8122318] Unlimited access to network resources
+2015-07-24 20:51:47.987 BusNet[66409:8122318] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-24 20:51:48.200 BusNet[66409:8122318] active
+2015-07-24 20:51:48.203 BusNet[66409:8122318] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-24 20:51:48.560 BusNet[66409:8122318] Resetting plugins due to page load.
+2015-07-24 21:00:16.653 BusNet[66950:8253291] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/366C648E-4B30-4CDF-A2F1-AC0E148B1E9B/Library/Cookies/Cookies.binarycookies
+2015-07-24 21:00:16.783 BusNet[66950:8253291] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-24 21:00:16.784 BusNet[66950:8253291] Multi-tasking -> Device: YES, App: YES
+2015-07-24 21:00:16.788 BusNet[66950:8253291] Unlimited access to network resources
+2015-07-24 21:00:16.795 BusNet[66950:8253291] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-24 21:00:16.993 BusNet[66950:8253291] active
+2015-07-24 21:00:16.997 BusNet[66950:8253291] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-24 21:00:17.129 BusNet[66950:8253291] Resetting plugins due to page load.
+2015-07-24 21:00:23.824 BusNet[66950:8253291] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/DA583627-D4FF-472E-A688-CCCA99284FC8/BusNet.app/www/index.html#/
+2015-07-24 21:59:19.386 BusNet[68530:9113933] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/89C96788-838A-4F53-8F6B-745ABB40BC5C/Library/Cookies/Cookies.binarycookies
+2015-07-24 21:59:19.687 BusNet[68530:9113933] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-24 21:59:19.688 BusNet[68530:9113933] Multi-tasking -> Device: YES, App: YES
+2015-07-24 21:59:19.713 BusNet[68530:9113933] Unlimited access to network resources
+2015-07-24 21:59:19.725 BusNet[68530:9113933] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-24 21:59:20.145 BusNet[68530:9113933] active
+2015-07-24 21:59:20.149 BusNet[68530:9113933] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-24 21:59:20.660 BusNet[68530:9113933] Resetting plugins due to page load.
+2015-07-24 21:59:22.181 BusNet[68530:9113933] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/8A7ADCB0-3BCF-4BB1-B9F9-E91B3A96529C/BusNet.app/www/index.html#/
+2015-07-24 21:59:22.213 BusNet[68530:9113933] PushPlugin.register: Push notification type is set to none
+2015-07-24 21:59:22.214 BusNet[68530:9113933] registerForRemoteNotificationTypes: is not supported in iOS 8.0 and later.
+2015-07-24 22:07:13.250 BusNet[69007:9267700] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/F2508D7F-362B-4EF9-8AC2-BF5F22482300/Library/Cookies/Cookies.binarycookies
+2015-07-24 22:07:13.336 BusNet[69007:9267700] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-24 22:07:13.336 BusNet[69007:9267700] Multi-tasking -> Device: YES, App: YES
+2015-07-24 22:07:13.338 BusNet[69007:9267700] Unlimited access to network resources
+2015-07-24 22:07:13.342 BusNet[69007:9267700] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-24 22:07:13.482 BusNet[69007:9267700] active
+2015-07-24 22:07:13.485 BusNet[69007:9267700] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-24 22:07:13.571 BusNet[69007:9267700] Resetting plugins due to page load.
+2015-07-24 22:07:14.106 BusNet[69007:9267700] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/DE166428-C9C6-4A36-A498-77E0E26DF788/BusNet.app/www/index.html#/
+2015-07-24 22:12:08.816 BusNet[69405:9368571] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/89495362-7AD9-4C3A-912C-2BBC58371AC8/Library/Cookies/Cookies.binarycookies
+2015-07-24 22:12:08.907 BusNet[69405:9368571] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-24 22:12:08.908 BusNet[69405:9368571] Multi-tasking -> Device: YES, App: YES
+2015-07-24 22:12:08.909 BusNet[69405:9368571] Unlimited access to network resources
+2015-07-24 22:12:08.912 BusNet[69405:9368571] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-24 22:12:09.052 BusNet[69405:9368571] active
+2015-07-24 22:12:09.055 BusNet[69405:9368571] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-24 22:12:09.123 BusNet[69405:9368571] Resetting plugins due to page load.
+2015-07-24 22:12:09.563 BusNet[69405:9368571] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/E4C5DAEB-6D7D-4EE0-B48D-B6D9FD783557/BusNet.app/www/index.html#/
+2015-07-25 22:46:54.781 BusNet[76695:9601798] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Data/Application/5F535F67-4ABD-48EF-BED8-4A9D6AC77194/Library/Cookies/Cookies.binarycookies
+2015-07-25 22:46:54.903 BusNet[76695:9601798] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-25 22:46:54.904 BusNet[76695:9601798] Multi-tasking -> Device: YES, App: YES
+2015-07-25 22:46:54.906 BusNet[76695:9601798] Unlimited access to network resources
+2015-07-25 22:46:54.909 BusNet[76695:9601798] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-07-25 22:46:55.051 BusNet[76695:9601798] active
+2015-07-25 22:46:55.053 BusNet[76695:9601798] Attempting to badge the application icon but haven't received permission from the user to badge the application
+2015-07-25 22:46:55.288 BusNet[76695:9601798] Resetting plugins due to page load.
+2015-07-25 22:46:55.763 BusNet[76695:9601798] Finished load of: file:///Users/yehudatuvia/Library/Developer/CoreSimulator/Devices/9127AB70-3A7A-478A-97D6-757BC8E0EF38/data/Containers/Bundle/Application/8B71B0E3-D12B-4606-9F87-C6CD0C5EDF21/BusNet.app/www/index.html#/

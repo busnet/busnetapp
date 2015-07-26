@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * @ngdoc overview
  * @name busnetApp
@@ -112,62 +111,105 @@ angular
     });*/
     $translateProvider.preferredLanguage('he');
   })
-  .run(function($rootScope, $state, $stateParams, loginService, $cordovaPush, $modal){
+  .run(function(
+    $rootScope, 
+    $state, 
+    $stateParams, 
+    loginService, 
+    $cordovaPush, 
+    $modal,
+    GOOGLE){
 
     //google push service registration
-    var googleConfig = {
-        "senderID":"163438544120"
-    };
+    
     document.addEventListener("deviceready", function(){
-        $cordovaPush.register(googleConfig).then(function(result) {
-            console.log('push register success: ' + result);
-        }, function(err) {
-            console.log('push register error: ' + err);
-        })
+        if (device.platform.toLowerCase() == 'android'){
+            var googleConfig = {
+                "senderID": GOOGLE.SENDERID
+            };
+            $cordovaPush.register(googleConfig).then(function(result) {
+                console.log('push register success: ' + result);
+            }, function(err) {
+                console.log('push register error: ' + err);
+            })
+        }else{
+            var iosConfig = {
+                "badge": true,
+                "sound": true,
+                "alert": true,
+            };
+            $cordovaPush.register(iosConfig).then(function(deviceToken) {
+                console.log("deviceToken: " + deviceToken)
+                loginService.user.apple = {
+                    deviceToken: deviceToken
+                }
+            }, function(err) {
+                console.log("Registration error: " + err);
+            });
+        }
     });
 
     $rootScope.$on('$cordovaPush:notificationReceived', function(event, notification) {
-      switch(notification.event) {
-        case 'registered':
-          if (notification.regid.length > 0 ) {
-            loginService.user.google = {
-                regid: notification.regid
-            }
-            console.log('registration ID = ' + notification.regid);
-          }
-          break;
+      if (device.platform.toLowerCase() == 'android'){
+        switch(notification.event) {
+            case 'registered':
+              if (notification.regid.length > 0 ) {
+                loginService.user.google = {
+                    regid: notification.regid
+                }
+                console.log('registration ID = ' + notification.regid);
+              }
+              break;
 
-        case 'message':
-            var modalInstance = $modal.open({
-                animation: true,
-                templateUrl: 'views/notification-modal.html',
-                controller: 'NotificationModalCtrl',
-                size: 'sm',
-                resolve: {
-                    notification: function () {
-                      return notification;
+            case 'message':
+                var modalInstance = $modal.open({
+                    animation: true,
+                    templateUrl: 'views/notification-modal.html',
+                    controller: 'NotificationModalCtrl',
+                    size: 'sm',
+                    resolve: {
+                        notification: function () {
+                          return notification;
+                        }
                     }
-                }
+                });
+
+                modalInstance.result.then(function (response) {
+                    if(response){
+                        //do nothing
+                    }
+                }, function () {
+                    console.log('Modal dismissed at: ' + new Date());
+                });
+              // this is the actual push notification. its format depends on the data model from the push server
+              //alert('message = ' + notification.message + ' msgCount = ' + notification.msgcnt);
+              break;
+
+            case 'error':
+              console.log('GCM error = ' + notification.msg);
+              break;
+
+            default:
+              console.log('An unknown GCM event has occurred');
+              break;
+        }
+      }else{
+        if (notification.alert) {
+            navigator.notification.alert(notification.alert);
+        }
+
+        if (notification.sound) {
+            var snd = new Media(event.sound);
+            snd.play();
+        }
+
+        if (notification.badge) {
+            $cordovaPush.setBadgeNumber(notification.badge).then(function(result) {
+              // Success!
+            }, function(err) {
+              // An error occurred. Show a message to the user
             });
-
-            modalInstance.result.then(function (response) {
-                if(response){
-                    //do nothing
-                }
-            }, function () {
-                console.log('Modal dismissed at: ' + new Date());
-            });
-          // this is the actual push notification. its format depends on the data model from the push server
-          //alert('message = ' + notification.message + ' msgCount = ' + notification.msgcnt);
-          break;
-
-        case 'error':
-          console.log('GCM error = ' + notification.msg);
-          break;
-
-        default:
-          console.log('An unknown GCM event has occurred');
-          break;
+        }
       }
     });
 

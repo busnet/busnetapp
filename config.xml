@@ -17,6 +17,7 @@
     <content src="index.html" />
     <access origin="*" />
     <preference name="DisallowOverscroll" value="true"/>
+    <gap:platform name="ios" />
     <platform name="android">
         <preference name="Fullscreen" value="true" />
         
