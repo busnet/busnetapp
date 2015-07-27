@@ -49,7 +49,6 @@
     <script src="bower_components/angular-moment/angular-moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/config.js"></script>
         <script src="scripts/app.js"></script>
@@ -77,6 +76,7 @@
         <script src="<%- socket_server%>/socket.io/socket.io.js"></script>
         <script src="languages/angular-locale_he-il.js"></script>
 <script>
+
 /**
  * Directly from fnakstad
  * https://github.com/fnakstad/angular-client-side-auth/blob/master/client/js/routingConfig.js

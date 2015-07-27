@@ -171,6 +171,34 @@ angular
       }
     });
 
+    window.addEventListener('native.showkeyboard', keyboardShowHandler);
+    function keyboardShowHandler(e) {
+        // get viewport height
+        var activeElement = $(document.activeElement);
+        var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        // get the maximum allowed height without the need to scroll the page up/down
+        var scrollLimit = viewportHeight - (document.activeElement.offsetHeight + activeElement.offset().top);
+
+        // if the keyboard height is bigger than the maximum allowed height
+        if (e.keyboardHeight > scrollLimit) {
+            // calculate the Y distance
+            var scrollYDistance = document.activeElement.offsetHeight + (e.keyboardHeight - scrollLimit);
+            // animate using move.min.js (CSS3 animations)
+            move(document.body).to(0, -scrollYDistance).duration('.2s').ease('in-out').end();
+        }
+    }
+
+    window.addEventListener('native.hidekeyboard', keyboardHideHandler);
+
+    // native.hidekeyboard callback
+    function keyboardHideHandler() {
+        // remove focus from activeElement 
+        // which is naturally an input since the nativekeyboard is hiding
+        document.activeElement.blur();
+        // animate using move.min.js (CSS3 animations)
+        move(document.body).to(0, 0).duration('.2s').ease('in-out').end();
+    }
+
     var resolveDone = function () { $rootScope.doingResolve = false; };
     $rootScope.doingResolve = false;
 

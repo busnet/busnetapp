@@ -3,13 +3,14 @@
 body {
     text-align: center;
     overflow-x: hidden;
-    overflow-y: scroll;
-    position: relative;
+    /*overflow-y: scroll*/;
+    /*position: relative*/;
 }
+/*
 .container-fluid {
     margin: 0 5px !important;
     padding: 0 5px !important;
-}
+}*/
 .img-responsive {
     margin: 0 auto;
 }
@@ -232,11 +233,11 @@ chat > div {
 
 
 
-/*----------------------- add ride ----------------------------*/
+/*----------------------- add ride ----------------------------
 #addRideSubmit {
     margin-bottom: 100px;
 }
-
+*/
 
 
 
