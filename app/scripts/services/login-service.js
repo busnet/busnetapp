@@ -158,7 +158,7 @@ angular.module('loginService', ['ui.router'])
           user = user.data;
           user.userRole = userRoles.user;
          }
-         user.token = user.hash;
+         user.token = user._id;
         // setup token
         setToken(user.token);
 

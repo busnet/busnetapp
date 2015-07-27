@@ -1,9 +1,8 @@
 <div class="chat-ride-details row">
-    <div class="col-xs-12">
-        <div class="panel panel-primary">
-	        <div class="info panel-heading"><!--{{ride._id}} | --><div>{{ride.area}}<br>{{ride.aviliableDate}}</div> <div><span class="glyphicon glyphicon-arrow-left"></span><br>&nbsp;</div> <div>{{ride.destination}}<br>{{ride.returnDate}}</div></div>
-        </div>
-    </div>
+  <div class="col-xs-4 center-block"><div class="center-block">{{ride.destination}} {{ride.returnDate}}</div></div>
+  <div class="col-xs-1"><div class="center-block"><span class="glyphicon glyphicon-arrow-left" ng-class="{'red-arrow': !ride.isSubContractor, 'green-arrow': ride.isSubContractor}"></span></div></div>
+  <div class="col-xs-4"><div class="center-block">{{ride.area}} {{ride.aviliableDate}}</div></div>
+  <div class="col-xs-3"><img width="90" ng-src="{{ride.typeImg}}" alt="{{ride.vehicleType}}"></div>
 </div>
 <div ng-show="isOwner">
 	<span>{{'CHAT_WITH' | translate}}</span>

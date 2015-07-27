@@ -11,7 +11,7 @@ angular.module('busnetApp')
   .controller('AddRideModalCtrl', function ($scope, $state, ride) {
     $scope.ride = ride;
     $scope.close = function(){
-    	$close(true);
+    	$scope.$close(true);
     	$state.go('app.rides');
     }
   });

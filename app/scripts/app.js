@@ -45,6 +45,7 @@ angular
         "USERNAME": "שם משתמש",
         "PASSWORD": "סיסמא",
         "LOGIN_ERROR": "קוד המשתמש ו/או הסיסמא אינם נכונים",
+        "LOADING": "טוען...",
         "NUM": "מס׳",
         "NUMBER": "מספר",
         "DATE": "תאריך",
@@ -62,6 +63,10 @@ angular
         "RIDE_BOARD" : "לוח נסיעות",
         "ADD_RIDE" : "הוספת נסיעה",
         "RIDE_TYPE": "סוג נסיעה",
+        "RIDE_PRICE_APPROVED": "אישר את מחיר הנסיעה",
+        "RIDE_PRICE_DECLINED": "סרב למחיר הנסיעה",
+        "RIDE_PRICE_OFFER": "הציע מחיר לנסיעה",
+        "RIDE_CONTRACT_APPROVED": "אישר את הסכם הנסיעה",
         "VACATE_DATE": "תאריך פינוי",
         "VACATE_HOUR": "שעת פינוי",
         "VEHICLE_COUNT": "מס׳ רכבים",
@@ -81,16 +86,16 @@ angular
         "CONTINUE": "המשך",
         "CHAT": "שיחה",
         "CHAT_WITH": "שיחה עם",
+        "IN_CHAT": "בצ׳אט",
+        "SENT_MESSAGE": "שלח הודעה",
         "RIDE_ADDED_SUCCESSFULLY": "הנסיעה הוספה בהצלחה",
-        /*-----------------------------------------------subMenu -------------------------------*/
-        // "LOGIN":"כניסה למערכת", allready exists as a page title
+        /*--subMenu--*/
         "MY_RIDES": "הנסיעות שלי",
-        // "ADD_RIDE" : "הוספת נסיעה", allready exists as a button in !!!
         "STATS": "דוחות",
         "COMPANY_DETAILS": "פרטי החברה",
         "BUSINESS_INDEX": "אינדקס עסקים",
         "SIDE_MAP": "מפת צד",
-        /*----------------------------------------------company details-----------------------------------*/
+        /*--company details--*/
         "CONTACT_GUY_NAME": "איש קשר",
         "FAX": "פקס",
         "ADRESS": "כתובת",
@@ -112,7 +117,7 @@ angular
 
     //google push service registration
     var googleConfig = {
-        "senderID":"217839684458"
+        "senderID":"163438544120"
     };
     document.addEventListener("deviceready", function(){
         $cordovaPush.register(googleConfig).then(function(result) {
@@ -166,6 +171,34 @@ angular
           break;
       }
     });
+
+    window.addEventListener('native.showkeyboard', keyboardShowHandler);
+    function keyboardShowHandler(e) {
+        // get viewport height
+        var activeElement = $(document.activeElement);
+        var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        // get the maximum allowed height without the need to scroll the page up/down
+        var scrollLimit = viewportHeight - (document.activeElement.offsetHeight + activeElement.offset().top);
+
+        // if the keyboard height is bigger than the maximum allowed height
+        if (e.keyboardHeight > scrollLimit) {
+            // calculate the Y distance
+            var scrollYDistance = document.activeElement.offsetHeight + (e.keyboardHeight - scrollLimit);
+            // animate using move.min.js (CSS3 animations)
+            move(document.body).to(0, -scrollYDistance).duration('.2s').ease('in-out').end();
+        }
+    }
+
+    window.addEventListener('native.hidekeyboard', keyboardHideHandler);
+
+    // native.hidekeyboard callback
+    function keyboardHideHandler() {
+        // remove focus from activeElement 
+        // which is naturally an input since the nativekeyboard is hiding
+        document.activeElement.blur();
+        // animate using move.min.js (CSS3 animations)
+        move(document.body).to(0, 0).duration('.2s').ease('in-out').end();
+    }
 
     var resolveDone = function () { $rootScope.doingResolve = false; };
     $rootScope.doingResolve = false;

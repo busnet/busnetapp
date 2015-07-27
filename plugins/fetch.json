@@ -6,10 +6,11 @@
             "subdir": "."
         }
     },
-    "org.apache.cordova.inappbrowser": {
+    "com.ionic.keyboard": {
         "source": {
-            "type": "registry",
-            "id": "org.apache.cordova.inappbrowser"
+            "type": "git",
+            "url": "https://github.com/driftyco/ionic-plugins-keyboard.git",
+            "subdir": "."
         }
     }
 }

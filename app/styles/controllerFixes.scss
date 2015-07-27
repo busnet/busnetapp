@@ -15,24 +15,28 @@
 }
 
 
-
 .gridRowDetails {
     padding: 5px 10px 0;
 }
-
-
-
 
 .modal-content {
     top: 100px;
 }
 
-
-
-
-
-
 .typeahead.dropdown-menu {
   top: auto !important;
   bottom: 36px  !important;
+}
+
+.panel-default{
+    margin-bottom: 1px;
+}
+
+.panel-heading {
+    padding: 0px;
+    margin: 5px;
+}
+
+.panel-body {
+    padding: 5px;
 }

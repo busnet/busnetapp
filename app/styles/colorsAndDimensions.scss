@@ -1,5 +1,14 @@
 $busNet-green: rgb(60, 181, 74);
 $busNet-blue: #0072bc;
+$busNet-red: red;
 $busNet-lightFontColor: white;
 
 $headerFooter-height: 50px;
+
+.blue-arrow, .blue-arrow a {
+  color: $busNet-blue;
+}
+
+.green-arrow, .green-arrow a {
+  color: $busNet-green;
+}

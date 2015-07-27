@@ -23,10 +23,15 @@ angular.module('busnetApp.grandfather', ['ui.router'  ])
                 'BACK',
                 'RIDE_BOARD',
                 'CHAT',
+                'IN_CHAT',
                 'ADD_RIDE',
-                // new added by Alex
                 'SETTINGS',
-                'COMPANY_DETAILS'
+                'COMPANY_DETAILS',
+                'SENT_MESSAGE',
+                'RIDE_PRICE_APPROVED',
+                'RIDE_PRICE_DECLINED',
+                'RIDE_PRICE_OFFER',
+                'RIDE_CONTRACT_APPROVED'
                 ]).then(function (translations) {
             return {
               checkAll: translations.CHECK_ALL,
@@ -43,10 +48,15 @@ angular.module('busnetApp.grandfather', ['ui.router'  ])
               back: translations.BACK,
               rideBoard: translations.RIDE_BOARD,
               chat: translations.CHAT,
+              inChat: translations.IN_CHAT,
               addRide: translations.ADD_RIDE,
-              //new added by Alex
               settings: translations.SETTINGS,
-              companyDetails: translations.COMPANY_DETAILS
+              companyDetails: translations.COMPANY_DETAILS,
+              sentMessage: translations.SENT_MESSAGE,
+              ridePriceApproved: translations.RIDE_PRICE_APPROVED,
+              ridePriceDeclined: translations.RIDE_PRICE_DECLINED,
+              ridePriceOffer: translations.RIDE_PRICE_OFFER,
+              rideContractApproved: translations.RIDE_CONTRACT_APPROVED
             }
           });
         },

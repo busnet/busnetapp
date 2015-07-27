@@ -17,12 +17,29 @@
     </div>
 <div class="row">
     <div class="col-xs-12">
-        <div ui-grid="gridOptions" dir="rtl" ui-grid-expandable class="rides-grid" id="rides"></div>
+        <div infinite-scroll="rides.nextPage()" infinite-scroll-disabled="rides.busy" infinite-scroll-distance="0" id="rides">
+            <div ng-repeat="item in rides.items" class="panel panel-default hand" ng-click="gotoRide(item._id)">
+              <div class="panel-heading" ng-class="{'rideType1': !item.isSubContractor, 'rideType2': item.isSubContractor}">
+               ({{item.aviliableHour}}) {{item.typeName}} - {{item.vehicleNumber}} {{item.vehicleType}}
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-3 center-block"><div class="center-block">{{item.destination}}<br/>{{item.returnDate}}</div></div>
+                  <div class="col-xs-1"><div class="center-block"><span class="glyphicon glyphicon-arrow-left" ng-class="{'blue-arrow': !item.isSubContractor, 'green-arrow': item.isSubContractor}"></span></div></div>
+                  <div class="col-xs-4"><div class="center-block">{{item.area}}<br/>{{item.aviliableDate}}</div></div>
+                  <div class="col-xs-3"><img width="70" ng-src="{{item.typeImg}}" alt="{{item.vehicleType}}"></div>
+                </div>
+                <div class="row" ng-show="rides.busy">
+                  <div class="col-xs-9">{{'LOADING' | translate}}</div>
+                </div>
+              </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
-    $(function () {
+    /*$(function () {
         fixGridHeight();
     });
 
@@ -33,6 +50,6 @@
 
     function fixGridHeight() {
         $(".ui-grid-viewport.ng-isolate-scope,.rides-grid").height($(window).height() - 220);
-    }
+    }*/
 </script>
   

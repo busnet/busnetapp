@@ -1,43 +1,22 @@
 <div id="header" data-role="header" ng-show="header">
     <div class="row">
         <div class="col-xs-3 col-sm-3">  
-            <a href="#notification" id="notificationsIcon"><img src="images/notification.png" class="img-responsive"><span class="badge">2</span></a>
-            <ul id="notificationsMenu" class="list-group">
-                <li><a href="#" class="list-group-item">New ride added near you home</a></li>
-                <li><a href="#" class="list-group-item">Yosi Perets wants to use your truck</a></li>
+            <a href="#notification" id="notificationsIcon"><img src="images/notification.png" class="img-responsive"><span class="badge">{{notifications.count}}</span></a>
+            <ul id="notificationsMenu" class="list-group" dir="rtl">
+                <li class="list-group-item" ng-class="{'list-group-item-info': !notification.read}" ng-repeat="notification in notifications"><a ui-sref="app.ridechat({rideid: notification.rideID, target: notification.from})">{{notification.formatedMsg}}</a></li>
             </ul>
         </div>
         <div class="col-xs-6 col-sm-3 col-sm-push-6">
             <img src="images/logotop.png" class="img-responsive" id="logo">
         </div>
-            <div class="col-xs-3 col-sm-6 col-sm-pull-3" id="menuDiv">
-                <a href="#"><img src="images/sidemenu.png" class="img-responsive" id="menuIcon"></a>
-                <div class="footer" role="navigation">
-                <div class="row">
-                    <button ui-sref="app.rides">
-                        <img class="img-responsive" src="images/icons/home-small.png">
-                        <div>{{'HOMEPAGE' | translate}}</div>
-                    </button
-                    ><button ui-sref="app.openrides">
-                        <img class="img-responsive" src="images/icons/openreq-small.png">
-                        <div>{{'OPEN_REQUESTS' | translate}}</div>
-                    </button
-                    ><button ui-sref="app.forum">
-                        <img class="img-responsive" src="images/icons/forum-small.png">
-                        <div>{{'FORUM' | translate}}</div>
-                    </button
-                    ><button ui-sref="app.settings">
-                        <img class="img-responsive" src="images/icons/settings-small.png">
-                        <div>{{'SETTINGS' | translate}}</div>
-                    </button>
-                </div>
-            </div>
+        <div class="col-xs-3 col-sm-6 col-sm-pull-3" id="menuDiv">
+            <a href="#"><img src="images/sidemenu.png" class="img-responsive" id="menuIcon"></a>
         </div>
     </div>
     <ul class="subMenu list-group">
         <li ng-hide="isLogged"><a ui-sref="app.login" class="list-group-item">{{"LOGIN" | translate}}</a></li
         ><li ng-show="isLogged"><a ng-click="logoutMe()" class="list-group-item">{{"LOGOUT" | translate}}</a></li
-        ><li><a ui-sref="app.rides" class="list-group-item">{{"MY_RIDES" | translate}}</a></li
+        ><li><a ui-sref="app.rides" class="list-group-item">{{"RIDE_BOARD" | translate}}</a></li
         ><li><a ui-sref="app.addride" class="list-group-item">{{"ADD_RIDE" | translate}}</a></li
         ><li><a href="#" class="list-group-item">{{"STATS" | translate}}</a></li
         ><li><a href="#" class="list-group-item">{{"COMPANY_DETAILS" | translate}}</a></li
@@ -46,13 +25,13 @@
     </ul>
 </div>
 <div id="betweenHeaderAndFooter">
-<div data-role="main" class="row" ng-show="headButtons">
-  <div class="col-xs-6 text-left">
-    <button class="btn btn-success" ng-show="addridebtn" id="addride" ui-sref="app.addride"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>{{ 'ADD_RIDE' | translate }}</button>
-  </div>
-  <div class="col-xs-6"><h4 class="pageTitle">{{pagetitle}} {{google}}</h4></div>
-</div>
-  <ui-view ng-hide="doingResolve"></ui-view>
+    <div data-role="main" class="row" ng-show="headButtons">
+      <div class="col-xs-6 text-left">
+        <button class="btn btn-success" ng-show="addridebtn" id="addride" ui-sref="app.addride"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>{{ 'ADD_RIDE' | translate }}</button>
+      </div>
+      <div class="col-xs-6"><h4 class="pageTitle">{{pagetitle}}</h4></div>
+    </div>
+    <ui-view ng-hide="doingResolve"></ui-view>
 </div>
 
 
@@ -113,8 +92,4 @@
         e.stopPropagation();
         $("#notificationsMenu").toggle(speed);
     });
-
-
-
-
 </script>

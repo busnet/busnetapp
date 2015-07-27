@@ -3,13 +3,14 @@
 body {
     text-align: center;
     overflow-x: hidden;
-    overflow-y: scroll;
-    position: relative;
+    /*overflow-y: scroll*/;
+    /*position: relative*/;
 }
+/*
 .container-fluid {
     margin: 0 5px !important;
     padding: 0 5px !important;
-}
+}*/
 .img-responsive {
     margin: 0 auto;
 }
@@ -109,20 +110,9 @@ textarea {
         left: 29px;
     }
 
-
-
-
-
-
-
-
 #addride {
     display: none; /*shown in menu*/
 }
-
-
-
-
 
 /*
 .footer {
@@ -169,7 +159,7 @@ textarea {
 .chat-main {
     list-style: none;
     padding: 0;
-    margin-bottom: 0;
+    margin-bottom: 100px;
 }
 .chat-main .time {
     float: left;
@@ -225,12 +215,16 @@ chat > div {
 
 
 /*------------------------- ridesGrid -----------------------------------------------*/
-.rideType2 * {
+.hand {
+    cursor: pointer;
+}
+
+.rideType2 {
     background-color: $busNet-green !important;
     color: $busNet-lightFontColor !important;
 }
 
-.ui-grid-header * {
+.rideType1 {
     background-color: $busNet-blue !important;
     color: $busNet-lightFontColor !important;
 }
@@ -238,11 +232,12 @@ chat > div {
 
 
 
-/*----------------------- add ride ----------------------------*/
+
+/*----------------------- add ride ----------------------------
 #addRideSubmit {
     margin-bottom: 100px;
 }
-
+*/
 
 
 
@@ -352,23 +347,10 @@ chat > div {
     }
 
 
-
-
-    
-
-
-
-
-    
-
-
-
-
-
     
 /*------------------------chat -----------------------------------*/
 #sendDiv {
-    bottom: $headerFooter-height;
+    bottom: height;
 }
 
 
@@ -383,8 +365,4 @@ chat > div {
         overflow-y: scroll;
         width: 100%;
     }
-
-
-
-
 }

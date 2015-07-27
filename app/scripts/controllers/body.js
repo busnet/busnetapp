@@ -9,11 +9,60 @@
  */
 
 angular.module('busnetApp')
-  	.controller('BodyCtrl', function ($scope, $state, translations, loginService) {
+  	.controller('BodyCtrl', function ($scope, $state, $http, translations, loginService, REST_URLS) {
+
+  	    var socket = io(REST_URLS.SOCKET_SERVER);
   	    $scope.isLogged = loginService.isLogged ? true : false;
   	    $scope.logoutMe = function () {
 	      loginService.logoutUser();
 	    };
+
+	    $scope.notifications = [];
+	    $scope.notifications.count = null;
+	    var notificationsCount = function(){
+	    	$scope.notifications.count = $scope.notifications.length;
+	    }
+	    var getNotifications = function(){
+	    	$http.get(REST_URLS.NOTIFICATIONS).
+	    	success(function(res){
+	    		if(res.data){
+	    			var notifications = [];
+	    			_.forEach(res.data, function(item){
+	    				switch(item.type){
+	    					case 'Chat':
+	    					case 'RequestChat':
+	    						var template = _.template('<%=senderName%> '+ translations.sentMessage + ' ' + translations.inChat + ': <%=msg%>');
+	    						break;
+	    					case 'RideApproved':
+	    						var template = _.template('<%=senderName%> '+ translations.ridePriceApproved);
+	    						break;
+	    					case 'PriceDeclined':
+	    						var template = _.template('<%=senderName%> '+ translations.ridePriceDeclined);
+	    						break;
+	    					case 'updateRidePrice':
+	    						var template = _.template('<%=senderName%> '+ translations.ridePriceOffer);
+	    						break;
+	    					case 'ownerApprovedAgreement':
+	    						var template = _.template('<%=senderName%> '+ translations.rideContractApproved);
+	    						break;
+	    					default:
+	    						var template = _.template('<%=msg%>');
+	    						break;
+	    				}
+	    				item.formatedMsg = template(item);
+	    				notifications.push(item);
+	    			})
+	    			$scope.notifications = notifications;
+	    			notificationsCount();
+	    		}
+	    	});
+	    };
+
+	    socket.on('notify', function (data){
+	    	getNotifications();
+	    });
+	    getNotifications();
+
   	    $scope.$on('$stateChangeSuccess',
 		function (event, toState, toParams, fromState, fromParams) {
 		    $scope.isLogged = loginService.isLogged ? true : false;
@@ -52,5 +101,6 @@ angular.module('busnetApp')
 		    $scope.header = header;
 		    $scope.headButtons = headButtons;
 		    $scope.footer = footer;
+
 		});
   	});

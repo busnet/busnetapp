@@ -52,40 +52,40 @@ module.exports = function (grunt) {
             RIDES: 'http://localhost:3002/rest/rides',
             RIDE: 'http://localhost:3002/rest/ride',
             LOGIN_SERVER: 'http://localhost:3002/rest/login',
-            REGISTER: "http://localhost:3002/register1",
-            USER: 'http://localhost:3002/rest/user'
+            USER: 'http://localhost:3002/rest/user',
+            NOTIFICATIONS: 'http://localhost:3002/rest/notifications'
           }
         }
       },
       phonegap: {
         constants: {
           REST_URLS: {
-            SOCKET_SERVER: 'http://10.0.0.2:3002',
-            VEHICLES: 'http://10.0.0.2:3002/rest/vehicles',
-            RIDE_TYPES: 'http://10.0.0.2:3002/rest/ridetypes',
-            AREAS: 'http://10.0.0.2:3002/rest/areas',
-            CITIES: 'http://10.0.0.2:3002/rest/cities',
-            RIDES: 'http://10.0.0.2:3002/rest/rides',
-            RIDE: 'http://10.0.0.2:3002/rest/ride',
-            LOGIN_SERVER: 'http://10.0.0.2:3002/rest/login',
-            REGISTER: "http://10.0.0.2:3002/register1",
-            USER: 'http://10.0.0.2:3002/rest/user'
+            SOCKET_SERVER: 'http://10.0.0.3:3002',
+            VEHICLES: 'http://10.0.0.3:3002/rest/vehicles',
+            RIDE_TYPES: 'http://10.0.0.3:3002/rest/ridetypes',
+            AREAS: 'http://10.0.0.3:3002/rest/areas',
+            CITIES: 'http://10.0.0.3:3002/rest/cities',
+            RIDES: 'http://10.0.0.3:3002/rest/rides',
+            RIDE: 'http://10.0.0.3:3002/rest/ride',
+            LOGIN_SERVER: 'http://10.0.0.3:3002/rest/login',
+            USER: 'http://10.0.0.3:3002/rest/user',
+            NOTIFICATIONS: 'http://10.0.0.3:3002/rest/notifications'
           }
         }
       },
       release: {
         constants: {
           REST_URLS: {
-            SOCKET_SERVER: 'http://app.trucknet.co.il',
-            VEHICLES: 'http://app.trucknet.co.il/rest/vehicles',
-            RIDE_TYPES: 'http://app.trucknet.co.il/rest/ridetypes',
-            AREAS: 'http://app.trucknet.co.il/rest/areas',
-            CITIES: 'http://app.trucknet.co.il/rest/cities',
-            RIDES: 'http://app.trucknet.co.il/rest/rides',
-            RIDE: 'http://app.trucknet.co.il/rest/ride',
-            LOGIN_SERVER: 'http://app.trucknet.co.il/rest/login',
-            REGISTER: "http://app.trucknet.co.il/register1",
-            USER: 'http://app.trucknet.co.il/rest/user'
+            SOCKET_SERVER: 'http://app.busnet.co.il',
+            VEHICLES: 'http://app.busnet.co.il/rest/vehicles',
+            RIDE_TYPES: 'http://app.busnet.co.il/rest/ridetypes',
+            AREAS: 'http://app.busnet.co.il/rest/areas',
+            CITIES: 'http://app.busnet.co.il/rest/cities',
+            RIDES: 'http://app.busnet.co.il/rest/rides',
+            RIDE: 'http://app.busnet.co.il/rest/ride',
+            LOGIN_SERVER: 'http://app.busnet.co.il/rest/login',
+            USER: 'http://app.busnet.co.il/rest/user',
+            NOTIFICATIONS: 'http://app.busnet.co.il/rest/notifications'
           }
         }
       }
@@ -354,7 +354,8 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
           '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= yeoman.dist %>/styles/fonts/*'
+          '<%= yeoman.dist %>/styles/fonts/*',
+          '!<%= yeoman.dist %>/images/vehicles/*.*'
         ]
       }
     },
