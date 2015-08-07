@@ -67,6 +67,7 @@
         <script src="scripts/controllers/add-ride.js"></script>
         <script src="scripts/controllers/ride-chat.js"></script>
         <script src="scripts/controllers/ride-details.js"></script>
+        <script src="scripts/controllers/ride-contract.js"></script>
         <script src="scripts/controllers/add-ride-modal.js"></script>
         <script src="scripts/controllers/notification-modal.js"></script>
         <!--bew made by Alex-->

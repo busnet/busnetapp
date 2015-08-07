@@ -39,7 +39,17 @@ angular.module('busnetApp.RideChat', [])
 	        }
 	      });
 	  })
-	.controller('RideChatCtrl', function ($scope, ride, ridetypes, vehicles, loginService, $stateParams) {
+	.controller('RideChatCtrl', function (
+			$scope, 
+			ride, 
+			ridetypes, 
+			vehicles, 
+			loginService, 
+			$stateParams,
+			REST_URLS) {
+		var socket = io(REST_URLS.SOCKET_SERVER);
+        var user = loginService.user;
+
 		var mapRide = function(item){
 			var typeName = item.type == "1" ? ridetypes[0].label : ridetypes[1].label;
 			var vehicle = _.find(vehicles, {label: item.vehicleType});
@@ -61,8 +71,36 @@ angular.module('busnetApp.RideChat', [])
 		$scope.companies = companies;
 		$scope.isOwner = ride.username == loginService.user._id;
 
-		var firstCompany = _.first(companies) ? _.first(companies).id : loginService.user._id;
+		var firstCompany = _.first(companies) ? _.first(companies).id : user._id;
 		var defaultCompny = $scope.isOwner ? firstCompany : ride.username;
 
 		$scope.target = $stateParams.target || defaultCompny;
+
+		$scope.suggest = function(price){
+			socket.emit('updateRidePrice', { 
+				rideID: ride._id, 
+				price: price, 
+				username: user._id, 
+				toUser: $scope.target, 
+				name: user.dtl.companyName 
+			});
+			$scope.ride.price = price;
+		};
+
+		$scope.approve = function(approved){
+			socket.emit('approveRideStatus', { 
+				rideID: ride._id, 
+				username: user._id, 
+				toUser: $scope.target, 
+				isApproved: approved ,
+				name: user.dtl.companyName
+			});
+			if(!approved){
+				$scope.ride.price = null;
+			}
+		};
+
+		socket.on('gotPrice', function(message){
+			$scope.ride.price = message.price;
+		});
 	});

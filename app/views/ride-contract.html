@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="col-xs-12">
+		<span>{{'JOB_ORDER' | translate}}</span>
+		<br/>
+		<span>{{'DATE' | translate}}: {{moment().format('DD/MM/YYYY')}}</span>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		<table>
+			<th colspan="2">{{'CONTRACTOR_DETAILS' | translate}}</th>
+			<tr>
+				<td>{{COMPANY_NAME | translate}}</td>
+				<td>{{}}</td>
+			</tr>
+			<tr>
+				<td>{{CONTACT_NAME | translate}}</td>
+				<td>{{}}</td>
+			</tr>
+			<tr>
+				<td>{{ADDRESS | translate}}</td>
+				<td>{{}}</td>
+			</tr>
+			<tr>
+				<td>{{TELEPHONE | translate}}</td>
+				<td>{{}}</td>
+			</tr>
+			<tr>
+				<td>{{FAX | translate}}</td>
+				<td>{{}}</td>
+			</tr>
+			<tr>
+				<td>{{COMPANY_LEGAL | translate}}</td>
+				<td>{{}}</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-xs-6"></div>
+</div>
