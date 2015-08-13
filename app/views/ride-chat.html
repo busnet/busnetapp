@@ -10,28 +10,4 @@
 		<li role="presentation" ng-class="{active: company.id==target}" ng-repeat="company in companies"><a ui-sref="app.ridechat({rideid: ride._id, target: company.id})">{{company.name}}</a></li>
 	</ul>
 </div>
-<div class="row" ng-show="isOwner && ride.type=='1'">
-	<label class="col-xs-4 pull-right control-label" for="rideprice">{{'RIDE_PRICE' | translate}}</label>
-	<div class="col-xs-5 pull-right">
-		<input name="rideprice" type="text" ng-model="suggested_price">
-	</div>
-	<div class="col-xs-3" ng-show="!ride.price">
-		<button ng-click="suggest(suggested_price)" class="btn btn-default" type="button">{{'SUGGEST' | translate}}</button>
-	</div>
-	<div class="col-xs-3" ng-show="ride.price">
-		{{'WAITING_FOR_APPROVAL' | translate}}
-	</div>
-</div>
-<div class="row" ng-show="isOwner==false && ride.type=='1' && ride.price">
-	<label class="col-xs-3 pull-right control-label" for="rideprice">{{'RIDE_PRICE' | translate}}</label>
-	<div class="col-xs-2 pull-right">
-		{{ride.price}}
-	</div>
-	<div class="col-xs-3">
-		<button ng-click="approve(true)" class="btn btn-default" type="button">{{'APPROVE' | translate}}</button>
-	</div>
-	<div class="col-xs-3">
-		<button ng-click="approve(false)" class="btn btn-default" type="button">{{'DECLINE_PRICE' | translate}}</button>
-	</div>
-</div>
 <chat ride="ride" target="target"/>

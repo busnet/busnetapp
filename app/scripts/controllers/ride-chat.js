@@ -75,32 +75,5 @@ angular.module('busnetApp.RideChat', [])
 		var defaultCompny = $scope.isOwner ? firstCompany : ride.username;
 
 		$scope.target = $stateParams.target || defaultCompny;
-
-		$scope.suggest = function(price){
-			socket.emit('updateRidePrice', { 
-				rideID: ride._id, 
-				price: price, 
-				username: user._id, 
-				toUser: $scope.target, 
-				name: user.dtl.companyName 
-			});
-			$scope.ride.price = price;
-		};
-
-		$scope.approve = function(approved){
-			socket.emit('approveRideStatus', { 
-				rideID: ride._id, 
-				username: user._id, 
-				toUser: $scope.target, 
-				isApproved: approved ,
-				name: user.dtl.companyName
-			});
-			if(!approved){
-				$scope.ride.price = null;
-			}
-		};
-
-		socket.on('gotPrice', function(message){
-			$scope.ride.price = message.price;
-		});
+		
 	});
