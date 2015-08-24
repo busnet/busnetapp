@@ -45,7 +45,14 @@ angular.module('busnetApp.addride', [
     $scope.ridetypes = ridetypes;
     $scope.vehicles = vehicles;
     $scope.vehicleCount = ['1', '2', '3', '4','5+'];
-
+    var hours = [];
+    for (var i = 0; i < 24; i++) {
+    	var hour = moment('2015-07-27T00:00:00').hours(i);
+    	hours.push(hour.format('HH:mm'));
+    	hour.add('m',30);
+    	hours.push(hour.format('HH:mm'));
+    };
+    $scope.hours = hours;
   	$scope.vacant_date_opened = false;
   	$scope.toggle_vacant_date = function($event){
   		$event.preventDefault();

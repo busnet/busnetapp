@@ -60,6 +60,22 @@ module.exports = function (grunt) {
           }
         }
       },
+      dv: {
+        constants: {
+          REST_URLS: {
+            SOCKET_SERVER: 'http://192.168.1.20:3002',
+            VEHICLES: 'http://192.168.1.20:3002/rest/vehicles',
+            RIDE_TYPES: 'http://192.168.1.20:3002/rest/ridetypes',
+            AREAS: 'http://192.168.1.20:3002/rest/areas',
+            CITIES: 'http://192.168.1.20:3002/rest/cities',
+            RIDES: 'http://192.168.1.20:3002/rest/rides',
+            RIDE: 'http://192.168.1.20:3002/rest/ride',
+            LOGIN_SERVER: 'http://192.168.1.20:3002/rest/login',
+            USER: 'http://192.168.1.20:3002/rest/user',
+            NOTIFICATIONS: 'http://192.168.1.20:3002/rest/notifications'
+          }
+        }
+      },
       phonegap: {
         constants: {
           REST_URLS: {
@@ -100,6 +116,18 @@ module.exports = function (grunt) {
           data: function(){
             return {
               socket_server: grunt.config.get('ngconstant.dev.constants.REST_URLS.SOCKET_SERVER')
+            }
+          }
+        },
+        files: {
+          '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/index.html.tpl']
+        }
+      },
+      dv:{
+        options:{
+          data: function(){
+            return {
+              socket_server: grunt.config.get('ngconstant.dv.constants.REST_URLS.SOCKET_SERVER')
             }
           }
         },
@@ -560,6 +588,9 @@ module.exports = function (grunt) {
       releaseBuild:{
         command: 'cordova build ios --release'
       },
+      dvBuild:{
+        command: 'cordova build ios --debug'
+      },
       phonegapServ:{
         command: 'cordova serve'
       }
@@ -601,7 +632,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', 'build task', function(target){
     target = target || 'dev';
-    if(target === 'phonegap' || target == 'release'){
+    if(target === 'phonegap' || target === 'dv' || target == 'release'){
       grunt.task.run([
         'clean:phonegap',
         'clean:dist',

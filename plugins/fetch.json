@@ -1,8 +1,9 @@
 {
     "com.phonegap.plugins.PushPlugin": {
         "source": {
-            "type": "registry",
-            "id": "com.phonegap.plugins.pushplugin"
+            "type": "git",
+            "url": "https://github.com/phonegap-build/PushPlugin.git",
+            "subdir": "."
         }
     },
     "org.apache.cordova.inappbrowser": {
@@ -15,6 +16,19 @@
         "source": {
             "type": "registry",
             "id": "com.clone.phonegap.plugins.pushplugin"
+        }
+    },
+    "com.ionic.keyboard": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/driftyco/ionic-plugins-keyboard.git",
+            "subdir": "."
+        }
+    },
+    "org.apache.cordova.device": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.device"
         }
     }
 }

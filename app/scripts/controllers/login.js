@@ -39,7 +39,10 @@ angular.module('busnetApp.login', ['busnetApp.grandfather', 'loginService'])
     };
     $scope.loginMe = function () {
       // setup promise, and 'working' flag
-      $scope.login.google = loginService.user.google;
+      var deviceToken = loginService.getDeviceToken();
+      if(deviceToken){
+        $scope.login[deviceToken.platform] = deviceToken.token;
+      }
       $scope.login.working = true;
       $scope.login.wrong = false;
       $scope.login.deviceToken = '';
