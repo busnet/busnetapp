@@ -15,7 +15,6 @@ angular.module('loginService', ['ui.router'])
   var socket = io(REST_URLS.SOCKET_SERVER);
 
   this.$get = function ($rootScope, $http, $q, $state) {
-
     /**
      * Low-level, private functions.
      */
@@ -36,12 +35,16 @@ angular.module('loginService', ['ui.router'])
       setHeaders(token);
     };
 
-    var setGoogleRegId = function(regId){
-      if(!regId){
-        localStorage.removeItem('googleRegId');
-      }else{
-        localStorage.setItem('googleRegId', regId);
+    var setDeviceToken = function (token) {
+      if (!token) {
+        localStorage.removeItem('deviceToken');
+      } else {
+        localStorage.setItem('deviceToken', JSON.stringify(token));
       }
+    };
+
+    var getDeviceToken = function(){
+      return JSON.parse(localStorage.getItem('deviceToken'));
     };
 
     var getLoginData = function () {
@@ -53,6 +56,8 @@ angular.module('loginService', ['ui.router'])
         wrappedService.doneLoading = true;
       }
     };
+
+    
 
     var managePermissions = function () {
       // Register routing function.
@@ -219,6 +224,8 @@ angular.module('loginService', ['ui.router'])
         self.pendingStateChange = null;
         return checkUser.promise;
       },
+      setDeviceToken: setDeviceToken,
+      getDeviceToken: getDeviceToken,
       /**
        * Public properties
        */

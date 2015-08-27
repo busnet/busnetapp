@@ -25,6 +25,17 @@
         </div>
     </div>
     <div class="form-group" show-errors="{ showSuccess: true }">
+		<label for="vacatehour" class="col-xs-4 col-xs-push-8 col-sm-2 col-sm-push-10 control-label">{{'VACATE_HOUR' | translate}}</label>
+	    <div class="col-xs-8 col-xs-pull-4 col-sm-7 col-sm-push-1">
+			<select name="vacatehour" id="vacatehour" class="form-control" ng-model="ride.vacant_hour" ng-options="hour for hour in hours" required>
+				<option value="">{{'SELECT' | translate}} {{'VACATE_HOUR' | translate}}</option>
+			</select>
+		</div>
+        <div class="col-xs-8 col-sm-3 col-sm-pull-9">
+            <p class="help-block" ng-if="addride.$submitted && addride.vacatehour.$error.required">{{'VACATE_HOUR' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+        </div>
+	</div>
+    <div class="form-group" show-errors="{ showSuccess: true }">
 		<label for="vehicletype" class="col-xs-4 col-xs-push-8 col-sm-2 col-sm-push-10 control-label">{{'VEHICLE_TYPE' | translate}}</label>
 	    <div class="col-xs-8 col-xs-pull-4 col-sm-7 col-sm-push-1">
 			<select name="vehicletype" id="vehicletype" class="form-control" ng-model="ride.vehicle" ng-options="vehicle.label for vehicle in vehicles" required>

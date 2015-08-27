@@ -39,7 +39,17 @@ angular.module('busnetApp.RideChat', [])
 	        }
 	      });
 	  })
-	.controller('RideChatCtrl', function ($scope, ride, ridetypes, vehicles, loginService, $stateParams) {
+	.controller('RideChatCtrl', function (
+			$scope, 
+			ride, 
+			ridetypes, 
+			vehicles, 
+			loginService, 
+			$stateParams,
+			REST_URLS) {
+		var socket = io(REST_URLS.SOCKET_SERVER);
+        var user = loginService.user;
+
 		var mapRide = function(item){
 			var typeName = item.type == "1" ? ridetypes[0].label : ridetypes[1].label;
 			var vehicle = _.find(vehicles, {label: item.vehicleType});
@@ -61,8 +71,9 @@ angular.module('busnetApp.RideChat', [])
 		$scope.companies = companies;
 		$scope.isOwner = ride.username == loginService.user._id;
 
-		var firstCompany = _.first(companies) ? _.first(companies).id : loginService.user._id;
+		var firstCompany = _.first(companies) ? _.first(companies).id : user._id;
 		var defaultCompny = $scope.isOwner ? firstCompany : ride.username;
 
 		$scope.target = $stateParams.target || defaultCompny;
+		
 	});

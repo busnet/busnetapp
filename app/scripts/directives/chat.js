@@ -7,7 +7,7 @@
  * # chat
  */
 angular.module('busnetApp.directives', ['angularMoment'])
-  .directive('chat', function (loginService, REST_URLS) {
+  .directive('chat', function ($state, loginService, REST_URLS) {
     return {
       templateUrl: 'views/chat.html',
       restrict: 'E',
@@ -19,7 +19,46 @@ angular.module('busnetApp.directives', ['angularMoment'])
         var socket = io(REST_URLS.SOCKET_SERVER);
         var user = loginService.user;
         scope.isOwner = scope.ride.username == user._id;
-        scope.messages = scope.ride.requests && scope.ride.requests[scope.target] ? scope.ride.requests[scope.target].msgs : [];
+        scope.messages = {
+          msgs:[]
+        };
+        if(scope.ride.requests){
+          scope.messages = scope.isOwner && scope.ride.requests[scope.target] ? scope.ride.requests[scope.target] : scope.ride.requests[user._id];
+        }
+
+        scope.suggest = function(price){
+          socket.emit('updateRidePrice', { 
+            rideID: scope.ride._id, 
+            price: price, 
+            username: user._id, 
+            toUser: scope.target, 
+            name: user.dtl.companyName 
+          });
+          scope.messages.price = price;
+        };
+
+        scope.approve = function(approved){
+          socket.emit('approveRideStatus', { 
+            rideID: scope.ride._id, 
+            username: user._id, 
+            toUser: scope.target, 
+            isApproved: approved ,
+            name: user.dtl.companyName
+          });
+          if(!approved){
+            scope.messages.price = null;
+          }else{
+            $state.go('app.ridecontract', {
+              rideid: scope.ride._id, 
+              targetid: scope.target
+            });
+          }
+        };
+
+        socket.on('gotPrice', function(message){
+          scope.ride.messages.price = message.price;
+        });
+
         var addMessage = function(message){
           if(!message){
             return;
@@ -42,19 +81,9 @@ angular.module('busnetApp.directives', ['angularMoment'])
         		toUser: scope.target
         	};
 
-        	//scope.messages.push(msg);
         	socket.emit(messageType, msg);
           scope.message = '';
         }
-        var scrollToBottom = function(){
-          //$.mobile.silentScroll(100);
-          /*$(element).find('#chat-main li:last').animate({ 
-             scrollTop: $(document).height()-$(window).height()}, 
-             1400, 
-             "slow"
-          );*/
-        }
-        
       }
     };
   });

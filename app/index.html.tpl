@@ -58,6 +58,7 @@
         <script src="scripts/controllers/my-requests.js"></script>
         <script src="scripts/controllers/body.js"></script>
         <script src="scripts/services/login-service.js"></script>
+        <script src="scripts/services/push-notifications.js"></script>
         <script src="scripts/services/rides.js"></script>
         <script src="scripts/directives/password-match.js"></script>
         <script src="scripts/directives/remote-validated.js"></script>
@@ -67,6 +68,7 @@
         <script src="scripts/controllers/add-ride.js"></script>
         <script src="scripts/controllers/ride-chat.js"></script>
         <script src="scripts/controllers/ride-details.js"></script>
+        <script src="scripts/controllers/ride-contract.js"></script>
         <script src="scripts/controllers/add-ride-modal.js"></script>
         <script src="scripts/controllers/notification-modal.js"></script>
         <!--bew made by Alex-->

@@ -1,7 +1,7 @@
 node_modules
 dist
 platforms
-www
+www/
 .tmp
 .sass-cache
 .idea

@@ -1,0 +1,120 @@
+<div class="row">
+	<div class="col-xs-12">
+		<span>{{'CONTRACT_ORDER' | translate}}</span>
+		<br/>
+		<span>{{'DATE' | translate}}: {{now}}</span>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<table dir="rtl" class="pull-right">
+			<tr>
+				<th colspan="2">{{'CONTRACTOR_DETAILS' | translate}}</th>
+			</tr>
+			<tr>
+				<td>{{'COMPANY_NAME' | translate}}</td>
+				<td>{{contractor.dtl.companyName}}</td>
+			</tr>
+			<tr>
+				<td>{{'CONTACT_NAME' | translate}}</td>
+				<td>{{contractor.dtl.contactName}}</td>
+			</tr>
+			<tr>
+				<td>{{'ADDRESS' | translate}}</td>
+				<td>{{contractor.dtl.address}}</td>
+			</tr>
+			<tr>
+				<td>{{'TELEPHONE' | translate}}</td>
+				<td>{{contractor.dtl.phoneNumber}}</td>
+			</tr>
+			<tr>
+				<td>{{'FAX' | translate}}</td>
+				<td>{{contractor.dtl.faxNumber}}</td>
+			</tr>
+			<tr>
+				<td>{{'COMPANY_LEGAL' | translate}}</td>
+				<td>{{contractor.dtl.companyNumber}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<table dir="rtl" class="pull-right">
+			<tr>
+				<th colspan="2">{{'PROVIDER_DETAILS' | translate}}</th>
+			</tr>
+			<tr>
+				<td>{{'COMPANY_NAME' | translate}}</td>
+				<td>{{provider.dtl.companyName}}</td>
+			</tr>
+			<tr>
+				<td>{{'CONTACT_NAME' | translate}}</td>
+				<td>{{provider.dtl.contactName}}</td>
+			</tr>
+			<tr>
+				<td>{{'ADDRESS' | translate}}</td>
+				<td>{{provider.dtl.address}}</td>
+			</tr>
+			<tr>
+				<td>{{'TELEPHONE' | translate}}</td>
+				<td>{{provider.dtl.phoneNumber}}</td>
+			</tr>
+			<tr>
+				<td>{{'FAX' | translate}}</td>
+				<td>{{provider.dtl.faxNumber}}</td>
+			</tr>
+			<tr>
+				<td>{{'COMPANY_LEGAL' | translate}}</td>
+				<td>{{provider.dtl.companyNumber}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<table dir="rtl" class="pull-right">
+			<tr>
+				<th colspan="2">{{'RIDE_DETAILS' | translate}}</th>
+			</tr>
+			<tr>
+				<td>{{'VEHICLE_TYPE' | translate}}</td>
+				<td>{{ride.vehicleType}} ({{ride.vehicleNumber}})</td>
+			</tr>
+			<tr>
+				<td>{{'VACATE_DATE' | translate}}</td>
+				<td>{{ride.aviliableDate}}</td>
+			</tr>
+			<tr>
+				<td>{{'VACATE_HOUR' | translate}}</td>
+				<td>{{ride.aviliableHour}}</td>
+			</tr>
+			<tr>
+				<td>{{'VACANT_AREA' | translate}}</td>
+				<td>{{ride.area}}</td>
+			</tr>
+			<tr>
+				<td>{{'ROUTE' | translate}}</td>
+				<td>{{ride.area}} - {{ride.destination}}</td>
+			</tr>
+			<tr>
+				<td>{{'RETURN_DATE' | translate}}</td>
+				<td>{{ride.returnDate}}</td>
+			</tr>
+			<tr>
+				<td>{{'PRICE' | translate}}</td>
+				<td>{{ride.price}}</td>
+			</tr>
+			<tr>
+				<td>{{'REMARKS' | translate}}</td>
+				<td>{{ride.extraDetails}}</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-xs-12">
+		<button class="btn btn-primary btn-lg" ng-click="approve()">
+			{{'APPROVE_DEAL_PRICE' | translate}} {{ride.price | currency:"ILS₪":0}}<br/>
+			{{'FROM' | translate}} {{provider.dtl.companyName}} {{'FOR' | translate}} {{contractor.dtl.companyName}}
+		</button>
+	</div>
+</div>
