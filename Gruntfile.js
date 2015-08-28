@@ -583,13 +583,13 @@ module.exports = function (grunt) {
     
     shell: {
       phonegapBuild: {
-        command: 'cordova build ios --debug'
+        command: 'cordova build android --debug'
       },
       releaseBuild:{
-        command: 'cordova build ios --release'
+        command: 'cordova build android --release'
       },
       dvBuild:{
-        command: 'cordova build ios --debug'
+        command: 'cordova build android --debug'
       },
       phonegapServ:{
         command: 'cordova serve'

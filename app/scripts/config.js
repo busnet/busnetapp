@@ -4,6 +4,6 @@ angular.module('config', [])
 
 .constant('GOOGLE', {SENDERID:'163438544120'})
 
-.constant('REST_URLS', {SOCKET_SERVER:'http://10.0.0.3:3002',VEHICLES:'http://10.0.0.3:3002/rest/vehicles',RIDE_TYPES:'http://10.0.0.3:3002/rest/ridetypes',AREAS:'http://10.0.0.3:3002/rest/areas',CITIES:'http://10.0.0.3:3002/rest/cities',RIDES:'http://10.0.0.3:3002/rest/rides',RIDE:'http://10.0.0.3:3002/rest/ride',LOGIN_SERVER:'http://10.0.0.3:3002/rest/login',USER:'http://10.0.0.3:3002/rest/user',NOTIFICATIONS:'http://10.0.0.3:3002/rest/notifications'})
+.constant('REST_URLS', {SOCKET_SERVER:'http://app.busnet.co.il',VEHICLES:'http://app.busnet.co.il/rest/vehicles',RIDE_TYPES:'http://app.busnet.co.il/rest/ridetypes',AREAS:'http://app.busnet.co.il/rest/areas',CITIES:'http://app.busnet.co.il/rest/cities',RIDES:'http://app.busnet.co.il/rest/rides',RIDE:'http://app.busnet.co.il/rest/ride',LOGIN_SERVER:'http://app.busnet.co.il/rest/login',USER:'http://app.busnet.co.il/rest/user',NOTIFICATIONS:'http://app.busnet.co.il/rest/notifications'})
 
 ;
