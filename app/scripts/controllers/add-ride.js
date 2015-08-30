@@ -97,10 +97,11 @@ angular.module('busnetApp.addride', [
   		}
   		$http.post(REST_URLS.RIDE, ride).then(function(res){
   			var modalInstance = $modal.open({
-				animation: true,
+				animation: false,
 				templateUrl: 'views/add-ride-modal.html',
 				controller: 'AddRideModalCtrl',
 				size: 'sm',
+				backdrop: false,
 				resolve: {
 					ride: function () {
 					  return res.data;

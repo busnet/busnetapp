@@ -172,7 +172,8 @@ angular
 
     var showModal = function(notification){
         var modalInstance = $modal.open({
-            animation: true,
+            animation: false,
+            backdrop: false,
             templateUrl: 'views/notification-modal.html',
             controller: 'NotificationModalCtrl',
             size: 'sm',
