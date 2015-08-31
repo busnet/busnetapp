@@ -45,6 +45,7 @@ angular.module('busnetApp.addride', [
     $scope.ridetypes = ridetypes;
     $scope.vehicles = vehicles;
     $scope.vehicleCount = ['1', '2', '3', '4','5+'];
+    $scope.platformCount = ['1', '2', '3', '4','5','6', '7', '8', '9', '10'];
     var hours = [];
     for (var i = 0; i < 24; i++) {
     	var hour = moment('2015-07-27T00:00:00').hours(i);
@@ -97,10 +98,11 @@ angular.module('busnetApp.addride', [
   		}
   		$http.post(REST_URLS.RIDE, ride).then(function(res){
   			var modalInstance = $modal.open({
-				animation: true,
+				animation: false,
 				templateUrl: 'views/add-ride-modal.html',
 				controller: 'AddRideModalCtrl',
 				size: 'sm',
+				backdrop: false,
 				resolve: {
 					ride: function () {
 					  return res.data;

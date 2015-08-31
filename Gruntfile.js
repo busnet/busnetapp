@@ -95,16 +95,16 @@ module.exports = function (grunt) {
       release: {
         constants: {
           REST_URLS: {
-            SOCKET_SERVER: 'http://app.busnet.co.il',
-            VEHICLES: 'http://app.busnet.co.il/rest/vehicles',
-            RIDE_TYPES: 'http://app.busnet.co.il/rest/ridetypes',
-            AREAS: 'http://app.busnet.co.il/rest/areas',
-            CITIES: 'http://app.busnet.co.il/rest/cities',
-            RIDES: 'http://app.busnet.co.il/rest/rides',
-            RIDE: 'http://app.busnet.co.il/rest/ride',
-            LOGIN_SERVER: 'http://app.busnet.co.il/rest/login',
-            USER: 'http://app.busnet.co.il/rest/user',
-            NOTIFICATIONS: 'http://app.busnet.co.il/rest/notifications'
+            SOCKET_SERVER: 'http://app.trucknet.co.il',
+            VEHICLES: 'http://app.trucknet.co.il/rest/vehicles',
+            RIDE_TYPES: 'http://app.trucknet.co.il/rest/ridetypes',
+            AREAS: 'http://app.trucknet.co.il/rest/areas',
+            CITIES: 'http://app.trucknet.co.il/rest/cities',
+            RIDES: 'http://app.trucknet.co.il/rest/rides',
+            RIDE: 'http://app.trucknet.co.il/rest/ride',
+            LOGIN_SERVER: 'http://app.trucknet.co.il/rest/login',
+            USER: 'http://app.trucknet.co.il/rest/user',
+            NOTIFICATIONS: 'http://app.trucknet.co.il/rest/notifications'
           }
         }
       }
@@ -583,13 +583,13 @@ module.exports = function (grunt) {
     
     shell: {
       phonegapBuild: {
-        command: 'cordova build ios --debug'
+        command: 'cordova build android --debug'
       },
       releaseBuild:{
-        command: 'cordova build ios --release'
+        command: 'cordova build android --release'
       },
       dvBuild:{
-        command: 'cordova build ios --debug'
+        command: 'cordova build android --debug'
       },
       phonegapServ:{
         command: 'cordova serve'

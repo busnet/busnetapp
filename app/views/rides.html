@@ -34,11 +34,11 @@
                   <div class="col-xs-4"><div class="center-block">{{item.area}}<br/>{{item.aviliableDate}}</div></div>
                   <div class="col-xs-3"><img width="70" ng-src="{{item.typeImg}}" alt="{{item.vehicleType}}"></div>
                 </div>
-                <div class="row" ng-show="rides.busy">
-                  <div class="col-xs-9">{{'LOADING' | translate}}</div>
-                </div>
               </div>
             </div>
+        </div>
+        <div class="row" ng-show="rides.busy">
+          <div class="col-xs-9">{{'LOADING' | translate}}</div>
         </div>
     </div>
 </div>

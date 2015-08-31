@@ -84,6 +84,7 @@ angular
         "VACATE_DATE": "תאריך פינוי",
         "VACATE_HOUR": "שעת פינוי",
         "VEHICLE_COUNT": "מס׳ רכבים",
+        "PLATFORMS_COUNT": "מס׳ משטחים",
         "VACANT_AREA": "אזור פינוי",
         "RETURN_DATE": "תאריך החזרה",
         "RETURN_AREA": "אזור החזרה",
@@ -172,7 +173,8 @@ angular
 
     var showModal = function(notification){
         var modalInstance = $modal.open({
-            animation: true,
+            animation: false,
+            backdrop: false,
             templateUrl: 'views/notification-modal.html',
             controller: 'NotificationModalCtrl',
             size: 'sm',

@@ -47,6 +47,17 @@
         </div>
 	</div>
 	<div class="form-group" show-errors="{ showSuccess: true }">
+		<label for="platformscount" class="col-xs-4 col-xs-push-8 col-sm-2 col-sm-push-10 control-label">{{'PLATFORMS_COUNT' | translate}}</label>
+	    <div class="col-xs-8 col-xs-pull-4 col-sm-7 col-sm-push-1">
+			<select name="platformscount" id="platformscount" class="form-control foum-input" ng-model="ride.platforms_count" ng-options="pcount for pcount in platformCount">
+				<option value="">{{'SELECT' | translate}} {{'PLATFORMS_COUNT' | translate}}</option>
+			</select>
+			</div>
+        <div class="col-xs-8 col-sm-3 col-sm-pull-9">
+            <p class="help-block" ng-if="addride.$submitted && addride.platformscount.$error.required">{{'VEHICLE_COUNT' | translate}} {{'REQUIRED_FIELD' | translate}}</p>
+		</div>
+	</div>
+	<div class="form-group" show-errors="{ showSuccess: true }">
 		<label for="vehiclecount" class="col-xs-4 col-xs-push-8 col-sm-2 col-sm-push-10 control-label">{{'VEHICLE_COUNT' | translate}}</label>
 	    <div class="col-xs-8 col-xs-pull-4 col-sm-7 col-sm-push-1">
 			<select name="vehiclecount" id="vehiclecount" class="form-control foum-input" ng-model="ride.vehicle_count" ng-options="vcount for vcount in vehicleCount" required>
