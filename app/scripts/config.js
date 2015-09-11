@@ -4,6 +4,6 @@ angular.module('config', [])
 
 .constant('GOOGLE', {SENDERID:'163438544120'})
 
-.constant('REST_URLS', {SOCKET_SERVER:'http://app.busnet.co.il',VEHICLES:'http://app.busnet.co.il/rest/vehicles',RIDE_TYPES:'http://app.busnet.co.il/rest/ridetypes',AREAS:'http://app.busnet.co.il/rest/areas',CITIES:'http://app.busnet.co.il/rest/cities',RIDES:'http://app.busnet.co.il/rest/rides',RIDE:'http://app.busnet.co.il/rest/ride',LOGIN_SERVER:'http://app.busnet.co.il/rest/login',USER:'http://app.busnet.co.il/rest/user',NOTIFICATIONS:'http://app.busnet.co.il/rest/notifications'})
+.constant('REST_URLS', {SOCKET_SERVER:'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002',VEHICLES:'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/vehicles',RIDE_TYPES:'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/ridetypes',AREAS:'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/areas',CITIES:'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/cities',RIDES:'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/rides',RIDE:'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/ride',LOGIN_SERVER:'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/login',USER:'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/user',NOTIFICATIONS:'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/notifications'})
 
 ;

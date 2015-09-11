@@ -22,6 +22,25 @@ module.exports = function (grunt) {
     phonegap: 'www'
   };
 
+  var filesTemplate = function(target){
+    return {
+        options:{
+          data: function(){
+            return {
+              socket_server: grunt.config.get('ngconstant.'+target+'.constants.REST_URLS.SOCKET_SERVER')
+            }
+          }
+        },
+        files: {
+          '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/index.html.tpl']
+        }
+      }
+  }
+
+  var shellCommand = function(target, platform){
+    return 'cordova build '+ platform +' --' + target;
+  }
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -60,6 +79,38 @@ module.exports = function (grunt) {
           }
         }
       },
+      qa: {
+        constants: {
+          REST_URLS: {
+            SOCKET_SERVER: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002',
+            VEHICLES: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/vehicles',
+            RIDE_TYPES: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/ridetypes',
+            AREAS: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/areas',
+            CITIES: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/cities',
+            RIDES: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/rides',
+            RIDE: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/ride',
+            LOGIN_SERVER: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/login',
+            USER: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/user',
+            NOTIFICATIONS: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/notifications'
+          }
+        }
+      },
+      release: {
+        constants: {
+          REST_URLS: {
+            SOCKET_SERVER: 'http://app.busnet.co.il',
+            VEHICLES: 'http://app.busnet.co.il/rest/vehicles',
+            RIDE_TYPES: 'http://app.busnet.co.il/rest/ridetypes',
+            AREAS: 'http://app.busnet.co.il/rest/areas',
+            CITIES: 'http://app.busnet.co.il/rest/cities',
+            RIDES: 'http://app.busnet.co.il/rest/rides',
+            RIDE: 'http://app.busnet.co.il/rest/ride',
+            LOGIN_SERVER: 'http://app.busnet.co.il/rest/login',
+            USER: 'http://app.busnet.co.il/rest/user',
+            NOTIFICATIONS: 'http://app.busnet.co.il/rest/notifications'
+          }
+        }
+      },
       dv: {
         constants: {
           REST_URLS: {
@@ -91,74 +142,15 @@ module.exports = function (grunt) {
             NOTIFICATIONS: 'http://10.0.0.3:3002/rest/notifications'
           }
         }
-      },
-      release: {
-        constants: {
-          REST_URLS: {
-            SOCKET_SERVER: 'http://app.busnet.co.il',
-            VEHICLES: 'http://app.busnet.co.il/rest/vehicles',
-            RIDE_TYPES: 'http://app.busnet.co.il/rest/ridetypes',
-            AREAS: 'http://app.busnet.co.il/rest/areas',
-            CITIES: 'http://app.busnet.co.il/rest/cities',
-            RIDES: 'http://app.busnet.co.il/rest/rides',
-            RIDE: 'http://app.busnet.co.il/rest/ride',
-            LOGIN_SERVER: 'http://app.busnet.co.il/rest/login',
-            USER: 'http://app.busnet.co.il/rest/user',
-            NOTIFICATIONS: 'http://app.busnet.co.il/rest/notifications'
-          }
-        }
       }
     },
 
     template: {
-      dev:{
-        options:{
-          data: function(){
-            return {
-              socket_server: grunt.config.get('ngconstant.dev.constants.REST_URLS.SOCKET_SERVER')
-            }
-          }
-        },
-        files: {
-          '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/index.html.tpl']
-        }
-      },
-      dv:{
-        options:{
-          data: function(){
-            return {
-              socket_server: grunt.config.get('ngconstant.dv.constants.REST_URLS.SOCKET_SERVER')
-            }
-          }
-        },
-        files: {
-          '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/index.html.tpl']
-        }
-      },
-      phonegap:{
-        options:{
-          data: function(){
-            return {
-              socket_server: grunt.config.get('ngconstant.phonegap.constants.REST_URLS.SOCKET_SERVER')
-            }
-          }
-        },
-        files: {
-          '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/index.html.tpl']
-        }
-      },
-      release:{
-        options:{
-          data: function(){
-            return {
-              socket_server: grunt.config.get('ngconstant.release.constants.REST_URLS.SOCKET_SERVER')
-            }
-          }
-        },
-        files: {
-          '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/index.html.tpl']
-        }
-      }
+      dev:filesTemplate('dev'),
+      dv:filesTemplate('dv'),
+      phonegap:filesTemplate('phonegap'),
+      release:filesTemplate('release'),
+      qa: filesTemplate('qa')
     },
 
     // Watches files for changes and runs tasks based on the changed files
@@ -555,6 +547,16 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.dist %>',
         dest: '<%= yeoman.phonegap %>',
         src: '**'
+      },
+      ios:{
+        expand: true,
+        dest: 'config.xml',
+        src: 'config.ios.xml'
+      },
+      android:{
+        expand: true,
+        dest: 'config.xml',
+        src: 'config.android.xml'
       }
     },
 
@@ -582,11 +584,20 @@ module.exports = function (grunt) {
     },
     
     shell: {
-      phonegapBuild: {
-        command: 'cordova build android --debug'
+      phonegapBuildAndroid: {
+        command: shellCommand('android', 'debug')
+      },
+      phonegapBuildIos: {
+        command: shellCommand('ios', 'debug')
       },
       releaseBuild:{
         command: 'cordova build android --release'
+      },
+      qaBuildAndroid:{
+        command: shellCommand('android', 'release')
+      },
+      qaBuildIos:{
+        command: shellCommand('ios', 'release')
       },
       dvBuild:{
         command: 'cordova build android --debug'
@@ -630,9 +641,9 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
-  grunt.registerTask('build', 'build task', function(target){
+  grunt.registerTask('build', 'build task', function(target, platform){
     target = target || 'dev';
-    if(target === 'phonegap' || target === 'dv' || target == 'release'){
+    if(target === 'phonegap' || target === 'dv' || target == 'release' || target == 'qa'){
       grunt.task.run([
         'clean:phonegap',
         'clean:dist',
@@ -652,7 +663,7 @@ module.exports = function (grunt) {
         'usemin',
         'htmlmin',
         'copy:phonegap',
-        'shell:'+target+'Build',
+        //'shell:'+target+'Build'+platform,
         ]);
     }else{
       grunt.task.run([
