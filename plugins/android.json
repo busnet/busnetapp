@@ -9,10 +9,6 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
@@ -21,7 +17,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -78,16 +74,13 @@
         }
     },
     "installed_plugins": {
-        "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.busnet.app.ios"
-        },
         "com.ionic.keyboard": {
             "PACKAGE_NAME": "com.busnet.app.ios"
         },
         "com.phonegap.plugins.PushPlugin": {
             "PACKAGE_NAME": "com.busnet.app.ios"
         },
-        "org.apache.cordova.inappbrowser": {
+        "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.busnet.app.ios"
         }
     },

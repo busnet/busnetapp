@@ -37,7 +37,7 @@ module.exports = function (grunt) {
       }
   }
 
-  var shellCommand = function(target, platform){
+  var shellBuildCommand = function(platform, target){
     return 'cordova build '+ platform +' --' + target;
   }
 
@@ -150,7 +150,27 @@ module.exports = function (grunt) {
       dv:filesTemplate('dv'),
       phonegap:filesTemplate('phonegap'),
       release:filesTemplate('release'),
-      qa: filesTemplate('qa')
+      qa: filesTemplate('qa'),
+      ios: {
+        options:{
+          data: {
+            id: 'com.busnet.app.ios'
+          }
+        },
+        files: {
+          'config.xml': ['config.xml.tpl']
+        }
+      },
+      android: {
+        options:{
+          data: {
+            id: 'com.busnet.busnetapp'
+          }
+        },
+        files: {
+          'config.xml': ['config.xml.tpl']
+        }
+      },
     },
 
     // Watches files for changes and runs tasks based on the changed files
@@ -584,23 +604,29 @@ module.exports = function (grunt) {
     },
     
     shell: {
-      phonegapBuildAndroid: {
-        command: shellCommand('android', 'debug')
+      phonegapBuildandroid: {
+        command: shellBuildCommand('android', 'debug')
       },
-      phonegapBuildIos: {
-        command: shellCommand('ios', 'debug')
+      phonegapBuildios: {
+        command: shellBuildCommand('ios', 'debug')
       },
-      releaseBuild:{
-        command: 'cordova build android --release'
+      releaseBuildios:{
+        command: shellBuildCommand('ios', 'release') //'cordova build android --release'
       },
-      qaBuildAndroid:{
-        command: shellCommand('android', 'release')
+      releaseBuildandroid:{
+        command: shellBuildCommand('android', 'release') //'cordova build android --release'
       },
-      qaBuildIos:{
-        command: shellCommand('ios', 'release')
+      qaBuildios:{
+        command: shellBuildCommand('ios', 'release')
       },
-      dvBuild:{
-        command: 'cordova build android --debug'
+      qaBuildandroid:{
+        command: shellBuildCommand('android', 'release')
+      },
+      dvBuildios:{
+        command: shellBuildCommand('ios', 'debug')
+      },
+      dvBuildandroid:{
+        command: shellBuildCommand('android', 'debug')
       },
       phonegapServ:{
         command: 'cordova serve'
@@ -663,7 +689,8 @@ module.exports = function (grunt) {
         'usemin',
         'htmlmin',
         'copy:phonegap',
-        //'shell:'+target+'Build'+platform,
+        'template:'+platform,
+        'shell:'+target+'Build'+platform,
         ]);
     }else{
       grunt.task.run([

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
-    id="com.busnet.app.ios" 
-    version="0.0.70" 
+    id="<%- id%>" 
+    version="0.0.72" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:cdv="http://cordova.apache.org/ns/1.0" 
     xmlns:gap="http://phonegap.com/ns/1.0"
