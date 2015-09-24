@@ -71,8 +71,8 @@ angular.module('busnetApp.RideChat', [])
 		$scope.companies = companies;
 		$scope.isOwner = ride.username == loginService.user._id;
 
-		var firstCompany = _.first(companies) ? _.first(companies).id : user._id;
-		var defaultCompny = $scope.isOwner ? firstCompany : ride.username;
+		var firstCompany = _.first(companies) ? _.first(companies).id : null;
+		var defaultCompny = $scope.isOwner ? firstCompany : null;
 
 		$scope.target = $stateParams.target || defaultCompny;
 		

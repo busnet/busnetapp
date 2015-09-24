@@ -23,7 +23,7 @@ angular.module('busnetApp.directives', ['angularMoment'])
           msgs:[]
         };
         if(scope.ride.requests){
-          scope.messages = scope.isOwner && scope.ride.requests[scope.target] ? scope.ride.requests[scope.target] : scope.ride.requests[user._id];
+          scope.messages = scope.ride.requests[scope.target] ? scope.ride.requests[scope.target] : [];
         }
 
         scope.suggest = function(price){
@@ -64,7 +64,7 @@ angular.module('busnetApp.directives', ['angularMoment'])
             return;
           }
           scope.$apply(function(){
-            scope.messages.push(message);
+            scope.messages.msgs.push(message);
             scrollToBottom();
           });
         };
