@@ -20,13 +20,6 @@ module.exports = [
         "clobbers": [
             "PushNotification"
         ]
-    },
-    {
-        "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
-        "id": "org.apache.cordova.inappbrowser.inappbrowser",
-        "clobbers": [
-            "window.open"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -34,8 +27,7 @@ module.exports.metadata =
 {
     "org.apache.cordova.device": "0.3.0",
     "com.ionic.keyboard": "1.0.4",
-    "com.phonegap.plugins.PushPlugin": "2.2.1",
-    "org.apache.cordova.inappbrowser": "0.6.0"
+    "com.phonegap.plugins.PushPlugin": "2.2.1"
 }
 // BOTTOM OF METADATA
 });

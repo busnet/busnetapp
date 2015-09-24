@@ -56,7 +56,8 @@ module.exports = function (grunt) {
             RIDE: 'http://localhost:3002/rest/ride',
             LOGIN_SERVER: 'http://localhost:3002/rest/login',
             USER: 'http://localhost:3002/rest/user',
-            NOTIFICATIONS: 'http://localhost:3002/rest/notifications'
+            NOTIFICATIONS: 'http://localhost:3002/rest/notifications',
+            REGISTER: 'http://localhost:3002/register1'
           }
         }
       },
@@ -72,7 +73,8 @@ module.exports = function (grunt) {
             RIDE: 'http://192.168.1.20:3002/rest/ride',
             LOGIN_SERVER: 'http://192.168.1.20:3002/rest/login',
             USER: 'http://192.168.1.20:3002/rest/user',
-            NOTIFICATIONS: 'http://192.168.1.20:3002/rest/notifications'
+            NOTIFICATIONS: 'http://192.168.1.20:3002/rest/notifications',
+            REGISTER: 'http://localhost:3002/register1'
           }
         }
       },
@@ -88,7 +90,8 @@ module.exports = function (grunt) {
             RIDE: 'http://10.0.0.3:3002/rest/ride',
             LOGIN_SERVER: 'http://10.0.0.3:3002/rest/login',
             USER: 'http://10.0.0.3:3002/rest/user',
-            NOTIFICATIONS: 'http://10.0.0.3:3002/rest/notifications'
+            NOTIFICATIONS: 'http://10.0.0.3:3002/rest/notifications',
+            REGISTER: 'http://localhost:3002/register1'
           }
         }
       },
@@ -104,7 +107,8 @@ module.exports = function (grunt) {
             RIDE: 'http://app.trucknet.co.il/rest/ride',
             LOGIN_SERVER: 'http://app.trucknet.co.il/rest/login',
             USER: 'http://app.trucknet.co.il/rest/user',
-            NOTIFICATIONS: 'http://app.trucknet.co.il/rest/notifications'
+            NOTIFICATIONS: 'http://app.trucknet.co.il/rest/notifications',
+            REGISTER: 'http://localhost:3002/register1'
           }
         }
       }
@@ -583,13 +587,13 @@ module.exports = function (grunt) {
     
     shell: {
       phonegapBuild: {
-        command: 'cordova build android --debug'
+        command: 'cordova build ios --debug'
       },
       releaseBuild:{
-        command: 'cordova build android --release'
+        command: 'cordova build ios --release'
       },
       dvBuild:{
-        command: 'cordova build android --debug'
+        command: 'cordova build ios --debug'
       },
       phonegapServ:{
         command: 'cordova serve'
