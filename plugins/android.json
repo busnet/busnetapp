@@ -9,15 +9,15 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"PushPlugin\"><param name=\"android-package\" value=\"com.plugin.gcm.PushPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -77,10 +77,10 @@
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.busnet.app.ios"
         },
-        "com.ionic.keyboard": {
+        "com.phonegap.plugins.PushPlugin": {
             "PACKAGE_NAME": "com.busnet.app.ios"
         },
-        "com.phonegap.plugins.PushPlugin": {
+        "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.busnet.app.ios"
         }
     },

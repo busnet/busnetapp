@@ -159,6 +159,7 @@ angular
                 "alert": true,
             };
             $cordovaPush.register(iosConfig).then(function(deviceToken) {
+                alert(platform);
                 loginService.setDeviceToken(
                     {
                         platform: 'ios',
@@ -166,6 +167,7 @@ angular
                     }
                 );
             }, function(err) {
+                alert("Registration error: " + err);
                 console.log("Registration error: " + err);
             });
         }

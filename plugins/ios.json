@@ -9,36 +9,31 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"PushPlugin\"><param name=\"ios-package\" value=\"PushPlugin\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
                         }
                     ]
-                }
-            },
-            "framework": {
-                "parents": {
-                    "CoreGraphics.framework": []
                 }
             }
         }
     },
     "installed_plugins": {
-        "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.trucknet.app.ios"
-        },
         "com.ionic.keyboard": {
-            "PACKAGE_NAME": "com.trucknet.app.ios"
+            "PACKAGE_NAME": "com.busnet.app.ios"
         },
         "com.phonegap.plugins.PushPlugin": {
-            "PACKAGE_NAME": "com.trucknet.app.ios"
+            "PACKAGE_NAME": "com.busnet.app.ios"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.busnet.app.ios"
         }
     },
     "dependent_plugins": {}

@@ -1,13 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "file": "plugins/org.apache.cordova.device/www/device.js",
-        "id": "org.apache.cordova.device.device",
-        "clobbers": [
-            "device"
-        ]
-    },
-    {
         "file": "plugins/com.ionic.keyboard/www/keyboard.js",
         "id": "com.ionic.keyboard.keyboard",
         "clobbers": [
@@ -20,14 +13,21 @@ module.exports = [
         "clobbers": [
             "PushNotification"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.device/www/device.js",
+        "id": "org.apache.cordova.device.device",
+        "clobbers": [
+            "device"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "org.apache.cordova.device": "0.3.0",
     "com.ionic.keyboard": "1.0.4",
     "com.phonegap.plugins.PushPlugin": "2.2.1"
+    "org.apache.cordova.device": "0.3.0"
 }
 // BOTTOM OF METADATA
 });
