@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
     id="<%- id%>" 
-    version="0.0.73" 
+    version="0.0.74" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:cdv="http://cordova.apache.org/ns/1.0" 
     xmlns:gap="http://phonegap.com/ns/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
-    <name>BusNet</name>
+    <name>TruckNet</name>
     <description>
-        Busnet application for mobile devices
+        TruckNet team
     </description>
     <author email="info@busnet.co.il" href="http://busnet.co.il">
-       Busnet team
+       TruckNet team
     </author>
     <content src="index.html" />
     <access origin="*" />

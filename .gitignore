@@ -8,3 +8,6 @@ www/
 bower_components
 .elasticbeanstalk/
 busnetapp.apk
+app/index.html
+app/scripts/config.js
+config.xml

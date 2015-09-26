@@ -159,7 +159,7 @@ module.exports = function (grunt) {
       ios: {
         options:{
           data: {
-            id: 'com.busnet.app.ios'
+            id: 'com.trucknet.app.ios'
           }
         },
         files: {
