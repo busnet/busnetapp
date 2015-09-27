@@ -27,13 +27,13 @@
     },
     "installed_plugins": {
         "com.ionic.keyboard": {
-            "PACKAGE_NAME": "com.busnet.app.ios"
+            "PACKAGE_NAME": "com.trucknet.app.ios"
         },
         "com.phonegap.plugins.PushPlugin": {
-            "PACKAGE_NAME": "com.busnet.app.ios"
+            "PACKAGE_NAME": "com.trucknet.app.ios"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.busnet.app.ios"
+            "PACKAGE_NAME": "com.trucknet.app.ios"
         }
     },
     "dependent_plugins": {}

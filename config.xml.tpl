@@ -33,7 +33,7 @@
         <icon src="assets/ios/icon-small.png" width="29" height="29" />
         <icon src="assets/ios/icon-small@2x.png" width="58" height="58" />
         <icon src="assets/ios/icon-Small-50.png" width="50" height="50" />
-        <icon src="assets/ios/icon-Small-50@2x" width="100" height="100" />
+        <icon src="assets/ios/icon-Small-50@2x.png" width="100" height="100" />
     </platform>
     <platform name="android">
         <preference name="Fullscreen" value="true" />
