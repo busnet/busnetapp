@@ -622,7 +622,7 @@ module.exports = function (grunt) {
         command: shellBuildCommand('android', 'release') //'cordova build android --release'
       },
       qaBuildios:{
-        command: shellBuildCommand('ios', 'release')
+        command: shellBuildCommand('ios', 'debug')
       },
       qaBuildandroid:{
         command: shellBuildCommand('android', 'release')
