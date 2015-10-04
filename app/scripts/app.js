@@ -45,6 +45,7 @@ angular
         "SERVER_ERROR": "שגיאת שרת",
         "LOGIN":"כניסה למערכת",
         "LOGOUT": "התנתק",
+        "REGISTER": "הרשם",
         "FROM": "מאת",
         "FOR": "עבור",
         "USERNAME": "שם משתמש",
