@@ -19,9 +19,7 @@ angular.module('busnetApp.directives', ['angularMoment'])
         var socket = io(REST_URLS.SOCKET_SERVER);
         var user = loginService.user;
         scope.isOwner = scope.ride.username == user._id;
-        scope.messages = {
-          msgs:[]
-        };
+        scope.messages = {};
         if(scope.ride.requests){
           scope.messages = scope.ride.requests[scope.target] ? scope.ride.requests[scope.target] : [];
         }
@@ -64,14 +62,17 @@ angular.module('busnetApp.directives', ['angularMoment'])
             return;
           }
           scope.$apply(function(){
+            if(!scope.messages.msgs){
+              scope.messages.msgs = [];
+            }
             scope.messages.msgs.push(message);
-            scrollToBottom();
+            //scrollToBottom();
           });
         };
         socket.on('message2Owner', addMessage);
         socket.on('message2User', addMessage);
         scope.sendMessage = function(message){
-        	var messageType =  scope.isOwner ? 'reply' : 'send';
+        	var messageType =  scope.ride.requests[scope.target] ? 'reply' : 'send';
         	var msg = {
         		message: message, 
         		rideID: scope.ride._id,

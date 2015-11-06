@@ -75,7 +75,8 @@ module.exports = function (grunt) {
             RIDE: 'http://localhost:3002/rest/ride',
             LOGIN_SERVER: 'http://localhost:3002/rest/login',
             USER: 'http://localhost:3002/rest/user',
-            NOTIFICATIONS: 'http://localhost:3002/rest/notifications'
+            NOTIFICATIONS: 'http://localhost:3002/rest/notifications',
+            REGISTER: 'http://localhost:3002/register1'
           }
         }
       },
@@ -91,7 +92,8 @@ module.exports = function (grunt) {
             RIDE: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/ride',
             LOGIN_SERVER: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/login',
             USER: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/user',
-            NOTIFICATIONS: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/notifications'
+            NOTIFICATIONS: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/notifications',
+            REGISTER: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/register1'
           }
         }
       },
@@ -107,7 +109,8 @@ module.exports = function (grunt) {
             RIDE: 'http://app.busnet.co.il/rest/ride',
             LOGIN_SERVER: 'http://app.busnet.co.il/rest/login',
             USER: 'http://app.busnet.co.il/rest/user',
-            NOTIFICATIONS: 'http://app.busnet.co.il/rest/notifications'
+            NOTIFICATIONS: 'http://app.busnet.co.il/rest/notifications',
+            REGISTER: 'http://app.busnet.co.il/register1'
           }
         }
       },
@@ -123,7 +126,8 @@ module.exports = function (grunt) {
             RIDE: 'http://192.168.1.20:3002/rest/ride',
             LOGIN_SERVER: 'http://192.168.1.20:3002/rest/login',
             USER: 'http://192.168.1.20:3002/rest/user',
-            NOTIFICATIONS: 'http://192.168.1.20:3002/rest/notifications'
+            NOTIFICATIONS: 'http://192.168.1.20:3002/rest/notifications',
+            REGISTER: 'http://192.168.1.20:3002/register1'
           }
         }
       },
@@ -139,7 +143,8 @@ module.exports = function (grunt) {
             RIDE: 'http://10.0.0.3:3002/rest/ride',
             LOGIN_SERVER: 'http://10.0.0.3:3002/rest/login',
             USER: 'http://10.0.0.3:3002/rest/user',
-            NOTIFICATIONS: 'http://10.0.0.3:3002/rest/notifications'
+            NOTIFICATIONS: 'http://10.0.0.3:3002/rest/notifications',
+            REGISTER: 'http://10.0.0.3:3002/register1'
           }
         }
       }

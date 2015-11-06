@@ -46,6 +46,7 @@ angular.module('busnetApp.RideChat', [])
 			vehicles, 
 			loginService, 
 			$stateParams,
+			$http,
 			REST_URLS) {
 		var socket = io(REST_URLS.SOCKET_SERVER);
         var user = loginService.user;
@@ -64,15 +65,14 @@ angular.module('busnetApp.RideChat', [])
 			return formatedItem;
 		}
 		$scope.ride = mapRide(ride);
-		var companies = [];
-		_.forEach(ride.requests, function(val, key){
-			companies.push({name: val.from, id: key});
-		});
-		$scope.companies = companies;
+		$scope.companies = [];
+		_.forEach($scope.ride.requests, function(val, key){
+			$scope.companies.push({id: key, name: val.from});
+		})
 		$scope.isOwner = ride.username == loginService.user._id;
 
-		var firstCompany = _.first(companies) ? _.first(companies).id : null;
-		var defaultCompny = $scope.isOwner ? firstCompany : null;
+		var firstCompany = _.first($scope.companies) ? _.first($scope.companies).id : null;
+		var defaultCompny = $scope.isOwner ? firstCompany : $scope.ride.username;
 
 		$scope.target = $stateParams.target || defaultCompny;
 		
