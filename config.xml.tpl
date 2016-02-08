@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
     id="<%- id%>" 
-    version="0.0.80" 
+    version="0.0.82" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:cdv="http://cordova.apache.org/ns/1.0" 
     xmlns:gap="http://phonegap.com/ns/1.0"
@@ -16,6 +16,20 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <plugin name="cordova-plugin-whitelist" version="1" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
     <preference name="DisallowOverscroll" value="true"/>
     <gap:platform name="ios" />
     <platform name="ios">

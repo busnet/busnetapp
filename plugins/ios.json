@@ -66,6 +66,9 @@
         },
         "phonegap-plugin-push": {
             "PACKAGE_NAME": "com.trucknet.app.ios"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.trucknet.trucknetapp"
         }
     },
     "dependent_plugins": {}

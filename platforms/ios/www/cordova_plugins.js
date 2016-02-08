@@ -27,7 +27,8 @@ module.exports.metadata =
 {
     "com.ionic.keyboard": "1.0.4",
     "cordova-plugin-device": "1.1.1",
-    "phonegap-plugin-push": "1.5.3"
+    "phonegap-plugin-push": "1.5.3",
+    "cordova-plugin-whitelist": "1.2.1"
 }
 // BOTTOM OF METADATA
 });

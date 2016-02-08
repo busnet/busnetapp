@@ -12,9 +12,8 @@ angular.module('loginService', ['ui.router'])
       errorState = 'app.error',
       logoutState = 'app.login';
 
-  var socket = io(REST_URLS.SOCKET_SERVER);
-
   this.$get = function ($rootScope, $http, $q, $state) {
+    var socket = io(REST_URLS.SOCKET_SERVER);
     /**
      * Low-level, private functions.
      */
@@ -144,6 +143,7 @@ angular.module('loginService', ['ui.router'])
      */
     var wrappedService = {
       loginHandler: function (user) {
+
         /**
          * Custom logic to manually set userRole goes here
          *
