@@ -8,17 +8,17 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js",
-        "id": "com.phonegap.plugins.PushPlugin.PushNotification",
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "id": "cordova-plugin-device.device",
         "clobbers": [
-            "PushNotification"
+            "device"
         ]
     },
     {
-        "file": "plugins/org.apache.cordova.device/www/device.js",
-        "id": "org.apache.cordova.device.device",
+        "file": "plugins/phonegap-plugin-push/www/push.js",
+        "id": "phonegap-plugin-push.PushNotification",
         "clobbers": [
-            "device"
+            "PushNotification"
         ]
     }
 ];
@@ -26,8 +26,8 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "com.ionic.keyboard": "1.0.4",
-    "com.phonegap.plugins.PushPlugin": "2.2.1",
-    "org.apache.cordova.device": "0.3.0"
+    "cordova-plugin-device": "1.1.1",
+    "phonegap-plugin-push": "1.5.3"
 }
 // BOTTOM OF METADATA
 });

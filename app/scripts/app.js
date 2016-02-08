@@ -141,7 +141,47 @@ angular
 
     //google push service registration
     
-    document.addEventListener("deviceready", function(){
+    var push = PushNotification.init({
+        android: {
+            senderID: GOOGLE.SENDERID
+        },
+        ios: {
+            alert: "true",
+            badge: "true",
+            sound: "true"
+        }
+    });
+
+    push.on('registration', function(data) {
+        console.log('registration',data);
+        // data.registrationId
+        var platform = $cordovaDevice.getPlatform().toLowerCase();
+        loginService.setDeviceToken({
+            platform: platform,
+            token: data.registrationId
+        });
+    });
+
+    push.on('notification', function(data) {
+        // data.message,
+        // data.title,
+        // data.count,
+        // data.sound,
+        // data.image,
+        // data.additionalData
+        showModal(data);
+        if (data.sound) {
+            var snd = new Media(event.sound);
+            snd.play();
+        }
+    });
+
+    push.on('error', function(e) {
+        console.log('push error: ', e.message);
+        // e.message
+    });
+    
+    /*document.addEventListener("deviceready", function(){
         var platform = $cordovaDevice.getPlatform().toLowerCase();
         if (platform == 'android'){
             var googleConfig = {
@@ -172,7 +212,7 @@ angular
             });
         }
     });
-
+*/
     var showModal = function(notification){
         var modalInstance = $modal.open({
             animation: false,
@@ -195,7 +235,7 @@ angular
             console.log('Modal dismissed at: ' + new Date());
         });
     }
-
+/*
     $rootScope.$on('$cordovaPush:notificationReceived', function(event, notification) {
       var platform = $cordovaDevice.getPlatform().toLowerCase();
       if (platform == 'android'){
@@ -250,6 +290,7 @@ angular
         }
       }
     });
+*/
 
     window.addEventListener('native.showkeyboard', keyboardShowHandler);
     function keyboardShowHandler(e) {

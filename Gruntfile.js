@@ -83,6 +83,23 @@ module.exports = function (grunt) {
       qa: {
         constants: {
           REST_URLS: {
+            SOCKET_SERVER: 'http://localhost:3002',
+            VEHICLES: 'http://localhost:3002/rest/vehicles',
+            RIDE_TYPES: 'http://localhost:3002/rest/ridetypes',
+            AREAS: 'http://localhost:3002/rest/areas',
+            CITIES: 'http://localhost:3002/rest/cities',
+            RIDES: 'http://localhost:3002/rest/rides',
+            RIDE: 'http://localhost:3002/rest/ride',
+            LOGIN_SERVER: 'http://localhost:3002/rest/login',
+            USER: 'http://localhost:3002/rest/user',
+            NOTIFICATIONS: 'http://localhost:3002/rest/notifications',
+            REGISTER: 'http://localhost:3002/register1'
+          }
+        }
+      },
+      /*qa: {
+        constants: {
+          REST_URLS: {
             SOCKET_SERVER: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002',
             VEHICLES: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/vehicles',
             RIDE_TYPES: 'http://busnet-qa-env-vxky2mjksz.elasticbeanstalk.com:3002/rest/ridetypes',
@@ -96,7 +113,7 @@ module.exports = function (grunt) {
             REGISTER: 'http://localhost:3002/register1'
           }
         }
-      },
+      },*/
       release: {
         constants: {
           REST_URLS: {
@@ -169,7 +186,7 @@ module.exports = function (grunt) {
       android: {
         options:{
           data: {
-            id: 'com.busnet.busnetapp'
+            id: 'com.trucknet.trucknetapp'
           }
         },
         files: {
@@ -711,7 +728,7 @@ module.exports = function (grunt) {
         'copy:dist',
         'cdnify',
         'cssmin',
-        'uglify',
+        //'uglify',
         'filerev',
         'usemin',
         'htmlmin',
